@@ -201,6 +201,11 @@
                 <span style="font-size: 12px;"><?php echo "ภาพรวมเมนู"; ?></span>
             </a>
         </li>
+        <li class="<?php echo ($menu_nav == 'popup_banner')? 'active':''; ?>">
+            <a href="{{ url('admin/popup_banner') }}"><i class="fa fa-space-shuttle"></i> 
+                <span style="font-size: 12px;"><?php echo "Popup Banner"; ?></span>
+            </a>
+        </li>
         <li class="<?php echo ($menu_nav == 'slide_banner')? 'active':''; ?>">
             <a href="{{ url('admin/slide_banner') }}"><i class="fa fa-space-shuttle"></i> 
                 <span style="font-size: 12px;"><?php echo "Slide Banner"; ?></span>
@@ -242,6 +247,11 @@
             <li>
                 <a href="{{ url('/admin/resolution_of_meeting') }}" style="font-size: 12px;">
                     <i class="fa fa-circle-o"></i> มติประชุม
+                </a>
+            </li>
+            <li>
+                <a href="{{ url('/admin/activity_news') }}" style="font-size: 12px;">
+                    <i class="fa fa-circle-o"></i> หน้าข่าวกิจกรรม
                 </a>
             </li>
           </ul>

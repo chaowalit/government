@@ -61,6 +61,12 @@ Route::post('admin/resolution_of_meeting/save', 'admin\ResolutionOfMeetingContro
 Route::get('admin/resolution_of_meeting/edit/{id}', 'admin\ResolutionOfMeetingController@edit');
 Route::get('admin/resolution_of_meeting/delete/{id}', 'admin\ResolutionOfMeetingController@delete');
 
+Route::get('admin/activity_news', 'admin\ActivityNewsController@index');
+Route::get('admin/activity_news/form', 'admin\ActivityNewsController@form');
+Route::post('admin/activity_news/save', 'admin\ActivityNewsController@save');
+Route::get('admin/activity_news/delete/{id}', 'admin\ActivityNewsController@delete');
+Route::get('admin/activity_news/edit/{id}', 'admin\ActivityNewsController@edit');
+
 Route::get('admin/slide_banner', 'admin\SlideBannerController@index');
 Route::get('admin/slide_banner/form', 'admin\SlideBannerController@form');
 Route::post('admin/slide_banner/save', 'admin\SlideBannerController@save');
