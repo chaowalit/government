@@ -41,8 +41,8 @@ class PresentationController extends AdminMsgController{
 	}
 
 	public function edit($id = ''){
-		$ActivityNews = new ActivityNews;
-		$result = $ActivityNews->getDataById($id);
+		$Presentation = new Presentation;
+		$result = $Presentation->getDataById($id);
 
 		$data = array(
 			'menu_name' => $this->menu_name,
@@ -50,7 +50,7 @@ class PresentationController extends AdminMsgController{
 			'type_form' => 'edit',
 		);
 
-		$this->render_view('admin/activity_news/form', $data, $this->menu_nav, 1);
+		$this->render_view('admin/presentation/form', $data, $this->menu_nav, 1);
 	}
 
 	public function save(Request $Requests){
@@ -60,7 +60,7 @@ class PresentationController extends AdminMsgController{
 			$files = $Requests->file('file_path');
 			if($files[0] != NULL){
 				if(empty($file_path) || $file_path == ''){
-					$file_path = 'activity-'.time();
+					$file_path = 'presentation-'.time();
 				}
 				$destinationPath = public_path('uploads/news/'.$file_path);
 				if (!file_exists($destinationPath)) {
@@ -89,12 +89,12 @@ class PresentationController extends AdminMsgController{
 					"created_at" => date("Y-m-d H:i:s"),
 					"updated_at" => date("Y-m-d H:i:s"),
 				);
-				$ActivityNews = new ActivityNews;
-				$ActivityNews->save_data($data);
+				$Presentation = new Presentation;
+				$Presentation->save_data($data);
 
 				$Requests->session()->flash('bg_color', 'success');
 				$Requests->session()->flash('msg', "ทำรายการบันทึกข้อมูล สำเร็จแล้ว");
-				return redirect('admin/activity_news/form');
+				return redirect('admin/presentation/form');
 			}else{
 				$data = array(
 					"title" => $Requests->get('title', ''),
@@ -104,12 +104,12 @@ class PresentationController extends AdminMsgController{
 					"active" => $Requests->get('active', ''),
 					"updated_at" => date("Y-m-d H:i:s"),
 				);
-				$ActivityNews = new ActivityNews;
-				$ActivityNews->save_data($data, $edit_id);
+				$Presentation = new Presentation;
+				$Presentation->save_data($data, $edit_id);
 
 				$Requests->session()->flash('bg_color', 'success');
 				$Requests->session()->flash('msg', "ทำรายการบันทึกข้อมูล สำเร็จแล้ว");
-				return redirect('admin/activity_news/edit/'.$edit_id);
+				return redirect('admin/presentation/edit/'.$edit_id);
 			}
 		} catch (\Exception $e){
 			echo $e->getMessage();
@@ -118,8 +118,8 @@ class PresentationController extends AdminMsgController{
 	}
 
 	public function delete($id = '', $folder = '', $filename = ''){
-		$ActivityNews = new ActivityNews;
-		$result = $ActivityNews->getDataById($id);
+		$Presentation = new Presentation;
+		$result = $Presentation->getDataById($id);
 
 		if($folder == '' && $filename == ''){
 			$path = public_path('uploads/news/'.$result[0]->file_path);
@@ -127,13 +127,13 @@ class PresentationController extends AdminMsgController{
 	    		@\File::delete($file);
 			}
 
-			$ActivityNews->delete_row($id);
+			$Presentation->delete_row($id);
 
-			return redirect('admin/activity_news');
+			return redirect('admin/presentation');
 		}else{
 			$path = public_path('uploads/news/'.$folder.'/'.$filename);
 			@\File::delete($path);
-			return redirect('admin/activity_news/edit/'.$id);
+			return redirect('admin/presentation/edit/'.$id);
 		}
 	}
 
@@ -141,10 +141,10 @@ class PresentationController extends AdminMsgController{
 		$data = array(
 			'show_img' => $filename
 		);
-		$ActivityNews = new ActivityNews;
-		$ActivityNews->save_data($data, $id);
+		$Presentation = new Presentation;
+		$Presentation->save_data($data, $id);
 
-		return redirect('admin/activity_news/edit/'.$id);
+		return redirect('admin/presentation/edit/'.$id);
 	}
 }
 ?>

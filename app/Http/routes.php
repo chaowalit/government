@@ -76,6 +76,12 @@ Route::get('admin/activity_news/edit/{id}', 'admin\ActivityNewsController@edit')
 Route::get('admin/activity_news/select/{id}/{filename}', 'admin\ActivityNewsController@select');
 
 Route::get('admin/presentation', 'admin\PresentationController@index');
+Route::get('admin/presentation/form', 'admin\PresentationController@form');
+Route::post('admin/presentation/save', 'admin\PresentationController@save');
+Route::get('admin/presentation/delete/{id}', 'admin\PresentationController@delete');
+Route::get('admin/presentation/delete/{id}/{folder}/{filename}', 'admin\PresentationController@delete');
+Route::get('admin/presentation/edit/{id}', 'admin\PresentationController@edit');
+Route::get('admin/presentation/select/{id}/{filename}', 'admin\PresentationController@select');
 
 Route::get('admin/slide_banner', 'admin\SlideBannerController@index');
 Route::get('admin/slide_banner/form', 'admin\SlideBannerController@form');
