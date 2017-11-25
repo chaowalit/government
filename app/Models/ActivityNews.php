@@ -12,6 +12,7 @@ class ActivityNews extends Model{
     	'post_date',
     	'detail1',
     	'file_path',
+    	'show_img',
     	'active',
     ];
 

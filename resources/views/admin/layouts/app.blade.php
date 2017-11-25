@@ -254,6 +254,11 @@
                     <i class="fa fa-circle-o"></i> หน้าข่าวกิจกรรม
                 </a>
             </li>
+            <li>
+                <a href="{{ url('/admin/presentation') }}" style="font-size: 12px;">
+                    <i class="fa fa-circle-o"></i> นำเสนอผลงาน อปท.
+                </a>
+            </li>
           </ul>
         </li>
 

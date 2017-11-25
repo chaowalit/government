@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\AdminMsgController;
-use App\Models\ActivityNews;
+use App\Models\Presentation;
 
-class ActivityNewsController extends AdminMsgController{
+class PresentationController extends AdminMsgController{
 
 	private $menu_nav = '';
 	private $menu_name = '';
@@ -21,14 +21,14 @@ class ActivityNewsController extends AdminMsgController{
     }
 
 	public function index(){
-		$ActivityNews = new ActivityNews;
-		$ActivityNews = $ActivityNews->getActivityNewsAll();
+		$Presentation = new Presentation;
+		$Presentation = $Presentation->getPresentationAll();
 		$data = array(
 			'menu_name' => $this->menu_name,
-			'activity_news' => $ActivityNews,
+			'presentation' => $Presentation,
 		);
 
-		$this->render_view('admin/activity_news/main', $data, $this->menu_nav, 1);
+		$this->render_view('admin/presentation/main', $data, $this->menu_nav, 1);
 	}
 
 	public function form(){
@@ -37,7 +37,7 @@ class ActivityNewsController extends AdminMsgController{
 			'type_form' => 'create',
 		);
 
-		$this->render_view('admin/activity_news/form', $data, $this->menu_nav, 1);
+		$this->render_view('admin/presentation/form', $data, $this->menu_nav, 1);
 	}
 
 	public function edit($id = ''){
@@ -113,56 +113,6 @@ class ActivityNewsController extends AdminMsgController{
 			}
 		} catch (\Exception $e){
 			echo $e->getMessage();
-		}
-
-		exit;
-		$file_path = "";
-		if($Requests->file('file_path')){
-			$file = $Requests->file('file_path');
-			$destinationPath = public_path('uploads/news');
-			$fileName = time().'.'.$file->getClientOriginalExtension();
-			$file->move($destinationPath, $fileName);
-			$file_path = 'public/uploads/news/'.$fileName;
-		}else{
-			$file_path = $Requests->get('img_old', '');
-		}
-
-		$post_date = "";
-		if(!empty($Requests->get('post_date', ''))){
-			$temp = explode('-', $Requests->get('post_date', ''));
-			$post_date = $temp[2].'-'.$temp[1].'-'.$temp[0].' 00:00:00';
-		}
-		if($Requests->get('edit_id', '') == ""){
-			$data = array(
-				"title" => $Requests->get('title', ''),
-				"post_date" => $post_date,
-				"detail1" => $Requests->get('detail1', ''),
-				"file_path" => $file_path,
-				"active" => $Requests->get('active', ''),
-				"created_at" => date("Y-m-d H:i:s"),
-				"updated_at" => date("Y-m-d H:i:s"),
-			);
-			$ResolutionOfMeeting = new ResolutionOfMeeting;
-			$ResolutionOfMeeting->save_data($data);
-
-			$Requests->session()->flash('bg_color', 'success');
-			$Requests->session()->flash('msg', "ทำรายการบันทึกข้อมูล สำเร็จแล้ว");
-			return redirect('admin/resolution_of_meeting/form');
-		}else {
-			$data = array(
-				"title" => $Requests->get('title', ''),
-				"post_date" => $post_date,
-				"detail1" => $Requests->get('detail1', ''),
-				"file_path" => $file_path,
-				"active" => $Requests->get('active', ''),
-				"updated_at" => date("Y-m-d H:i:s"),
-			);
-			$ResolutionOfMeeting = new ResolutionOfMeeting;
-			$ResolutionOfMeeting->save_data($data, $Requests->get('edit_id', ''));
-
-			$Requests->session()->flash('bg_color', 'success');
-			$Requests->session()->flash('msg', "ทำรายการบันทึกข้อมูล สำเร็จแล้ว");
-			return redirect('admin/resolution_of_meeting/edit/'.$Requests->get('edit_id', ''));
 		}
 
 	}

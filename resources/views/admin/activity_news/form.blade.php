@@ -115,6 +115,47 @@
                     <a href="{{ url('/admin/activity_news') }}" class="btn btn-warning">ยกเลิก</a>
                   </div>
                 </form>
+
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th style="width: 10%;text-align: center;">เลือก</th>
+                            <th>รูปภาพ</th>
+                            <th style="width: 20%;text-align: center;"></th>
+                        </tr>
+                        <?php
+                            if(isset($result[0]->file_path)){
+                            $path = public_path('uploads/news/'.$result[0]->file_path);
+                            foreach(glob($path.'/*.*') as $file) {
+                                $temp = explode('/', $file);
+                                $file_name = $temp[count($temp)-1];
+                        ?>
+                            <tr>
+                                <td style="text-align: center;">
+                                    <?php
+                                        if($result[0]->show_img == $file_name){
+                                            echo "<b style='color: green;'>OK</b>";
+                                        }
+                                    ?>
+                                </td>
+                                <td>
+                                    <a href="<?php echo '/uploads/news/'.$result[0]->file_path.'/'.$file_name; ?>" target="_blank">
+                                    <img src="<?php echo asset('uploads/news/'.$result[0]->file_path).'/'.$file_name; ?>" style="width:150px;height: 100px;">
+                                    </a>
+                                </td>
+                                <td style="text-align: center;">
+                                    <a href="<?php echo url('/admin/activity_news/select').'/'.$result[0]->id.'/'.$file_name; ?>">เลือก</a>
+                                    &nbsp;&nbsp;
+                                    <a href="<?php echo url('/admin/activity_news/delete').'/'.$result[0]->id.'/'.$result[0]->file_path.'/'.$file_name; ?>" onclick="return confirm('คุณต้องการลบรายการนี้หรือไม่ ?')">
+                                        ลบรูปภาพ
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php
+                            } }
+                        ?>
+                    </tbody>
+                </table>
             </div>
           </div>
           <!-- /.box -->
