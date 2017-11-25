@@ -56,21 +56,16 @@ class VdoController extends AdminMsgController{
 	public function save(Request $Requests){
 		try {
 			$edit_id = $Requests->get('edit_id', '');
-			$file_path = $Requests->get('img_old', '');
-			$files = $Requests->file('file_path');
-			if($files[0] != NULL){
-				if(empty($file_path) || $file_path == ''){
-					$file_path = 'otop-'.time();
-				}
-				$destinationPath = public_path('uploads/news/'.$file_path);
-				if (!file_exists($destinationPath)) {
-				    \File::makeDirectory($destinationPath, $mode = 0777, true, true);
-				}
 
-				foreach($files as $file){
-		            $fileName = time().'-'.rand (100,999).'.'.$file->getClientOriginalExtension();
-		            $file->move($destinationPath, $fileName);
-		        }
+			$file_path = '';
+			if($Requests->file('file_path')){
+				$file = $Requests->file('file_path');
+				$destinationPath = public_path('uploads/vdo');
+				$fileName = time().'.'.$file->getClientOriginalExtension();
+				$file->move($destinationPath, $fileName);
+				$file_path = 'public/uploads/vdo/'.$fileName;
+			}else{
+				$file_path = $Requests->get('img_old', '');
 			}
 
 			//---- save ----//
@@ -89,12 +84,12 @@ class VdoController extends AdminMsgController{
 					"created_at" => date("Y-m-d H:i:s"),
 					"updated_at" => date("Y-m-d H:i:s"),
 				);
-				$Otop = new Otop;
-				$Otop->save_data($data);
+				$Vdo = new Vdo;
+				$Vdo->save_data($data);
 
 				$Requests->session()->flash('bg_color', 'success');
 				$Requests->session()->flash('msg', "ทำรายการบันทึกข้อมูล สำเร็จแล้ว");
-				return redirect('admin/otop/form');
+				return redirect('admin/vdo/form');
 			}else{
 				$data = array(
 					"title" => $Requests->get('title', ''),
@@ -104,12 +99,12 @@ class VdoController extends AdminMsgController{
 					"active" => $Requests->get('active', ''),
 					"updated_at" => date("Y-m-d H:i:s"),
 				);
-				$Otop = new Otop;
-				$Otop->save_data($data, $edit_id);
+				$Vdo = new Vdo;
+				$Vdo->save_data($data, $edit_id);
 
 				$Requests->session()->flash('bg_color', 'success');
 				$Requests->session()->flash('msg', "ทำรายการบันทึกข้อมูล สำเร็จแล้ว");
-				return redirect('admin/otop/edit/'.$edit_id);
+				return redirect('admin/vdo/edit/'.$edit_id);
 			}
 		} catch (\Exception $e){
 			echo $e->getMessage();
@@ -117,34 +112,17 @@ class VdoController extends AdminMsgController{
 
 	}
 
-	public function delete($id = '', $folder = '', $filename = ''){
-		$Otop = new Otop;
-		$result = $Otop->getDataById($id);
+	public function delete($id = ''){
+		$Vdo = new Vdo;
+		$result = $Vdo->getDataById($id);
 
-		if($folder == '' && $filename == ''){
-			$path = public_path('uploads/news/'.$result[0]->file_path);
-			foreach(glob($path.'/*.*') as $file) {
-	    		@\File::delete($file);
-			}
-
-			$Otop->delete_row($id);
-
-			return redirect('admin/otop');
-		}else{
-			$path = public_path('uploads/news/'.$folder.'/'.$filename);
-			@\File::delete($path);
-			return redirect('admin/otop/edit/'.$id);
+		if(file_exists(base_path($result[0]->file_path))){
+			@unlink(base_path($result[0]->file_path));
 		}
-	}
 
-	public function select($id = '', $filename = ''){
-		$data = array(
-			'show_img' => $filename
-		);
-		$Otop = new Otop;
-		$Otop->save_data($data, $id);
+		$Vdo->delete_row($id);
 
-		return redirect('admin/otop/edit/'.$id);
+		return redirect('admin/vdo');
 	}
 }
 ?>

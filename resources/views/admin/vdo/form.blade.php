@@ -99,10 +99,10 @@
                       <label for="">อัปโหลดไฟล์</label>
                       <input type="file" name="file_path" id="file_path">
 
-                      <p class="help-block">รองรับไฟล์ vdo เท่านั้น</p>
+                      <p class="help-block">รองรับไฟล์ mp4 เท่านั้น</p>
                         <p>
-                        <!-- <a href="<?php echo isset($result[0]->file_path)? '/'.$result[0]->file_path:''; ?>" target="_blank">{{ @$result[0]->file_path }}</a>
-                        </p> -->
+                        <a href="<?php echo isset($result[0]->file_path)? '/'.$result[0]->file_path:''; ?>" target="_blank">{{ @$result[0]->file_path }}</a>
+                        </p>
                     </div>
                   </div>
                     <!-- /.box-body -->

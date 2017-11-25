@@ -101,6 +101,9 @@ Route::get('admin/otop/select/{id}/{filename}', 'admin\OtopController@select');
 
 Route::get('admin/vdo', 'admin\VdoController@index');
 Route::get('admin/vdo/form', 'admin\VdoController@form');
+Route::post('admin/vdo/save', 'admin\VdoController@save');
+Route::get('admin/vdo/delete/{id}', 'admin\VdoController@delete');
+Route::get('admin/vdo/edit/{id}', 'admin\VdoController@edit');
 
 
 Route::get('admin/slide_banner', 'admin\SlideBannerController@index');
