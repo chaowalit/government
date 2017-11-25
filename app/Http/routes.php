@@ -31,6 +31,12 @@ Back End purchase
 */
 Route::get('config_menu', 'admin\ConfigMenuController@index');
 
+Route::get('admin/popup_banner', 'admin\PopupBannerController@index');
+Route::get('admin/popup_banner/form', 'admin\PopupBannerController@form');
+Route::post('admin/popup_banner/save', 'admin\PopupBannerController@save');
+Route::get('admin/popup_banner/edit/{id}', 'admin\PopupBannerController@edit');
+Route::get('admin/popup_banner/delete/{id}', 'admin\PopupBannerController@delete');
+
 Route::get('admin/information', 'admin\InformationController@index');
 Route::get('admin/information/form', 'admin\InformationController@form');
 Route::post('admin/information/save', 'admin\InformationController@save');

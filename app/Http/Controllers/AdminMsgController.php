@@ -16,6 +16,12 @@ class AdminMsgController extends Controller
 								'menu_name' => 'ตั้งค่าเมนู',
 							),
 						),
+		'popup_banner' => array(
+							array(
+								'menu_nav' => 'popup_banner',
+								'menu_name' => 'Popup Banner',
+							),
+						),
 		'information' => array(
 							array(
 								'menu_nav' => 'information',
