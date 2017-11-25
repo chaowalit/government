@@ -259,6 +259,16 @@
                     <i class="fa fa-circle-o"></i> นำเสนอผลงาน อปท.
                 </a>
             </li>
+            <li>
+                <a href="{{ url('/admin/landmarks') }}" style="font-size: 12px;">
+                    <i class="fa fa-circle-o"></i> สถานที่สำคัญ(ท่องเที่ยว)
+                </a>
+            </li>
+            <li>
+                <a href="{{ url('/admin/otop') }}" style="font-size: 12px;">
+                    <i class="fa fa-circle-o"></i> ผลิตภัณฑ์OTOP
+                </a>
+            </li>
           </ul>
         </li>
 

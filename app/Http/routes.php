@@ -83,6 +83,17 @@ Route::get('admin/presentation/delete/{id}/{folder}/{filename}', 'admin\Presenta
 Route::get('admin/presentation/edit/{id}', 'admin\PresentationController@edit');
 Route::get('admin/presentation/select/{id}/{filename}', 'admin\PresentationController@select');
 
+Route::get('admin/landmarks', 'admin\LandmarksController@index');
+Route::get('admin/landmarks/form', 'admin\LandmarksController@form');
+Route::post('admin/landmarks/save', 'admin\LandmarksController@save');
+Route::get('admin/landmarks/delete/{id}', 'admin\LandmarksController@delete');
+Route::get('admin/landmarks/delete/{id}/{folder}/{filename}', 'admin\LandmarksController@delete');
+Route::get('admin/landmarks/edit/{id}', 'admin\LandmarksController@edit');
+Route::get('admin/landmarks/select/{id}/{filename}', 'admin\LandmarksController@select');
+
+
+
+
 Route::get('admin/slide_banner', 'admin\SlideBannerController@index');
 Route::get('admin/slide_banner/form', 'admin\SlideBannerController@form');
 Route::post('admin/slide_banner/save', 'admin\SlideBannerController@save');
