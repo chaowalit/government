@@ -91,7 +91,16 @@ Route::get('admin/landmarks/delete/{id}/{folder}/{filename}', 'admin\LandmarksCo
 Route::get('admin/landmarks/edit/{id}', 'admin\LandmarksController@edit');
 Route::get('admin/landmarks/select/{id}/{filename}', 'admin\LandmarksController@select');
 
+Route::get('admin/otop', 'admin\OtopController@index');
+Route::get('admin/otop/form', 'admin\OtopController@form');
+Route::post('admin/otop/save', 'admin\OtopController@save');
+Route::get('admin/otop/delete/{id}', 'admin\OtopController@delete');
+Route::get('admin/otop/delete/{id}/{folder}/{filename}', 'admin\OtopController@delete');
+Route::get('admin/otop/edit/{id}', 'admin\OtopController@edit');
+Route::get('admin/otop/select/{id}/{filename}', 'admin\OtopController@select');
 
+Route::get('admin/vdo', 'admin\VdoController@index');
+Route::get('admin/vdo/form', 'admin\VdoController@form');
 
 
 Route::get('admin/slide_banner', 'admin\SlideBannerController@index');

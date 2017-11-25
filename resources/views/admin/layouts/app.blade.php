@@ -269,6 +269,11 @@
                     <i class="fa fa-circle-o"></i> ผลิตภัณฑ์OTOP
                 </a>
             </li>
+            <li>
+                <a href="{{ url('/admin/vdo') }}" style="font-size: 12px;">
+                    <i class="fa fa-circle-o"></i> วีดีโอวิดิทัศน์
+                </a>
+            </li>
           </ul>
         </li>
 
