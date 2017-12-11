@@ -26,7 +26,7 @@ class SlideBanner extends Model{
 	}
 
 	public function getSlideBannerAll(){
-		return \DB::table($this->table)->where('active', 1)
+		return \DB::table($this->table)
 					->orderBy('active', 'desc')
 					->orderBy('order_number', 'asc')
 					->orderBy('updated_at', 'desc')
@@ -49,6 +49,14 @@ class SlideBanner extends Model{
 
 	public function getDataById($id){
 		return \DB::table($this->table)->where('id', $id)->get();
+	}
+	//--------------------------- Front End --------------------------//
+	public function getSlideBannerAllFn(){
+		return \DB::table($this->table)->where('active', 1)
+					->orderBy('active', 'desc')
+					->orderBy('order_number', 'asc')
+					->orderBy('updated_at', 'desc')
+					->get();
 	}
 }
 ?>

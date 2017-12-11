@@ -1,5 +1,21 @@
 <script type="text/javascript" src="<?php echo asset('fn/'.$template.'/js/script.js'); ?>"></script>
 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".custom-carousel-slide-news").owlCarousel({
+            navigation : false,
+            pagination: false,
+            slideSpeed : 400,
+            stopOnHover: true,
+              autoPlay: 3000,
+              items : 1,
+              itemsDesktopSmall : [900,3],
+            itemsTablet: [600,2],
+            itemsMobile : [479, 1]
+        });
+    });
+</script>
+
 <?php if($menu_nav == 'contact_us') { ?>
 	<!-- Google Maps -->
   <style>

@@ -101,7 +101,9 @@
 
                       <p class="help-block">รองรับไฟล์ mp4 เท่านั้น</p>
                         <p>
-                        <a href="<?php echo isset($result[0]->file_path)? '/'.$result[0]->file_path:''; ?>" target="_blank">{{ @$result[0]->file_path }}</a>
+                        <!-- <a href="<?php echo isset($result[0]->file_path)? '/'.$result[0]->file_path:''; ?>" target="_blank">{{ @$result[0]->file_path }}</a> -->
+
+                        <embed src="<?php echo isset($result[0]->file_path)? '/'.$result[0]->file_path:''; ?>" autostart="false" height="70" width="144" />
                         </p>
                     </div>
                   </div>

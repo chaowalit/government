@@ -51,5 +51,13 @@ class Landmarks extends Model{
 	public function delete_row($id){
 		return \DB::table($this->table)->where('id', '=', $id)->delete();
 	}
+	//----------------------------------------------------------------------
+	public function getLandmarksAllFN(){
+		return \DB::table($this->table)
+					->where('active', 1)
+					->orderBy('post_date', 'desc')
+					->orderBy('updated_at', 'desc')
+					->get();
+	}
 }
 ?>

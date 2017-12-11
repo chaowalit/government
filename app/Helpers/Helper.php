@@ -66,6 +66,50 @@ if (!function_exists('getPasswordApiV1')) {
 	}
 }
 
+if (!function_exists('showMonth')) {
+	function showMonth($month, $lang = 'th'){
+		switch ($month) {
+			case '1':
+				$month = 'ม.ค.';
+				break;
+			case '2':
+				$month = 'ก.พ.';
+				break;
+			case '3':
+				$month = 'มี.ค.';
+				break;
+			case '4':
+				$month = 'เม.ย.';
+				break;
+			case '5':
+				$month = 'พ.ค.';
+				break;
+			case '6':
+				$month = 'มิ.ย.';
+				break;
+			case '7':
+				$month = 'ก.ค.';
+				break;
+			case '8':
+				$month = 'ส.ค.';
+				break;
+			case '9':
+				$month = 'ก.ย.';
+				break;
+			case '10':
+				$month = 'ต.ค.';
+				break;
+			case '11':
+				$month = 'พ.ย.';
+				break;
+			case '12':
+				$month = 'ธ.ค.';
+				break;
+			}
+		return $month;
+	}
+}
+
 if (!function_exists('showFullMonth')) {
 	function showFullMonth($month, $lang = 'en') {
 		if ($lang == 'en') {
