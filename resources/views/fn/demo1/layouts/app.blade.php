@@ -7,7 +7,7 @@
 
   <!-- Basic -->
   <title><?php echo isset($contact_us[0]->location_name)? $contact_us[0]->location_name:""; ?></title>
-
+    <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
   <!-- Define Charset -->
   <meta charset="utf-8">
 
@@ -76,7 +76,7 @@
 
 
       <!-- Start  Logo & Naviagtion  -->
-      <div class="navbar navbar-default navbar-top" role="navigation" data-spy="affix" data-offset-top="50" style="height: 144px;">
+      <div class="navbar navbar-default navbar-top" role="navigation" data-spy="affix" data-offset-top="50" style="height: 112px;">
         <div class="container" style="height: 100%;">
           <div class="navbar-header">
             <!-- Stat Toggle Nav Link For Mobiles -->
@@ -84,11 +84,11 @@
               <i class="fa fa-bars"></i>
             </button>
             <!-- End Toggle Nav Link For Mobiles -->
-            <a class="navbar-brand" href="#" style="padding: 10px 0;">
-              <img alt="" src="<?php echo '/'.$logo_url; ?>" style="width: 120px;height: 120px;">
+            <a class="navbar-brand" href="#" style="padding: 6px 0;">
+              <img alt="" src="<?php echo '/'.$logo_url; ?>" style="width: 100px;height: 100px;">
             </a>
           </div>
-          <div class="navbar-collapse collapse" style="padding-top: 32px;">
+          <div class="navbar-collapse collapse" style="padding-top: 20px;">
             <!-- Stat Search -->
             <div class="search-side">
                 <a class="show-search facebook itl-tooltip " data-placement="bottom" title="Facebook" data-original-title="Facebook" href="#">

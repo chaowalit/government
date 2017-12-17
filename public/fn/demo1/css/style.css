@@ -33,7 +33,7 @@
 /*	     01 - General & Basic Styles
 /*------------------------------------------*/
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Prompt', sans-serif;
 	font-size: 13px;
     line-height: 21px;
 	font-weight: 300;
@@ -79,7 +79,7 @@ i {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Prompt', sans-serif;
 	font-weight: 600;
 	margin: 0;
 	color: #444;
@@ -118,7 +118,7 @@ h6 {
 p {
     color: #666;
     font-size: 13px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Prompt', sans-serif;
     line-height: 22px;
     margin: 0;
 }
@@ -164,7 +164,7 @@ a.main-button, input[type="submit"] {
     text-decoration: none;
     color: #fff;
     font-size: 12px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Prompt', sans-serif;
     font-weight: 300;
     text-transform: uppercase;
     padding: 6px 16px;
@@ -388,14 +388,14 @@ input[type="submit"] {
 	opacity: 0; 
 }
 .detailText p{
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Prompt', sans-serif;
     line-height: normal;
     color: white;
   	font-weight: 300;
   	line-height: 30px;
 }
 .detailText h2{
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Prompt', sans-serif;
     font-size: 36px;
     line-height: normal;
     color: white;
@@ -700,7 +700,7 @@ ul.social-list li:last-child a i {
     display: block;
     color: #666;
     font-size: 13px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Prompt', sans-serif;
     padding: 11px 16px;
     text-decoration: none;
     text-transform: capitalize;
@@ -1068,7 +1068,7 @@ ul.breadcrumbs {
 }
 
 ul.breadcrumbs li {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Prompt', sans-serif;
 	font-size: 13px;
 	font-weight: 300;
     margin-left: 3px;
@@ -1123,7 +1123,7 @@ input[type="submit"] {
 #respond textarea, .email {
     color: #666fb5;
     font-size: 13px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Prompt', sans-serif;
     border: 1px solid #eee;
     border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -5520,7 +5520,7 @@ ul.footer-nav li a:hover {
 }
 
 .services-2-icon h4 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Prompt', sans-serif;
   color: #404449;
   font-size: 16px;
   font-weight: 400;

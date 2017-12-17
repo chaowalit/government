@@ -16,6 +16,13 @@
     });
 </script>
 
+<style type="text/css">
+    .testimonial-content {
+        border-radius: 20px;
+        padding: 6px 18px;
+    }
+</style>
+
 <?php if($menu_nav == 'contact_us') { ?>
 	<!-- Google Maps -->
   <style>

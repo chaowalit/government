@@ -78,25 +78,12 @@
             <div class="custom-carousel-slide-news show-one-slide touch-carousel slide_news" data-appeared-items="1">
               <!-- Testimonial 1 -->
               <div class="classic-testimonials item">
-                <div class="testimonial-content">
+                <div class="testimonial-content" style="border-radius: 20px;padding: 6px 18px;box-shadow: 1px 4px 3px -1px rgba(50, 50, 50, 0.75);">
                   <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>
                 <!-- <div class="testimonial-author"><span>John Doe</span> - Customer</div> -->
               </div>
-              <!-- Testimonial 2 -->
-              <div class="classic-testimonials item">
-                <div class="testimonial-content">
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-                <!-- <div class="testimonial-author"><span>John Doe</span> - Customer</div> -->
-              </div>
-              <!-- Testimonial 3 -->
-              <div class="classic-testimonials item">
-                <div class="testimonial-content">
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-                <!-- <div class="testimonial-author"><span>John Doe</span> - Customer</div> -->
-              </div>
+
             </div>
             <!-- End Testimonials Carousel -->
 
