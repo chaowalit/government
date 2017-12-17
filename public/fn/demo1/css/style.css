@@ -2696,7 +2696,7 @@ ul.icons-list li i {
 }
 
 .classic-testimonials .testimonial-content:before {
-	content: "\201C";
+	/*content: "\201C";*/
 	font-weight: 300;
 	position: absolute;
 	font-size: 30px;

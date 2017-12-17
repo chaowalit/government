@@ -16,12 +16,9 @@
     });
 </script>
 
-<style type="text/css">
-    .testimonial-content {
-        border-radius: 20px;
-        padding: 6px 18px;
-    }
-</style>
+<?php if($menu_nav == 'index') { ?>
+<link rel="stylesheet" type="text/css" href="<?php echo asset('fn/'.$template.'/css/custom_theme.css'); ?>" media="screen">
+<?php } ?>
 
 <?php if($menu_nav == 'contact_us') { ?>
 	<!-- Google Maps -->

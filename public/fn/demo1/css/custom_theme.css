@@ -1,0 +1,30 @@
+.panel-group .panel{
+	border-radius: 12px;
+    box-shadow: 2px 3px 6px -1px rgba(50, 50, 50, 0.75);
+}
+.panel-heading {
+    padding: 3px;
+}
+.panel-default > .panel-heading {
+    background: none;
+}
+.panel-title {
+    font-size: 18px;
+    font-weight: 200;
+}
+.classic-title{
+	border-bottom: none;
+    padding-bottom: 8px;
+}
+.post-text-hide{
+	font-size: 14px;
+	font-weight: 200;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.classic-testimonials .testimonial-content-v2{
+	margin-bottom: 0px;
+	padding: 8px 18px;
+	border-radius: 16px;
+}

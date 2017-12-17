@@ -79,7 +79,14 @@
               <!-- Testimonial 1 -->
               <div class="classic-testimonials item">
                 <div class="testimonial-content" style="border-radius: 20px;padding: 6px 18px;box-shadow: 1px 4px 3px -1px rgba(50, 50, 50, 0.75);">
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                  <p style="font-size: 14px;">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <!-- <div class="testimonial-author"><span>John Doe</span> - Customer</div> -->
+              </div>
+              <!-- Testimonial 1 -->
+              <div class="classic-testimonials item">
+                <div class="testimonial-content" style="border-radius: 20px;padding: 6px 18px;box-shadow: 1px 4px 3px -1px rgba(50, 50, 50, 0.75);">
+                  <p style="font-size: 14px;">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>
                 <!-- <div class="testimonial-author"><span>John Doe</span> - Customer</div> -->
               </div>
@@ -109,151 +116,59 @@
                     <!-- Toggle Heading -->
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion_1" href="#collapse-1">
+                            <a data-toggle="collapse" data-parent="#accordion_1" href="#collapse-1" style="color: #004160;">
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-desktop"></i> ข่าวประชาสัมพันธ์
+                                <i class="fa fa-bullhorn"></i> ข่าวประชาสัมพันธ์
                             </a>
                         </h4>
                     </div>
                     <!-- Toggle Content -->
                     <div id="collapse-1" class="panel-collapse collapse in">
                       <div class="panel-body">
-                            <!-- Start Recent Posts Carousel -->
-                            <div class="latest-posts">
-                              <h4 class="classic-title" style="border-bottom: none;padding-bottom: 8px;">
+                            <h4 class="classic-title">
                                 <span style="border-bottom: none;"> &nbsp;</span>
                             </h4>
-                              <div class="latest-posts-classic information-carousel touch-carousel" data-appeared-items="1">
-                                <?php
+                            <div class="information-carousel show-one-slide touch-carousel" data-appeared-items="1">
+                              <!-- Testimonial 1 -->
+                              <?php
                                 if(isset($information[0])){
-                                    for($i = 0; $i < count($information); $i++){
-                                ?>
-                                <!-- Posts 1 -->
-                                <div class="post-row item">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <?php if(isset($information[$i])){ ?>
-                                            <div class="left-meta-post">
-                                                <div class="post-date">
-                                                    <span class="day">
-                                                        <?php echo date("d", strtotime($information[$i]->post_date));
-                                                        ?>
-                                                    </span>
-                                                    <span class="month">
-                                                        <?php echo showMonth((int)date("m", strtotime($information[$i]->post_date))); ?>
-                                                    </span>
-                                                    <span class="year">
-                                                        <?php echo showYear(
-                                                                date("Y", strtotime($information[$i]->post_date)),
-                                                                'th'
-                                                            ); ?>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <h5 class="post-title">
-                                                <a href="#">{{ $information[$i]->title }}</a>
-                                            </h5>
-                                            <div class="post-content">
-                                                <p>
-                                                <a class="read-more" href="#">Read More...</a></p>
-                                            </div>
-                                            <?php } $i++; ?>
+                                    for ($i = 0 ; $i < count($information) ; $i++) {
+                              ?>
+                              <div class="classic-testimonials item">
+                                <?php 
+                                for ($j = 0 ; $j < 5 ; $j++) {
+                                    $k = $i + $j;
+                                if(isset($information[$k])){ ?>
+                                    <div class="col-md-12">
+                                        <div class="testimonial-content testimonial-content-v2">
+                                          
+                                        <h5 class="post-title post-text-hide">
+                                            <i class="fa fa-bullhorn"></i>
+                                            <a href="#" class="<?php echo "information_".$k; ?>">
+                                                <span style="font-size: 12px;color: #999;">
+    {{ date("d-m-Y", strtotime($information[$k]->post_date)) }}
+                                                </span>
+                                                {{ $information[$k]->title }}
+                                            </a>
+                                        </h5>
+                                            <style type="text/css">
+                                                <?php echo ".information_".$k; ?>:hover {
+                                                  color: #ee3733;
+                                                }
+                                                <?php echo ".information_".$k; ?> {
+                                                    color: #444;
+                                                }
+                                            </style>
                                         </div>
-                                        <div class="col-md-6">
-                                            <?php if(isset($information[$i])){ ?>
-                                            <div class="left-meta-post">
-                                                <div class="post-date">
-                                                    <span class="day">
-                                                        <?php echo date("d", strtotime($information[$i]->post_date));
-                                                        ?>
-                                                    </span>
-                                                    <span class="month">
-                                                        <?php echo showMonth((int)date("m", strtotime($information[$i]->post_date))); ?>
-                                                    </span>
-                                                    <span class="year">
-                                                        <?php echo showYear(
-                                                                date("Y", strtotime($information[$i]->post_date)),
-                                                                'th'
-                                                            ); ?>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <h5 class="post-title">
-                                                <a href="#">{{ $information[$i]->title }}</a>
-                                            </h5>
-                                            <div class="post-content">
-                                                <p>
-                                                <a class="read-more" href="#">Read More...</a></p>
-                                            </div>
-                                            <?php } $i++; ?>
+                                        <div class="testimonial-author" style="margin-bottom: 10px;">
+                                            <!-- <span>เมื่อวันที่</span>  {{ date("d-m-Y", strtotime($information[$k]->post_date)) }} -->
                                         </div>
                                     </div>
-                                    <br>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <?php if(isset($information[$i])){ ?>
-                                            <div class="left-meta-post">
-                                                <div class="post-date">
-                                                    <span class="day">
-                                                        <?php echo date("d", strtotime($information[$i]->post_date));
-                                                        ?>
-                                                    </span>
-                                                    <span class="month">
-                                                        <?php echo showMonth((int)date("m", strtotime($information[$i]->post_date))); ?>
-                                                    </span>
-                                                    <span class="year">
-                                                        <?php echo showYear(
-                                                                date("Y", strtotime($information[$i]->post_date)),
-                                                                'th'
-                                                            ); ?>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <h5 class="post-title">
-                                                <a href="#">{{ $information[$i]->title }}</a>
-                                            </h5>
-                                            <div class="post-content">
-                                                <p>
-                                                <a class="read-more" href="#">Read More...</a></p>
-                                            </div>
-                                            <?php } $i++; ?>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <?php if(isset($information[$i])){ ?>
-                                            <div class="left-meta-post">
-                                                <div class="post-date">
-                                                    <span class="day">
-                                                        <?php echo date("d", strtotime($information[$i]->post_date));
-                                                        ?>
-                                                    </span>
-                                                    <span class="month">
-                                                        <?php echo showMonth((int)date("m", strtotime($information[$i]->post_date))); ?>
-                                                    </span>
-                                                    <span class="year">
-                                                        <?php echo showYear(
-                                                                date("Y", strtotime($information[$i]->post_date)),
-                                                                'th'
-                                                            ); ?>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <h5 class="post-title">
-                                                <a href="#">{{ $information[$i]->title }}</a>
-                                            </h5>
-                                            <div class="post-content">
-                                                <p>
-                                                <a class="read-more" href="#">Read More...</a></p>
-                                            </div>
-                                            <?php } ?>
-                                        </div>
-                                    </div>
-                                </div>
-                                <?php } } ?>
+                                <?php } } $i = $k; ?>
 
                               </div>
+                            <?php } } ?>
                             </div>
-                            <!-- End Recent Posts Carousel -->
-
                         </div>
                     </div>
                   </div>
@@ -269,7 +184,7 @@
                     <!-- Toggle Heading -->
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion_2" href="#collapse-2">
+                            <a data-toggle="collapse" data-parent="#accordion_2" href="#collapse-2" style="color: #004160;">
                                 <i class="fa fa-angle-up control-icon"></i>
                                 <i class="fa fa-desktop"></i> ข่าวจัดซื้อจัดจ้าง
                             </a>
@@ -278,7 +193,7 @@
                     <!-- Toggle Content -->
                     <div id="collapse-2" class="panel-collapse collapse in">
                       <div class="panel-body">
-                            <h4 class="classic-title" style="border-bottom: none;padding-bottom: 8px;">
+                            <h4 class="classic-title">
                                 <span style="border-bottom: none;"> &nbsp;</span>
                             </h4>
                             <div class="custom-carousel show-one-slide touch-carousel" data-appeared-items="1">
@@ -289,14 +204,20 @@
                               ?>
                               <div class="classic-testimonials item">
                                 <?php 
-                                for ($j = 0 ; $j < 3 ; $j++) {
+                                for ($j = 0 ; $j < 5 ; $j++) {
                                     $k = $i + $j;
                                 if(isset($purchase_news[$k])){ ?>
                                     <div class="col-md-12">
-                                        <div class="testimonial-content" style="margin-bottom: 0px;">
+                                        <div class="testimonial-content testimonial-content-v2">
                                           
-                                        <h5 class="post-title" style="font-size: 12px;">
-                                            <a href="#" class="<?php echo "purchase_news_".$k; ?>">{{ $purchase_news[$k]->title }}</a>
+                                        <h5 class="post-title post-text-hide">
+                                            <i class="fa fa-bullhorn"></i>
+                                            <a href="#" class="<?php echo "purchase_news_".$k; ?>">
+                                                <span style="font-size: 12px;color: #999;">
+    {{ date("d-m-Y", strtotime($purchase_news[$k]->post_date)) }}
+                                                </span>
+                                                {{ $purchase_news[$k]->title }}
+                                            </a>
                                         </h5>
                                             <style type="text/css">
                                                 <?php echo ".purchase_news_".$k; ?>:hover {
@@ -308,7 +229,6 @@
                                             </style>
                                         </div>
                                         <div class="testimonial-author" style="margin-bottom: 10px;">
-                                            <span>เมื่อวันที่</span>  {{ date("d-m-Y", strtotime($purchase_news[$k]->post_date)) }}
                                         </div>
                                     </div>
                                 <?php } } $i = $k; ?>
@@ -331,7 +251,7 @@
                     <!-- Toggle Heading -->
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion_3" href="#collapse-3">
+                            <a data-toggle="collapse" data-parent="#accordion_3" href="#collapse-3" style="color: #004160;">
                                 <i class="fa fa-angle-up control-icon"></i>
                                 <i class="fa fa-desktop"></i> เผยแพร่การคำนวนราคากลาง
                             </a>
@@ -340,7 +260,7 @@
                     <!-- Toggle Content -->
                     <div id="collapse-3" class="panel-collapse collapse in">
                       <div class="panel-body">
-                            <h4 class="classic-title" style="border-bottom: none;padding-bottom: 8px;">
+                            <h4 class="classic-title">
                                 <span style="border-bottom: none;"> &nbsp;</span>
                             </h4>
                             <div class="custom-carousel show-one-slide touch-carousel" data-appeared-items="1">
@@ -351,14 +271,20 @@
                               ?>
                               <div class="classic-testimonials item">
                                 <?php 
-                                for ($j = 0 ; $j < 3 ; $j++) {
+                                for ($j = 0 ; $j < 5 ; $j++) {
                                     $k = $i + $j;
                                 if(isset($calculate_middle_price[$k])){ ?>
                                     <div class="col-md-12">
-                                        <div class="testimonial-content" style="margin-bottom: 0px;">
+                                        <div class="testimonial-content testimonial-content-v2">
                                           
-                                        <h5 class="post-title" style="font-size: 12px;">
-                                            <a href="#" class="<?php echo "calculate_middle_price_".$k; ?>">{{ $calculate_middle_price[$k]->title }}</a>
+                                        <h5 class="post-title post-text-hide">
+                                            <i class="fa fa-bullhorn"></i>
+                                            <a href="#" class="<?php echo "calculate_middle_price_".$k; ?>">
+                                                <span style="font-size: 12px;color: #999;">
+    {{ date("d-m-Y", strtotime($calculate_middle_price[$k]->post_date)) }}
+                                                </span>
+                                                {{ $calculate_middle_price[$k]->title }}
+                                            </a>
                                         </h5>
                                             <style type="text/css">
                                                 <?php echo ".calculate_middle_price_".$k; ?>:hover {
@@ -370,7 +296,6 @@
                                             </style>
                                         </div>
                                         <div class="testimonial-author" style="margin-bottom: 10px;">
-                                            <span>เมื่อวันที่</span>  {{ date("d-m-Y", strtotime($calculate_middle_price[$k]->post_date)) }}
                                         </div>
                                     </div>
                                 <?php } } $i = $k; ?>
@@ -393,7 +318,7 @@
                     <!-- Toggle Heading -->
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion_4" href="#collapse-4">
+                            <a data-toggle="collapse" data-parent="#accordion_4" href="#collapse-4" style="color: #004160;">
                                 <i class="fa fa-angle-up control-icon"></i>
                                 <i class="fa fa-desktop"></i> ข่าวกิจกรรม
                             </a>
@@ -446,7 +371,7 @@
                     <!-- Toggle Heading -->
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion_5" href="#collapse-5">
+                            <a data-toggle="collapse" data-parent="#accordion_5" href="#collapse-5" style="color: #004160;">
                                 <i class="fa fa-angle-up control-icon"></i>
                                 <i class="fa fa-desktop"></i> นำเสนอผลงาน อปท.
                             </a>
@@ -499,7 +424,7 @@
                     <!-- Toggle Heading -->
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion_6" href="#collapse-6">
+                            <a data-toggle="collapse" data-parent="#accordion_6" href="#collapse-6" style="color: #004160;">
                                 <i class="fa fa-angle-up control-icon"></i>
                                 <i class="fa fa-desktop"></i> มติประชุม
                             </a>
@@ -508,7 +433,7 @@
                     <!-- Toggle Content -->
                     <div id="collapse-6" class="panel-collapse collapse in">
                       <div class="panel-body">
-                            <h4 class="classic-title" style="border-bottom: none;padding-bottom: 8px;">
+                            <h4 class="classic-title">
                                 <span style="border-bottom: none;"> &nbsp;</span>
                             </h4>
                             <div class="custom-carousel show-one-slide touch-carousel" data-appeared-items="1">
@@ -519,14 +444,20 @@
                               ?>
                               <div class="classic-testimonials item">
                                 <?php 
-                                for ($j = 0 ; $j < 3 ; $j++) {
+                                for ($j = 0 ; $j < 5 ; $j++) {
                                     $k = $i + $j;
                                 if(isset($resolution_of_meeting[$k])){ ?>
                                     <div class="col-md-12">
-                                        <div class="testimonial-content" style="margin-bottom: 0px;">
+                                        <div class="testimonial-content testimonial-content-v2">
                                           
-                                        <h5 class="post-title" style="font-size: 12px;">
-                                            <a href="#" class="<?php echo "resolution_of_meeting_".$k; ?>">{{ $resolution_of_meeting[$k]->title }}</a>
+                                        <h5 class="post-title post-text-hide">
+                                            <i class="fa fa-bullhorn"></i>
+                                            <a href="#" class="<?php echo "resolution_of_meeting_".$k; ?>">
+                                                <span style="font-size: 12px;color: #999;">
+    {{ date("d-m-Y", strtotime($resolution_of_meeting[$k]->post_date)) }}
+                                                </span>
+                                                {{ $resolution_of_meeting[$k]->title }}
+                                            </a>
                                         </h5>
                                             <style type="text/css">
                                                 <?php echo ".resolution_of_meeting_".$k; ?>:hover {
@@ -538,7 +469,6 @@
                                             </style>
                                         </div>
                                         <div class="testimonial-author" style="margin-bottom: 10px;">
-                                            <span>เมื่อวันที่</span>  {{ date("d-m-Y", strtotime($resolution_of_meeting[$k]->post_date)) }}
                                         </div>
                                     </div>
                                 <?php } } $i = $k; ?>
@@ -561,7 +491,7 @@
                     <!-- Toggle Heading -->
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion_7" href="#collapse-7">
+                            <a data-toggle="collapse" data-parent="#accordion_7" href="#collapse-7" style="color: #004160;">
                                 <i class="fa fa-angle-up control-icon"></i>
                                 <i class="fa fa-desktop"></i> วิดีโอวิดิทัศน์
                             </a>
@@ -593,7 +523,7 @@
                     <!-- Toggle Heading -->
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion_8" href="#collapse-8">
+                            <a data-toggle="collapse" data-parent="#accordion_8" href="#collapse-8" style="color: #004160;">
                                 <i class="fa fa-angle-up control-icon"></i>
                                 <i class="fa fa-desktop"></i> สถานที่สำคัญ (ท่องเที่ยว)
                             </a>
@@ -646,7 +576,7 @@
                     <!-- Toggle Heading -->
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion_9" href="#collapse-9">
+                            <a data-toggle="collapse" data-parent="#accordion_9" href="#collapse-9" style="color: #004160;">
                                 <i class="fa fa-angle-up control-icon"></i>
                                 <i class="fa fa-desktop"></i> ผลิตภัณฑ์ OTOP
                             </a>
@@ -699,7 +629,7 @@
                     <!-- Toggle Heading -->
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion_10" href="#collapse-10">
+                            <a data-toggle="collapse" data-parent="#accordion_10" href="#collapse-10" style="color: #004160;">
                                 <i class="fa fa-angle-up control-icon"></i>
                                 <i class="fa fa-desktop"></i> ข่าวโอนย้าย
                             </a>
@@ -708,7 +638,7 @@
                     <!-- Toggle Content -->
                     <div id="collapse-10" class="panel-collapse collapse in">
                       <div class="panel-body">
-                            <h4 class="classic-title" style="border-bottom: none;padding-bottom: 8px;">
+                            <h4 class="classic-title">
                                 <span style="border-bottom: none;"> &nbsp;</span>
                             </h4>
                             <div class="custom-carousel show-one-slide touch-carousel" data-appeared-items="1">
@@ -719,14 +649,20 @@
                               ?>
                               <div class="classic-testimonials item">
                                 <?php 
-                                for ($j = 0 ; $j < 3 ; $j++) {
+                                for ($j = 0 ; $j < 5 ; $j++) {
                                     $k = $i + $j;
                                 if(isset($transfer_news[$k])){ ?>
                                     <div class="col-md-12">
-                                        <div class="testimonial-content" style="margin-bottom: 0px;">
+                                        <div class="testimonial-content testimonial-content-v2">
                                           
-                                        <h5 class="post-title" style="font-size: 12px;">
-                                            <a href="#" class="<?php echo "transfer_news_".$k; ?>">{{ $transfer_news[$k]->title }}</a>
+                                        <h5 class="post-title post-text-hide">
+                                            <i class="fa fa-bullhorn"></i>
+                                            <a href="#" class="<?php echo "transfer_news_".$k; ?>">
+                                                <span style="font-size: 12px;color: #999;">
+    {{ date("d-m-Y", strtotime($transfer_news[$k]->post_date)) }}
+                                                </span>
+                                                {{ $transfer_news[$k]->title }}
+                                            </a>
                                         </h5>
                                             <style type="text/css">
                                                 <?php echo ".transfer_news_".$k; ?>:hover {
@@ -738,7 +674,6 @@
                                             </style>
                                         </div>
                                         <div class="testimonial-author" style="margin-bottom: 10px;">
-                                            <span>เมื่อวันที่</span>  {{ date("d-m-Y", strtotime($transfer_news[$k]->post_date)) }}
                                         </div>
                                     </div>
                                 <?php } } $i = $k; ?>
