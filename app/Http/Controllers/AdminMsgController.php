@@ -28,6 +28,12 @@ class AdminMsgController extends Controller
 								'menu_name' => 'ข่าวประชาสัมพันธ์',
 							),
 						),
+		'other_link' => array(
+							array(
+								'menu_nav' => 'other_link',
+								'menu_name' => 'ลิ้งหน่วยงานอื่นๆ',
+							),
+						),
 		'slide_banner' => array(
 							array(
 								'menu_nav' => 'slide_banner',

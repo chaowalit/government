@@ -211,6 +211,11 @@
                 <span style="font-size: 12px;"><?php echo "Slide Banner"; ?></span>
             </a>
         </li>
+        <li class="<?php echo ($menu_nav == 'other_link')? 'active':''; ?>">
+            <a href="{{ url('admin/other_link') }}"><i class="fa fa-space-shuttle"></i> 
+                <span style="font-size: 12px;"><?php echo "ลิ้งหน่วยงานอื่นๆ"; ?></span>
+            </a>
+        </li>
        <!--  <li class="<?php echo ($menu_nav == 'information')? 'active':''; ?>">
             <a href="{{ url('admin/information') }}"><i class="fa fa-space-shuttle"></i> 
                 <span style="font-size: 12px;"><?php echo "ข่าวประชาสัมพันธ์"; ?></span>

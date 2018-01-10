@@ -39,7 +39,7 @@ body {
 	font-weight: 300;
 	color: #666;
 	overflow-x: hidden;
-	background: url(../images/patterns/1.png) fixed repeat;
+	/*background: url(../images/patterns/1.png) fixed repeat;*/
 }
 strong, b {
 	font-weight: 600;
@@ -282,6 +282,10 @@ input[type="submit"] {
 
 #container {
     background-color: #fff;
+    background-image: url(../images/bg_winter.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 302% 85%;
 }
 .bg-color1{
 	background: #F2F2F2;

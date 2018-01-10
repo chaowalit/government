@@ -78,14 +78,14 @@
             <div class="custom-carousel-slide-news show-one-slide touch-carousel slide_news" data-appeared-items="1">
               <!-- Testimonial 1 -->
               <div class="classic-testimonials item">
-                <div class="testimonial-content" style="border-radius: 20px;padding: 6px 18px;box-shadow: 1px 4px 3px -1px rgba(50, 50, 50, 0.75);">
+                <div class="testimonial-content" style="border-radius: 20px;padding: 6px 18px;box-shadow: 1px 4px 3px -1px rgba(50, 50, 50, 0.75);background-color: #fff;">
                   <p style="font-size: 14px;">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>
                 <!-- <div class="testimonial-author"><span>John Doe</span> - Customer</div> -->
               </div>
               <!-- Testimonial 1 -->
               <div class="classic-testimonials item">
-                <div class="testimonial-content" style="border-radius: 20px;padding: 6px 18px;box-shadow: 1px 4px 3px -1px rgba(50, 50, 50, 0.75);">
+                <div class="testimonial-content" style="border-radius: 20px;padding: 6px 18px;box-shadow: 1px 4px 3px -1px rgba(50, 50, 50, 0.75);background-color: #fff;">
                   <p style="font-size: 14px;">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>
                 <!-- <div class="testimonial-author"><span>John Doe</span> - Customer</div> -->
@@ -143,7 +143,7 @@
                                         <div class="testimonial-content testimonial-content-v2">
                                           
                                         <h5 class="post-title post-text-hide">
-                                            <i class="fa fa-bullhorn"></i>
+                                            <i class="fa fa-bullhorn" style="color: #337ab7;"></i>
                                             <a href="#" class="<?php echo "information_".$k; ?>">
                                                 <span style="font-size: 12px;color: #999;">
     {{ date("d-m-Y", strtotime($information[$k]->post_date)) }}
@@ -186,7 +186,7 @@
                       <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_2" href="#collapse-2" style="color: #004160;">
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-desktop"></i> ข่าวจัดซื้อจัดจ้าง
+                                <i class="fa fa-bullhorn"></i> ข่าวจัดซื้อจัดจ้าง
                             </a>
                         </h4>
                     </div>
@@ -253,7 +253,7 @@
                       <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_3" href="#collapse-3" style="color: #004160;">
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-desktop"></i> เผยแพร่การคำนวนราคากลาง
+                                <i class="fa fa-bullhorn"></i> เผยแพร่การคำนวนราคากลาง
                             </a>
                         </h4>
                     </div>
@@ -320,7 +320,7 @@
                       <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_4" href="#collapse-4" style="color: #004160;">
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-desktop"></i> ข่าวกิจกรรม
+                                <i class="fa fa-bullhorn"></i> ข่าวกิจกรรม
                             </a>
                         </h4>
                     </div>
@@ -373,7 +373,7 @@
                       <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_5" href="#collapse-5" style="color: #004160;">
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-desktop"></i> นำเสนอผลงาน อปท.
+                                <i class="fa fa-bullhorn"></i> นำเสนอผลงาน อปท.
                             </a>
                         </h4>
                     </div>
@@ -426,7 +426,7 @@
                       <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_6" href="#collapse-6" style="color: #004160;">
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-desktop"></i> มติประชุม
+                                <i class="fa fa-bullhorn"></i> มติประชุม
                             </a>
                         </h4>
                     </div>
@@ -493,7 +493,7 @@
                       <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_7" href="#collapse-7" style="color: #004160;">
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-desktop"></i> วิดีโอวิดิทัศน์
+                                <i class="fa fa-bullhorn"></i> วิดีโอวิดิทัศน์
                             </a>
                         </h4>
                     </div>
@@ -525,7 +525,7 @@
                       <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_8" href="#collapse-8" style="color: #004160;">
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-desktop"></i> สถานที่สำคัญ (ท่องเที่ยว)
+                                <i class="fa fa-bullhorn"></i> สถานที่สำคัญ (ท่องเที่ยว)
                             </a>
                         </h4>
                     </div>
@@ -578,7 +578,7 @@
                       <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_9" href="#collapse-9" style="color: #004160;">
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-desktop"></i> ผลิตภัณฑ์ OTOP
+                                <i class="fa fa-bullhorn"></i> ผลิตภัณฑ์ OTOP
                             </a>
                         </h4>
                     </div>
@@ -631,7 +631,7 @@
                       <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_10" href="#collapse-10" style="color: #004160;">
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-desktop"></i> ข่าวโอนย้าย
+                                <i class="fa fa-bullhorn"></i> ข่าวโอนย้าย
                             </a>
                         </h4>
                     </div>
@@ -705,19 +705,37 @@
 
                 <!-- Categories Widget -->
                 <div class="widget widget-categories">
-                  <h4>Categories <span class="head-line"></span></h4>
+                  <!-- <h4>Categories <span class="head-line"></span></h4> -->
                   <ul>
-                    <li>
-                      <a href="#">Brandign</a>
+                    <li style="">
+                        <a href="#" style="border: none;">
+                      <img src="<?php echo asset('public/fn/demo1/images/bn-forms-applications.jpg'); ?>" style="border-radius: 10px;box-shadow: 0px 4px 2px 0px rgba(50, 50, 50, 0.75);">
+                        </a>
                     </li>
-                    <li>
-                      <a href="#">Design</a>
+                    <li style="">
+                      <a href="#" style="border: none;">
+                      <img src="<?php echo asset('public/fn/demo1/images/bn-forms-applications.jpg'); ?>" style="border-radius: 10px;box-shadow: 0px 4px 2px 0px rgba(50, 50, 50, 0.75);">
+                        </a>
                     </li>
-                    <li>
-                      <a href="#">Development</a>
+                    <li style="">
+                      <a href="#" style="border: none;">
+                      <img src="<?php echo asset('public/fn/demo1/images/bn-forms-applications.jpg'); ?>" style="border-radius: 10px;box-shadow: 0px 4px 2px 0px rgba(50, 50, 50, 0.75);">
+                        </a>
                     </li>
-                    <li>
-                      <a href="#">Graphic</a>
+                    <li style="">
+                      <a href="#" style="border: none;">
+                      <img src="<?php echo asset('public/fn/demo1/images/bn-forms-applications.jpg'); ?>" style="border-radius: 10px;box-shadow: 0px 4px 2px 0px rgba(50, 50, 50, 0.75);">
+                        </a>
+                    </li>
+                    <li style="">
+                      <a href="#" style="border: none;">
+                      <img src="<?php echo asset('public/fn/demo1/images/bn-forms-applications.jpg'); ?>" style="border-radius: 10px;box-shadow: 0px 4px 2px 0px rgba(50, 50, 50, 0.75);">
+                        </a>
+                    </li>
+                    <li style="">
+                      <a href="#" style="border: none;">
+                      <img src="<?php echo asset('public/fn/demo1/images/bn-forms-applications.jpg'); ?>" style="border-radius: 10px;box-shadow: 0px 4px 2px 0px rgba(50, 50, 50, 0.75);">
+                        </a>
                     </li>
                   </ul>
                 </div>
@@ -767,24 +785,6 @@
                   </div>
                 </div>
 
-                <!-- Tags Widget -->
-                <div class="widget widget-tags">
-                  <h4>Tags <span class="head-line"></span></h4>
-                  <div class="tagcloud">
-                    <a href="#">Portfolio</a>
-                    <a href="#">Theme</a>
-                    <a href="#">Mobile</a>
-                    <a href="#">Design</a>
-                    <a href="#">Wordpress</a>
-                    <a href="#">Jquery</a>
-                    <a href="#">CSS</a>
-                    <a href="#">Modern</a>
-                    <a href="#">Theme</a>
-                    <a href="#">Icons</a>
-                    <a href="#">Google</a>
-                  </div>
-                </div>
-
               </div>
               <!--End sidebar-->
 
@@ -798,64 +798,7 @@
 
 
       <!-- Divider -->
-      <div class="hr1 margin-50"></div>
-
-
-      <!-- Start Clients/Partner Section -->
-      <div class="container">
-        <div class="our-clients">
-
-          <!-- Classic Heading -->
-          <h4 class="classic-title"><span>ลิ้งหน่วยงานอื่นๆ</span></h4>
-
-          <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5">
-
-            <!-- Client 1 -->
-            <div class="client-item item">
-              <a href="#"><img src="/public/fn/demo1/images/c1.png" alt="" /></a>
-            </div>
-
-            <!-- Client 2 -->
-            <div class="client-item item">
-              <a href="#"><img src="/public/fn/demo1/images/c2.png" alt="" /></a>
-            </div>
-
-            <!-- Client 3 -->
-            <div class="client-item item">
-              <a href="#"><img src="/public/fn/demo1/images/c3.png" alt="" /></a>
-            </div>
-
-            <!-- Client 4 -->
-            <div class="client-item item">
-              <a href="#"><img src="/public/fn/demo1/images/c4.png" alt="" /></a>
-            </div>
-
-            <!-- Client 5 -->
-            <div class="client-item item">
-              <a href="#"><img src="/public/fn/demo1/images/c5.png" alt="" /></a>
-            </div>
-
-            <!-- Client 6 -->
-            <div class="client-item item">
-              <a href="#"><img src="/public/fn/demo1/images/c6.png" alt="" /></a>
-            </div>
-
-            <!-- Client 7 -->
-            <div class="client-item item">
-              <a href="#"><img src="/public/fn/demo1/images/c7.png" alt="" /></a>
-            </div>
-
-            <!-- Client 8 -->
-            <div class="client-item item">
-              <a href="#"><img src="/public/fn/demo1/images/c8.png" alt="" /></a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      <!-- .container -->
-      <!-- End Clients/Partner Section -->
-
+      <div class="hr1 margin-50" style="margin-bottom: 10px;"></div>
 
     </div>
     <!-- End Content -->

@@ -90,6 +90,24 @@
 
 <?php } ?>
 
+<?php if($menu_nav == 'other_link'){ ?>
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="{{ asset('admin/assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
+    <!-- bootstrap datepicker -->
+    <script src="{{ asset('admin/assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+
+    <script>
+      $(function () {
+
+        //Date picker
+        $('#datepicker').datepicker({
+            format: 'dd-mm-yyyy',
+            autoclose: true
+        });
+      });
+    </script>
+<?php } ?>
+
 <?php if($menu_nav == 'information'){ ?>
 
     <!-- CK Editor -->

@@ -37,6 +37,12 @@ Route::post('admin/popup_banner/save', 'admin\PopupBannerController@save');
 Route::get('admin/popup_banner/edit/{id}', 'admin\PopupBannerController@edit');
 Route::get('admin/popup_banner/delete/{id}', 'admin\PopupBannerController@delete');
 
+Route::get('admin/other_link', 'admin\OtherLinkController@index');
+Route::get('admin/other_link/form', 'admin\OtherLinkController@form');
+Route::post('admin/other_link/save', 'admin\OtherLinkController@save');
+Route::get('admin/other_link/edit/{id}', 'admin\OtherLinkController@edit');
+Route::get('admin/other_link/delete/{id}', 'admin\OtherLinkController@delete');
+
 Route::get('admin/information', 'admin\InformationController@index');
 Route::get('admin/information/form', 'admin\InformationController@form');
 Route::post('admin/information/save', 'admin\InformationController@save');
