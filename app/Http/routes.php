@@ -111,6 +111,11 @@ Route::post('admin/vdo/save', 'admin\VdoController@save');
 Route::get('admin/vdo/delete/{id}', 'admin\VdoController@delete');
 Route::get('admin/vdo/edit/{id}', 'admin\VdoController@edit');
 
+Route::get('admin/vdo_youtube', 'admin\VdoYoutubeController@index');
+Route::get('admin/vdo_youtube/form', 'admin\VdoYoutubeController@form');
+Route::post('admin/vdo_youtube/save', 'admin\VdoYoutubeController@save');
+Route::get('admin/vdo_youtube/delete/{id}', 'admin\VdoYoutubeController@delete');
+Route::get('admin/vdo_youtube/edit/{id}', 'admin\VdoYoutubeController@edit');
 
 Route::get('admin/slide_banner', 'admin\SlideBannerController@index');
 Route::get('admin/slide_banner/form', 'admin\SlideBannerController@form');

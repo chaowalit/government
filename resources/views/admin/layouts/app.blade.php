@@ -279,6 +279,11 @@
                     <i class="fa fa-circle-o"></i> วีดีโอวิดิทัศน์
                 </a>
             </li>
+            <li>
+                <a href="{{ url('/admin/vdo_youtube') }}" style="font-size: 12px;">
+                    <i class="fa fa-circle-o"></i> วีดีโอวิดิทัศน์ (Youtube)
+                </a>
+            </li>
           </ul>
         </li>
 
