@@ -707,36 +707,15 @@
                 <div class="widget widget-categories">
                   <!-- <h4>Categories <span class="head-line"></span></h4> -->
                   <ul>
+                    <?php if(isset($other_link[0])){ 
+                        foreach ($other_link as $key => $value) {
+                    ?>
                     <li style="">
-                        <a href="#" style="border: none;">
-                      <img src="<?php echo asset('public/fn/demo1/images/bn-forms-applications.jpg'); ?>" style="border-radius: 10px;box-shadow: 0px 4px 2px 0px rgba(50, 50, 50, 0.75);">
+                        <a href="<?php echo $value->title; ?>" style="border: none;">
+                      <img src="<?php echo asset($value->file_path); ?>" style="border-radius: 10px;box-shadow: 0px 4px 2px 0px rgba(50, 50, 50, 0.75);">
                         </a>
                     </li>
-                    <li style="">
-                      <a href="#" style="border: none;">
-                      <img src="<?php echo asset('public/fn/demo1/images/bn-forms-applications.jpg'); ?>" style="border-radius: 10px;box-shadow: 0px 4px 2px 0px rgba(50, 50, 50, 0.75);">
-                        </a>
-                    </li>
-                    <li style="">
-                      <a href="#" style="border: none;">
-                      <img src="<?php echo asset('public/fn/demo1/images/bn-forms-applications.jpg'); ?>" style="border-radius: 10px;box-shadow: 0px 4px 2px 0px rgba(50, 50, 50, 0.75);">
-                        </a>
-                    </li>
-                    <li style="">
-                      <a href="#" style="border: none;">
-                      <img src="<?php echo asset('public/fn/demo1/images/bn-forms-applications.jpg'); ?>" style="border-radius: 10px;box-shadow: 0px 4px 2px 0px rgba(50, 50, 50, 0.75);">
-                        </a>
-                    </li>
-                    <li style="">
-                      <a href="#" style="border: none;">
-                      <img src="<?php echo asset('public/fn/demo1/images/bn-forms-applications.jpg'); ?>" style="border-radius: 10px;box-shadow: 0px 4px 2px 0px rgba(50, 50, 50, 0.75);">
-                        </a>
-                    </li>
-                    <li style="">
-                      <a href="#" style="border: none;">
-                      <img src="<?php echo asset('public/fn/demo1/images/bn-forms-applications.jpg'); ?>" style="border-radius: 10px;box-shadow: 0px 4px 2px 0px rgba(50, 50, 50, 0.75);">
-                        </a>
-                    </li>
+                    <?php } } ?>
                   </ul>
                 </div>
 

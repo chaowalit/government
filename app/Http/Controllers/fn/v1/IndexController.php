@@ -16,6 +16,7 @@ use App\Models\ResolutionOfMeeting;
 use App\Models\Landmarks;
 use App\Models\Otop;
 use App\Models\TransferNews;
+use App\Models\OtherLink;
 
 class IndexController extends FrontMsgController{
 
@@ -61,6 +62,9 @@ class IndexController extends FrontMsgController{
 		$TransferNews = new TransferNews;
 		$transfer_news = $TransferNews->getTransferNewsAllFN();
 
+		$OtherLink = new OtherLink;
+		$other_link = $OtherLink->getOtherLinkAllFN();
+
 		$data = array(
 			'template' => $this->template,
 			'menu_nav' => $this->menu_nav['index'],
@@ -81,6 +85,7 @@ class IndexController extends FrontMsgController{
 			'landmarks' => $landmarks,
 			'otop' => $otop,
 			'transfer_news' => $transfer_news,
+			'other_link' => $other_link
 		);
 
 		return view('fn/'.$this->template.'/main/index', $data);
