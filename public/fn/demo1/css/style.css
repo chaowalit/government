@@ -4209,9 +4209,9 @@ ul.post-meta li, ul.post-meta li a {
 /*------------------------------------------*/
 
 footer {
-	background-color: #222;
+	/*background-color: #222;*/
     padding-top: 60px;
-	border-top: 4px solid #555;
+	/*border-top: 4px solid #555;*/
 	color: #ccc;
 }
 
@@ -4233,7 +4233,7 @@ footer a:hover {
 }
 
 .footer-widget h4 {
-	color: #eee;
+	/*color: #eee;*/
 	text-transform: uppercase;
 	padding-bottom: 8px;
 	margin-bottom: 20px;
@@ -4411,6 +4411,10 @@ footer a:hover {
 }
 
 .copyright-section {
+    min-height: 280px;
+	background-image: url(../images/bg-footer.png);
+	background-position: center bottom;
+    background-repeat: no-repeat;
     padding: 15px 0;
 	font-size: 11px;
 	letter-spacing: 0.5px;
@@ -5767,4 +5771,21 @@ ul.footer-nav li a:hover {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+
+/* custom bank */
+.custom-page-content {
+	padding: 15px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 2px 3px 6px -1px rgba(50, 50, 50, 0.75);
+    margin-right: 5px;
+}
+
+.custom-right-sidebar {
+	padding: 15px;
+    border-radius: 12px;
+    box-shadow: 2px 3px 6px -1px rgba(50, 50, 50, 0.75);
+    background-color: white;
 }

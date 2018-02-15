@@ -434,69 +434,95 @@
           <!-- Start Subscribe & Social Links Widget -->
           <div class="col-md-3">
             <div class="footer-widget mail-subscribe-widget">
-              <h4>Get in touch<span class="head-line"></span></h4>
-              <p>Join our mailing list to stay up to date and get notices about our new releases!</p>
-              <form class="subscribe">
-                <input type="text" placeholder="mail@example.com">
-                <input type="submit" class="btn-system" value="Send">
-              </form>
-            </div>
-            <div class="footer-widget social-widget">
-              <h4>Follow Us<span class="head-line"></span></h4>
-              <ul class="social-icons">
+              <h4>เกี่ยวกับหน่วยงาน<span class="head-line"></span></h4>
+
+              <ul>
                 <li>
-                  <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><b>ประวัติความเป็นมา</b></a>
                 </li>
                 <li>
-                  <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><b>พันธกิจและวิสัยทัศน์</b></a>
                 </li>
                 <li>
-                  <a class="google" href="#"><i class="fa fa-google-plus"></i></a>
+                  <a href="#"><b>สานส์จากผู้บริหาร</b></a>
                 </li>
                 <li>
-                  <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
-                </li>
-                <li>
-                  <a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
-                </li>
-                <li>
-                  <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
-                </li>
-                <li>
-                  <a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-                </li>
-                <li>
-                  <a class="instgram" href="#"><i class="fa fa-instagram"></i></a>
-                </li>
-                <li>
-                  <a class="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
-                </li>
-                <li>
-                  <a class="skype" href="#"><i class="fa fa-skype"></i></a>
+                  <a href="#"><b>โครงสร้างบุคคลากร</b></a>
+                  <ul>
+                    <?php
+                                if(isset($staff_structure[0])){
+                                    foreach ($staff_structure as $key => $value) {
+                            ?>
+                                    <li>&nbsp;&nbsp;&nbsp;
+                                        <a href="<?php echo url('staff_structure').'/'.$value->id; ?>">
+                                            - {{ $value->sub_menu_name }}
+                                        </a>
+                                    </li>
+                            <?php } } ?>
+                  </ul>
                 </li>
               </ul>
+            </div>
+            <div class="footer-widget social-widget">
+              <h4>ร้องเรียน/ร้องทุกข์<span class="head-line"></span></h4>
+              <ul>
+                <li>
+                  <a href="#"><b>ร้องเรียน/ร้องทุกข์</b></a>
+                </li>
+            </ul>
             </div>
           </div>
           <!-- .col-md-3 -->
           <!-- End Subscribe & Social Links Widget -->
 
 
-          <!-- Start Twitter Widget -->
+          <!-- Start Twitter Widget twitter-widget  -->
           <div class="col-md-3">
-            <div class="footer-widget twitter-widget">
-              <h4>Twitter Feed<span class="head-line"></span></h4>
+            <div class="footer-widget mail-subscribe-widget">
+              <h4>ศูนย์ข้อมูลข่าวสารราชการ<span class="head-line"></span></h4>
               <ul>
                 <li>
-                  <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
-                  <span>28 February 2016</span>
+                  <a href="#"><b>ดัชนีรวม / ดัชนีประจำแฟ้ม</b></a>
                 </li>
                 <li>
-                  <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.An Fusce eleifend aliquet nis application.</p>
-                  <span>26 February 2016</span>
+                  <a href="#"><b>ข้อมูลข่าวสารตามมาตรา 7</b></a>
+                  <ul>
+                      <?php
+                            if(isset($menu_government_online['online_data_section_7'][0])){
+                            foreach ($menu_government_online['online_data_section_7'] as $key => $value) {
+                                if($value->active == '1'){
+                        ?>
+                                    <li>&nbsp;&nbsp;&nbsp;
+                                        <a href="<?php echo url('sub_online_electronic/online_data_section_7').'/'.$value->id; ?>">
+                                            - {{ $value->sub_menu_name }}
+                                        </a>
+                                    </li>
+                        <?php
+                                }
+                            }
+                        }
+                        ?>
+                  </ul>
                 </li>
                 <li>
-                  <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
-                  <span>28 February 2016</span>
+                  <a href="#"><b>ข้อมูลข่าวสารตามมาตรา 9</b></a>
+                  <ul>
+                      <?php
+                                if(isset($menu_government_online['online_data_section_9'][0])){
+                                foreach ($menu_government_online['online_data_section_9'] as $key => $value) {
+                                    if($value->active == '1'){
+                            ?>
+                                    <li>&nbsp;&nbsp;&nbsp;
+                                        <a href="<?php echo url('sub_online_electronic/online_data_section_9').'/'.$value->id; ?>">
+                                            - {{ $value->sub_menu_name }}
+                                        </a>
+                                    </li>
+                            <?php
+                                    }
+                                } 
+                            }
+                            ?>
+                  </ul>
                 </li>
               </ul>
             </div>
@@ -505,56 +531,65 @@
           <!-- End Twitter Widget -->
 
 
-          <!-- Start Flickr Widget -->
+          <!-- Start Flickr Widget flickr-widget-->
           <div class="col-md-3">
-            <div class="footer-widget flickr-widget">
-              <h4>Flicker Feed<span class="head-line"></span></h4>
-              <ul class="flickr-list">
-                <li>
-                  <a href="images/flickr-01.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-01.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-02.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-02.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-03.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-03.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-04.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-04.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-05.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-05.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-06.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-06.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-07.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-07.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-08.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-08.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-09.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-09.jpg">
-                  </a>
-                </li>
+            <div class="footer-widget mail-subscribe-widget">
+              <h4>ศูนย์ข้อมูลข่าวสารราชการ<span class="head-line"></span></h4>
+              <ul>
+                    <li>
+                        <a href="#"><b>จัดซื้อจัดจ้าง/การเงิน</b></a>
+                        <?php
+                            if(isset($menu_government_online['online_contract_other'][0])){
+                            foreach ($menu_government_online['online_contract_other'] as $key => $value) {
+                                    if($value->active == '1'){
+                            ?>
+                                    <li>&nbsp;&nbsp;&nbsp;
+                                        <a href="<?php echo url('sub_online_electronic/online_contract_other').'/'.$value->id; ?>">
+                                            - {{ $value->sub_menu_name }}
+                                        </a>
+                                    </li>
+                            <?php
+                                    }
+                                } 
+                            }
+                        ?>
+                    </li>
+                    <li>
+                        <a href="#"><b>สรุปรายงาน</b></a>
+                        <?php
+                            if(isset($menu_government_online['other_neccessary'][0])){
+                            foreach ($menu_government_online['other_neccessary'] as $key => $value) {
+                                    if($value->active == '1'){
+                            ?>
+                                    <li>&nbsp;&nbsp;&nbsp;
+                                        <a href="<?php echo url('sub_online_electronic/other_neccessary').'/'.$value->id; ?>">
+                                            - {{ $value->sub_menu_name }}
+                                        </a>
+                                    </li>
+                        <?php
+                                }
+                            } 
+                        }
+                        ?>
+                    </li>
+                    <li>
+                        <a href="#"><b>ข้อมูลข่าวสารอื่นๆ</b></a>
+                        <?php
+                                if(isset($menu_government_online['document_interesting'][0])){
+                                foreach ($menu_government_online['document_interesting'] as $key => $value) {
+                                    if($value->active == '1'){
+                            ?>
+                                    <li>&nbsp;&nbsp;&nbsp;
+                                        <a href="<?php echo url('sub_online_electronic/document_interesting').'/'.$value->id; ?>">
+                                            - {{ $value->sub_menu_name }}
+                                        </a>
+                                    </li>
+                            <?php
+                                    }
+                                } 
+                            }
+                            ?>
+                    </li>
               </ul>
             </div>
           </div>
@@ -562,16 +597,33 @@
           <!-- End Flickr Widget -->
 
 
-          <!-- Start Contact Widget -->
+          <!-- Start Contact Widget contact-widget -->
           <div class="col-md-3">
-            <div class="footer-widget contact-widget">
-              <h4><img src="images/footer-margo.png" class="img-responsive" alt="Footer Logo" /></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+            <div class="footer-widget mail-subscribe-widget" style="margin-bottom: 12px;">
+              <h4>ศูนย์ข้อมูลข่าวสารราชการ<span class="head-line"></span></h4>
               <ul>
-                <li><span>Phone Number:</span> +01 234 567 890</li>
-                <li><span>Email:</span> company@company.com</li>
-                <li><span>Website:</span> www.yourdomain.com</li>
+                <li>
+                    <a href="#"><b>สำรวจการให้บริการศูนย์ข้อมูลฯ</b></a>
+                    <li>&nbsp;&nbsp;&nbsp;<a href="#"> - แบบฟอร์มสำรวจความพึงพอใจ</a></li>
+                    <li>&nbsp;&nbsp;&nbsp;<a href="#"> - สรุปผลความพึงพอใจ</a></li>
+                    <li>&nbsp;&nbsp;&nbsp;<a href="#"> - สถิติผู้เข้าใช้บริการ</a></li>
+                    <li>&nbsp;&nbsp;&nbsp;<a href="#"> - กระดานถาม-ตอบข้อคิดเห็น</a></li>
+                </li>
               </ul>
+            </div>
+            <div class="footer-widget social-widget" style="margin-bottom: 12px;">
+              <ul>
+                <li>
+                  <a href="#"><b>สมุดเยื่ยม</b></a>
+                </li>
+            </ul>
+            </div>
+            <div class="footer-widget social-widget">
+              <ul>
+                <li>
+                  <a href="#"><b>ติดต่อเรา</b></a>
+                </li>
+            </ul>
             </div>
           </div>
           <!-- .col-md-3 -->
@@ -581,24 +633,24 @@
         </div>
         <!-- row -->
 
-        <!-- Start Copyright -->
+
+      </div>
+      <!-- Start Copyright -->
         <div class="copyright-section">
           <div class="row">
             <div class="col-md-6">
-              <p>&copy; 2016 Margo - All Rights Reserved <a href="http://graygrids.com">GrayGrids</a> </p>
+              <!-- <p>&copy; 2016 Margo - All Rights Reserved <a href="http://graygrids.com">GrayGrids</a> </p> -->
             </div>
             <div class="col-md-6">
-              <ul class="footer-nav">
+              <!-- <ul class="footer-nav">
                 <li><a href="#">Sitemap</a></li>
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Contact</a></li>
-              </ul>
+              </ul> -->
             </div>
           </div>
         </div>
         <!-- End Copyright -->
-
-      </div>
     </footer>
     <!-- End Footer -->
 

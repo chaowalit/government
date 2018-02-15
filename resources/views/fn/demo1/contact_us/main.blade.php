@@ -26,7 +26,8 @@
     <div id="content">
       <div class="container">
 
-        <div class="row">
+        <div class="row" style="padding: 15px;background-color: white;border-radius: 12px;
+    box-shadow: 2px 3px 6px -1px rgba(50, 50, 50, 0.75);">
 
           <div class="col-md-8">
 

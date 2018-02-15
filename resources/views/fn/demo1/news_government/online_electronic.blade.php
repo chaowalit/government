@@ -29,7 +29,7 @@
 
 
           <!--Sidebar-->
-          <div class="col-md-3 sidebar left-sidebar">
+          <div class="col-md-3 sidebar left-sidebar custom-page-content">
 
             <div class="tabs-section">
 
@@ -167,7 +167,7 @@
 
 
           <!-- Start Blog Posts -->
-          <div class="col-md-9 blog-box">
+          <div class="col-md-9 blog-box custom-right-sidebar">
 
             <!-- Start Post -->
             <div class="blog-post image-post">
@@ -405,5 +405,13 @@
       </div>
     </div>
     <!-- End Content -->
+
+    <style type="text/css">
+        @media (min-width: 992px){
+            .col-md-9 {
+                width: 74%;
+            }
+        }
+    </style>
 
 @endsection

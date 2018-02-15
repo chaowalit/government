@@ -29,7 +29,7 @@
 
 
           <!-- Page Content -->
-          <div class="col-md-9 page-content">
+          <div class="col-md-9 page-content custom-page-content">
 
             <!-- Classic Heading -->
             <h4 class="classic-title"><span>ประวัติความเป็นมาและตราสัญลักษณ์ <?php echo @$contact_us[0]->location_name; ?></span></h4>
@@ -69,7 +69,7 @@
 
 
           <!--Sidebar-->
-          <div class="col-md-3 sidebar right-sidebar">
+          <div class="col-md-3 sidebar right-sidebar custom-right-sidebar">
 
             <!-- Search Widget -->
             <div class="widget widget-search">
@@ -169,5 +169,13 @@
       </div>
     </div>
     <!-- End Content -->
+
+    <style type="text/css">
+        @media (min-width: 992px){
+            .col-md-3 {
+                width: 24%;
+            }
+        }
+    </style>
 
 @endsection
