@@ -144,7 +144,7 @@
                                           
                                         <h5 class="post-title post-text-hide">
                                             <i class="fa fa-bullhorn" style="color: #337ab7;"></i>
-                                            <a href="#" class="<?php echo "information_".$k; ?>">
+                                            <a href="<?php echo url('detail/information').'/'.$information[$k]->id; ?>" class="<?php echo "information_".$k; ?>">
                                                 <span style="font-size: 12px;color: #999;">
     {{ date("d-m-Y", strtotime($information[$k]->post_date)) }}
                                                 </span>
@@ -212,7 +212,7 @@
                                           
                                         <h5 class="post-title post-text-hide">
                                             <i class="fa fa-bullhorn"></i>
-                                            <a href="#" class="<?php echo "purchase_news_".$k; ?>">
+                                            <a href="<?php echo asset($purchase_news[$k]->file_path); ?>" class="<?php echo "purchase_news_".$k; ?>" target="_blank">
                                                 <span style="font-size: 12px;color: #999;">
     {{ date("d-m-Y", strtotime($purchase_news[$k]->post_date)) }}
                                                 </span>
@@ -279,7 +279,7 @@
                                           
                                         <h5 class="post-title post-text-hide">
                                             <i class="fa fa-bullhorn"></i>
-                                            <a href="#" class="<?php echo "calculate_middle_price_".$k; ?>">
+                                            <a href="<?php echo asset($calculate_middle_price[$k]->file_path); ?>" class="<?php echo "calculate_middle_price_".$k; ?>" target="_blank">
                                                 <span style="font-size: 12px;color: #999;">
     {{ date("d-m-Y", strtotime($calculate_middle_price[$k]->post_date)) }}
                                                 </span>
@@ -339,13 +339,13 @@
                                 <div class="portfolio-item item" style="padding-right: 5px;">
                                   <div class="portfolio-border">
                                     <div class="portfolio-thumb">
-                                        <a class="" title="This is an image title" href="#">
+                                        <a class="" title="This is an image title" href="<?php echo url('detail/activity').'/'.$value->id; ?>">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
                                             <img alt="" src="/public/uploads/news/<?php echo $value->file_path.'/'.$value->show_img; ?>" style="height: 151px;width: 100%;"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
-                                      <a href="#">
+                                      <a href="<?php echo url('detail/activity').'/'.$value->id; ?>">
                                         <!-- <h4>Lorem Ipsum Dolor</h4> -->
                                         <span>{{ $value->title }}</span>
                                         <!-- <span>Drawing</span> -->
@@ -392,13 +392,13 @@
                                 <div class="portfolio-item item" style="padding-right: 5px;">
                                   <div class="portfolio-border">
                                     <div class="portfolio-thumb">
-                                        <a class="" title="This is an image title" href="#">
+                                        <a class="" title="This is an image title" href="<?php echo url('detail/presentation').'/'.$value->id; ?>">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
                                             <img alt="" src="/public/uploads/news/<?php echo $value->file_path.'/'.$value->show_img; ?>" style="height: 151px;width: 100%;"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
-                                      <a href="#">
+                                      <a href="<?php echo url('detail/presentation').'/'.$value->id; ?>">
                                         <!-- <h4>Lorem Ipsum Dolor</h4> -->
                                         <span>{{ $value->title }}</span>
                                         <!-- <span>Drawing</span> -->
@@ -452,7 +452,7 @@
                                           
                                         <h5 class="post-title post-text-hide">
                                             <i class="fa fa-bullhorn"></i>
-                                            <a href="#" class="<?php echo "resolution_of_meeting_".$k; ?>">
+                                            <a href="<?php echo asset($resolution_of_meeting[$k]->file_path); ?>" class="<?php echo "resolution_of_meeting_".$k; ?>" target="_blank">
                                                 <span style="font-size: 12px;color: #999;">
     {{ date("d-m-Y", strtotime($resolution_of_meeting[$k]->post_date)) }}
                                                 </span>
@@ -505,7 +505,26 @@
                                 <span style="border-bottom: none;"> &nbsp;</span>
                             </h4>
                             <div class="presentation-carousel show-one-slide touch-carousel" data-appeared-items="3">
-                                
+                                <?php
+                                if(isset($vdo_youtube[0])){
+                                    foreach ($vdo_youtube as $key => $value) {
+                                ?>
+                                <div class="portfolio-item item" style="padding-right: 5px;">
+                                  <div class="portfolio-border">
+                                    <div class="portfolio-thumb">
+                                        <iframe width="259" height="151" src="{{ $value->file_path }}">
+                                        </iframe>
+                                    </div>
+                                    <div class="portfolio-details">
+                                      <a href="#">
+                                        <!-- <h4>Lorem Ipsum Dolor</h4> -->
+                                        <span>{{ $value->title }}</span>
+                                        <!-- <span>Drawing</span> -->
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                                <?php }} ?>
                             </div>
                         </div>
                         </div>
@@ -544,13 +563,13 @@
                                 <div class="portfolio-item item" style="padding-right: 5px;">
                                   <div class="portfolio-border">
                                     <div class="portfolio-thumb">
-                                        <a class="" title="This is an image title" href="#">
+                                        <a class="" title="This is an image title" href="<?php echo url('detail/landmarks').'/'.$value->id; ?>">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
                                             <img alt="" src="/public/uploads/news/<?php echo $value->file_path.'/'.$value->show_img; ?>" style="height: 151px;width: 100%;"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
-                                      <a href="#">
+                                      <a href="<?php echo url('detail/landmarks').'/'.$value->id; ?>">
                                         <!-- <h4>Lorem Ipsum Dolor</h4> -->
                                         <span>{{ $value->title }}</span>
                                         <!-- <span>Drawing</span> -->
@@ -597,13 +616,13 @@
                                 <div class="portfolio-item item" style="padding-right: 5px;">
                                   <div class="portfolio-border">
                                     <div class="portfolio-thumb">
-                                        <a class="" title="This is an image title" href="#">
+                                        <a class="" title="This is an image title" href="<?php echo url('detail/otop').'/'.$value->id; ?>">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
                                             <img alt="" src="/public/uploads/news/<?php echo $value->file_path.'/'.$value->show_img; ?>" style="height: 151px;width: 100%;"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
-                                      <a href="#">
+                                      <a href="<?php echo url('detail/otop').'/'.$value->id; ?>">
                                         <!-- <h4>Lorem Ipsum Dolor</h4> -->
                                         <span>{{ $value->title }}</span>
                                         <!-- <span>Drawing</span> -->
@@ -657,7 +676,7 @@
                                           
                                         <h5 class="post-title post-text-hide">
                                             <i class="fa fa-bullhorn"></i>
-                                            <a href="#" class="<?php echo "transfer_news_".$k; ?>">
+                                            <a href="<?php echo asset($transfer_news[$k]->file_path); ?>" class="<?php echo "transfer_news_".$k; ?>" target="_blank">
                                                 <span style="font-size: 12px;color: #999;">
     {{ date("d-m-Y", strtotime($transfer_news[$k]->post_date)) }}
                                                 </span>

@@ -17,6 +17,7 @@ use App\Models\Landmarks;
 use App\Models\Otop;
 use App\Models\TransferNews;
 use App\Models\OtherLink;
+use App\Models\VdoYoutube;
 
 class IndexController extends FrontMsgController{
 
@@ -65,6 +66,9 @@ class IndexController extends FrontMsgController{
 		$OtherLink = new OtherLink;
 		$other_link = $OtherLink->getOtherLinkAllFN();
 
+		$VdoYoutube = new VdoYoutube;
+		$vdo_youtube = $VdoYoutube->getVdoYoutubeAll();
+
 		$data = array(
 			'template' => $this->template,
 			'menu_nav' => $this->menu_nav['index'],
@@ -85,10 +89,106 @@ class IndexController extends FrontMsgController{
 			'landmarks' => $landmarks,
 			'otop' => $otop,
 			'transfer_news' => $transfer_news,
-			'other_link' => $other_link
+			'other_link' => $other_link,
+			'vdo_youtube' => $vdo_youtube,
 		);
 
 		return view('fn/'.$this->template.'/main/index', $data);
+	}
+
+	public function informationDetail($id = ''){
+		$Information = new Information;
+		$information = $Information->getDataById($id);
+		$informationAll = $Information->getInformationAllFN();
+		$data = array(
+			'template' => $this->template,
+			'menu_nav' => $this->menu_nav['index'],
+			'menu_l1' => '1',
+			'menu_l2' => '1',
+			'logo_url' => $this->getLogo(),
+			'staff_structure' => $this->staff_structure,
+			'menu_government_online' => $this->menu_government_online,
+			'contact_us' => $this->contact_us,
+			'information' => $information,
+			'informationAll' => $informationAll,
+		);
+		return view('fn/'.$this->template.'/main/information', $data);
+	}
+
+	public function activityDetail($id = ''){
+		$ActivityNews = new ActivityNews;
+		$activity_news_all = $ActivityNews->getActivityNewsAllFN();
+		$activity_news = $ActivityNews->getDataById($id);
+		$data = array(
+			'template' => $this->template,
+			'menu_nav' => $this->menu_nav['index'],
+			'menu_l1' => '1',
+			'menu_l2' => '1',
+			'logo_url' => $this->getLogo(),
+			'staff_structure' => $this->staff_structure,
+			'menu_government_online' => $this->menu_government_online,
+			'contact_us' => $this->contact_us,
+			'activity_news' => $activity_news,
+			'activity_news_all' => $activity_news_all,
+		);
+		return view('fn/'.$this->template.'/main/activity', $data);
+	}
+
+	public function presentationDetail($id = ''){
+		$Presentation = new Presentation;
+		$presentation_all = $Presentation->getPresentationAllFN();
+		$presentation = $Presentation->getDataById($id);
+		$data = array(
+			'template' => $this->template,
+			'menu_nav' => $this->menu_nav['index'],
+			'menu_l1' => '1',
+			'menu_l2' => '1',
+			'logo_url' => $this->getLogo(),
+			'staff_structure' => $this->staff_structure,
+			'menu_government_online' => $this->menu_government_online,
+			'contact_us' => $this->contact_us,
+			'presentation' => $presentation,
+			'presentation_all' => $presentation_all,
+		);
+		return view('fn/'.$this->template.'/main/presentation', $data);
+	}
+
+	public function landmarksDetail($id = ''){
+		$Landmarks = new Landmarks;
+		$landmarks_all = $Landmarks->getLandmarksAllFN();
+		$landmarks = $Landmarks->getDataById($id);
+		$data = array(
+			'template' => $this->template,
+			'menu_nav' => $this->menu_nav['index'],
+			'menu_l1' => '1',
+			'menu_l2' => '1',
+			'logo_url' => $this->getLogo(),
+			'staff_structure' => $this->staff_structure,
+			'menu_government_online' => $this->menu_government_online,
+			'contact_us' => $this->contact_us,
+			'landmarks' => $landmarks,
+			'landmarks_all' => $landmarks_all,
+		);
+		return view('fn/'.$this->template.'/main/landmarks', $data);
+	}
+
+	public function otopDetail($id = ''){
+		$Otop = new Otop;
+		$otop_all = $Otop->getOtopAllFN();
+		$otop = $Otop->getDataById($id);
+		$data = array(
+			'template' => $this->template,
+			'menu_nav' => $this->menu_nav['index'],
+			'menu_l1' => '1',
+			'menu_l2' => '1',
+			'logo_url' => $this->getLogo(),
+			'staff_structure' => $this->staff_structure,
+			'menu_government_online' => $this->menu_government_online,
+			'contact_us' => $this->contact_us,
+			'otop' => $otop,
+			'otop_all' => $otop_all,
+		);
+		return view('fn/'.$this->template.'/main/otop', $data);
 	}
 }
 ?>

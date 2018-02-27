@@ -49,10 +49,10 @@
               <ul class="contact-details">
                 <!-- <li><a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a>
                 </li> -->
-                <li><a href="#"><i class="fa fa-envelope-o"></i> <?php echo isset($contact_us[0]->email)? $contact_us[0]->email:""; ?></a>
+                <!-- <li><a href="#"><i class="fa fa-envelope-o"></i> <?php echo isset($contact_us[0]->email)? $contact_us[0]->email:""; ?></a>
                 </li>
                 <li><a href="#"><i class="fa fa-phone"></i> <?php echo isset($contact_us[0]->tel)? $contact_us[0]->tel:""; ?></a>
-                </li>
+                </li> -->
               </ul>
               <!-- End Contact Info -->
             </div>
