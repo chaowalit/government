@@ -117,6 +117,7 @@
                     <div class="panel-heading">
                       <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_1" href="#collapse-1" style="color: #004160;">
+                                <span id="click_information" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
                                 <i class="fa fa-bullhorn"></i> ข่าวประชาสัมพันธ์
                             </a>
@@ -185,6 +186,7 @@
                     <div class="panel-heading">
                       <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_2" href="#collapse-2" style="color: #004160;">
+                                <span id="click_purchase_news" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
                                 <i class="fa fa-bullhorn"></i> ข่าวจัดซื้อจัดจ้าง
                             </a>
@@ -252,6 +254,7 @@
                     <div class="panel-heading">
                       <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_3" href="#collapse-3" style="color: #004160;">
+                                <span id="click_calculate_middle_price" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
                                 <i class="fa fa-bullhorn"></i> เผยแพร่การคำนวนราคากลาง
                             </a>
@@ -319,6 +322,7 @@
                     <div class="panel-heading">
                       <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_4" href="#collapse-4" style="color: #004160;">
+                                <span id="click_activity_news" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
                                 <i class="fa fa-bullhorn"></i> ข่าวกิจกรรม
                             </a>
@@ -372,6 +376,7 @@
                     <div class="panel-heading">
                       <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_5" href="#collapse-5" style="color: #004160;">
+                                <span id="click_presentation" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
                                 <i class="fa fa-bullhorn"></i> นำเสนอผลงาน อปท.
                             </a>
@@ -425,6 +430,7 @@
                     <div class="panel-heading">
                       <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_6" href="#collapse-6" style="color: #004160;">
+                                <span id="click_resolution_of_meeting" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
                                 <i class="fa fa-bullhorn"></i> มติประชุม
                             </a>
@@ -492,6 +498,7 @@
                     <div class="panel-heading">
                       <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_7" href="#collapse-7" style="color: #004160;">
+                                <span id="click_vdo_youtube" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
                                 <i class="fa fa-bullhorn"></i> วิดีโอวิดิทัศน์
                             </a>
@@ -516,7 +523,7 @@
                                         </iframe>
                                     </div>
                                     <div class="portfolio-details">
-                                      <a href="#">
+                                      <a href="<?php echo url('detail/vdo_youtube').'/'.$value->id; ?>">
                                         <!-- <h4>Lorem Ipsum Dolor</h4> -->
                                         <span>{{ $value->title }}</span>
                                         <!-- <span>Drawing</span> -->
@@ -543,6 +550,7 @@
                     <div class="panel-heading">
                       <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_8" href="#collapse-8" style="color: #004160;">
+                                <span id="click_landmarks" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
                                 <i class="fa fa-bullhorn"></i> สถานที่สำคัญ (ท่องเที่ยว)
                             </a>
@@ -596,6 +604,7 @@
                     <div class="panel-heading">
                       <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_9" href="#collapse-9" style="color: #004160;">
+                                <span id="click_otop" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
                                 <i class="fa fa-bullhorn"></i> ผลิตภัณฑ์ OTOP
                             </a>
@@ -649,6 +658,7 @@
                     <div class="panel-heading">
                       <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_10" href="#collapse-10" style="color: #004160;">
+                                <span id="click_transfer_news" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
                                 <i class="fa fa-bullhorn"></i> ข่าวโอนย้าย
                             </a>
@@ -775,13 +785,15 @@
                   </ul>
                 </div>
 
+                <?php if(isset($vdo_youtube[0])){ ?>
                 <!-- Video Widget -->
                 <div class="widget">
-                  <h4>Video <span class="head-line"></span></h4>
+                  <h4>วิดีโอ <span class="head-line"></span></h4>
                   <div>
-                    <iframe src="http://player.vimeo.com/video/63322694?byline=0&amp;portrait=0&amp;badge=0" width="800" height="450"></iframe>
+                    <iframe src="{{ $vdo_youtube[0]->file_path }}" width="800" height="450"></iframe>
                   </div>
                 </div>
+                <?php } ?>
 
               </div>
               <!--End sidebar-->

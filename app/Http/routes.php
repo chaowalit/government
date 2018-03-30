@@ -20,6 +20,8 @@ Route::get('detail/activity/{id}', 'fn\v1\IndexController@activityDetail');
 Route::get('detail/presentation/{id}', 'fn\v1\IndexController@presentationDetail');
 Route::get('detail/landmarks/{id}', 'fn\v1\IndexController@landmarksDetail');
 Route::get('detail/otop/{id}', 'fn\v1\IndexController@otopDetail');
+Route::get('detail/vdo_youtube/{id}', 'fn\v1\IndexController@vdoYoutubeDetail');
+Route::get('news-search-all/{type}', 'fn\v1\IndexController@newsSearchAll');
 
 Route::get('history', 'fn\v1\HistoryController@index');
 Route::get('mission_vision', 'fn\v1\MissionVisionController@index');

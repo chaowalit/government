@@ -18,6 +18,65 @@
 
 <?php if($menu_nav == 'index') { ?>
 <link rel="stylesheet" type="text/css" href="<?php echo asset('fn/'.$template.'/css/custom_theme.css'); ?>" media="screen">
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#dataTableNews').DataTable();
+
+        $("#click_information").click(function(e){
+            window.location.href = "/news-search-all/information";
+            e.preventDefault();
+        });
+        $("#click_purchase_news").click(function(e){
+            window.location.href = "/news-search-all/purchase_news";
+            e.preventDefault();
+        });
+        $("#click_calculate_middle_price").click(function(e){
+            window.location.href = "/news-search-all/calculate_middle_price";
+            e.preventDefault();
+        });
+        $("#click_activity_news").click(function(e){
+            window.location.href = "/news-search-all/activity_news";
+            e.preventDefault();
+        });
+        $("#click_presentation").click(function(e){
+            window.location.href = "/news-search-all/presentation";
+            e.preventDefault();
+        });
+        $("#click_resolution_of_meeting").click(function(e){
+            window.location.href = "/news-search-all/resolution_of_meeting";
+            e.preventDefault();
+        });
+        $("#click_vdo_youtube").click(function(e){
+            window.location.href = "/news-search-all/vdo_youtube";
+            e.preventDefault();
+        });
+        $("#click_landmarks").click(function(e){
+            window.location.href = "/news-search-all/landmarks";
+            e.preventDefault();
+        });
+        $("#click_otop").click(function(e){
+            window.location.href = "/news-search-all/otop";
+            e.preventDefault();
+        });
+        $("#click_transfer_news").click(function(e){
+            window.location.href = "/news-search-all/transfer_news";
+            e.preventDefault();
+        });
+    });
+</script>
+
+<style type="text/css">
+    .right-detail-all {
+        padding-right: 30px;
+        position: absolute;
+        right: 10px;
+        font-size: 14px;
+    }
+</style>
 <?php } ?>
 
 <?php if($menu_nav == 'contact_us') { ?>

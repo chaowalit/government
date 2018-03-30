@@ -51,11 +51,12 @@ class ResolutionOfMeeting extends Model{
 		return \DB::table($this->table)->where('id', '=', $id)->delete();
 	}
 	//---------------------------------------------------------------------
-	public function getResolutionOfMeetingAllFN(){
+	public function getResolutionOfMeetingAllFN($limit = 20){
 		return \DB::table($this->table)
 					->where('active', 1)
 					->orderBy('post_date', 'desc')
 					->orderBy('updated_at', 'desc')
+					->limit($limit)
 					->get();
 	}
 }
