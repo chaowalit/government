@@ -33,6 +33,8 @@ Route::get('contact_us', 'fn\v1\ContactUsController@index');
 Route::get('online_electronic', 'fn\v1\OnlineElectronicController@index');
 Route::get('sub_online_electronic/{type}/{id}', 'fn\v1\OnlineElectronicController@sub_online_electronic');
 
+Route::get('complaint', 'fn\v1\ComplaintController@index');
+
 /*
 Back End purchase
 */

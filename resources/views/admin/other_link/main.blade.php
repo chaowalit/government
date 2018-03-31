@@ -52,7 +52,7 @@
                               <th style="text-align: center;width: 10px;">Active</th>
                               <th>หัวข้อ</th>
                               <th>วันที่ประกาศ</th>
-                              <th style="width: 10%;"></th>
+                              <th style="width: 100px;"></th>
                             </tr>
 
                             <?php if(isset($other_link[0])){ 
@@ -61,7 +61,9 @@
                             <tr>
                               <td>{{ ++$k }}</td>
                               <td style="text-align: center;">{{ $v->active }}</td>
-                              <td>{{ $v->title }}</td>
+                              <td>
+                                <label style="width: 500px;word-wrap: break-word;">{{ $v->title }}</label>
+                            </td>
                               <td>
                                 {{ $v->post_date }}
                               </td>

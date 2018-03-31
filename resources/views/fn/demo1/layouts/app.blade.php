@@ -136,7 +136,7 @@
                 </ul>
               </li>
               <li>
-                <a href="#">ร้องเรียน/ร้องทุกข์</a>
+                <a href="{{ url('/complaint') }}" class="<?php echo $menu_nav == 'complaint'? "active":""; ?>">ร้องเรียน/ร้องทุกข์</a>
                 <!-- <a href="#">ข้อมูลบริการ</a> -->
                 <!-- <ul class="dropdown">
                     <li class="treeview">

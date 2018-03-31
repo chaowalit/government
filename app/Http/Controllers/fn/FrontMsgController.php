@@ -22,6 +22,7 @@ class FrontMsgController extends Controller
 		'about' => 'about',
 		'contact_us' => 'contact_us',
 		'news_government' => 'news_government',
+        'complaint' => 'complaint',
 	);
 
 	protected $template = '';
