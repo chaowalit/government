@@ -107,19 +107,29 @@
             <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a class="<?php echo $menu_nav == 'index'? "active":""; ?>" href="{{ url('/') }}">หน้าแรก</a>
+                <a class="<?php echo $menu_nav == 'index'? "active":""; ?>" href="{{ url('/') }}"><?php echo \Config::get('config_memu.main_1'); ?>
+                </a>
               </li>
               <li>
-                <a href="#" class="<?php echo $menu_nav == 'about'? "active":""; ?>">เกี่ยวกับหน่วยงาน</a>
+                <a href="#" class="<?php echo $menu_nav == 'about'? "active":""; ?>">
+                <?php echo \Config::get('config_memu.main_2.main_show'); ?>
+                </a>
                 <ul class="dropdown">
-                    <li><a href="{{ url('/history') }}" class="<?php echo ($menu_l1 == '1' && $menu_nav == 'about')? "active":""; ?>">ประวัติความเป็นมา</a>
+                    <li><a href="{{ url('/history') }}" class="<?php echo ($menu_l1 == '1' && $menu_nav == 'about')? "active":""; ?>">
+                            <?php echo \Config::get('config_memu.main_2.level_1'); ?>
+                        </a>
                   </li>
-                  <li><a href="{{ url('/mission_vision') }}" class="<?php echo ($menu_l1 == '2' && $menu_nav == 'about')? "active":""; ?>">พันธกิจและวิสัยทัศน์</a>
+                  <li><a href="{{ url('/mission_vision') }}" class="<?php echo ($menu_l1 == '2' && $menu_nav == 'about')? "active":""; ?>">
+                        <?php echo \Config::get('config_memu.main_2.level_2'); ?>
+                    </a>
                   </li>
-                  <li><a href="{{ url('/executive_messages') }}" class="<?php echo ($menu_l1 == '3' && $menu_nav == 'about')? "active":""; ?>">สานส์จากผู้บริหาร</a>
+                  <li><a href="{{ url('/executive_messages') }}" class="<?php echo ($menu_l1 == '3' && $menu_nav == 'about')? "active":""; ?>">
+                        <?php echo \Config::get('config_memu.main_2.level_3'); ?>
+                    </a>
                   </li>
                   <li class="treeview">
-                        <a href="#" class="<?php echo ($menu_l1 == '4' && $menu_nav == 'about')? "active":""; ?>">โครงสร้างบุคคลากร
+                        <a href="#" class="<?php echo ($menu_l1 == '4' && $menu_nav == 'about')? "active":""; ?>">
+                            <?php echo \Config::get('config_memu.main_2.level_4'); ?>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-right pull-right"></i>
                             </span>
@@ -136,7 +146,7 @@
                 </ul>
               </li>
               <li>
-                <a href="{{ url('/complaint') }}" class="<?php echo $menu_nav == 'complaint'? "active":""; ?>">ร้องเรียน/ร้องทุกข์</a>
+                <a href="{{ url('/complaint') }}" class="<?php echo $menu_nav == 'complaint'? "active":""; ?>"><?php echo \Config::get('config_memu.main_3'); ?></a>
                 <!-- <a href="#">ข้อมูลบริการ</a> -->
                 <!-- <ul class="dropdown">
                     <li class="treeview">
@@ -172,16 +182,18 @@
                 </ul> -->
               </li>
               <li>
-                <a href="#" class="<?php echo $menu_nav == 'news_government'? "active":""; ?>">ศูนย์ข้อมูลข่าวสารราชการ</a>
+                <a href="#" class="<?php echo $menu_nav == 'news_government'? "active":""; ?>">
+                    <?php echo \Config::get('config_memu.main_4.main_show'); ?>
+                </a>
                 <ul class="dropdown" style="width: 245px;">
                     <li class="treeview">
-                        <a href="{{ url('/online_electronic') }}" class="<?php echo ($menu_l1 == '1' && $menu_nav == 'news_government')? "active":""; ?>">ดัชนีรวม / ดัชนีประจำแฟ้ม
-                            
+                        <a href="{{ url('/online_electronic') }}" class="<?php echo ($menu_l1 == '1' && $menu_nav == 'news_government')? "active":""; ?>">
+                            <?php echo \Config::get('config_memu.main_4.level_1'); ?>
                         </a>
                         
                     </li>
                     <li class="treeview">
-                        <a href="#">ข้อมูลข่าวสารตามมาตรา 7
+                        <a href="#"><?php echo \Config::get('config_memu.main_4.level_2'); ?>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-right pull-right"></i>
                             </span>
@@ -204,7 +216,7 @@
                         </ul>
                     </li>
                     <li class="treeview">
-                        <a href="#">ข้อมูลข่าวสารตามมาตรา 9
+                        <a href="#"><?php echo \Config::get('config_memu.main_4.level_3'); ?>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-right pull-right"></i>
                             </span>
@@ -227,7 +239,7 @@
                         </ul>
                     </li>
                     <li class="treeview">
-                        <a href="#">จัดซื้อจัดจ้าง/การเงิน <!-- สัญญาอื่นๆ -->
+                        <a href="#"><?php echo \Config::get('config_memu.main_4.level_4'); ?> <!-- สัญญาอื่นๆ -->
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-right pull-right"></i>
                             </span>
@@ -250,7 +262,7 @@
                         </ul>
                     </li>
                     <li class="treeview">
-                        <a href="#">สรุปรายงาน <!-- เอกสารอื่นๆที่ต้องรายงาน -->
+                        <a href="#"><?php echo \Config::get('config_memu.main_4.level_5'); ?> <!-- เอกสารอื่นๆที่ต้องรายงาน -->
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-right pull-right"></i>
                             </span>
@@ -273,7 +285,7 @@
                         </ul>
                     </li>
                     <li class="treeview">
-                        <a href="#">ข้อมูลข่าวสารอื่นๆ  <!--ข้อมูลข่าวสารที่น่าสนใจ-->
+                        <a href="#"><?php echo \Config::get('config_memu.main_4.level_6'); ?>  <!--ข้อมูลข่าวสารที่น่าสนใจ-->
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-right pull-right"></i>
                             </span>
@@ -300,7 +312,7 @@
                   <!-- <li><a href="#">ร้องเรียน/ร้องทุกข์</a>
                   </li> -->
                   <li class="treeview">
-                        <a href="#">สำรวจการให้บริการศูนย์ข้อมูลฯ
+                        <a href="#"><?php echo \Config::get('config_memu.main_4.level_7'); ?>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-right pull-right"></i>
                             </span>
@@ -315,9 +327,9 @@
                 </ul>
               </li>
               <li>
-                <a href="#">สมุดเยื่ยม</a>
+                <a href="#"><?php echo \Config::get('config_memu.main_5'); ?></a>
               </li>
-              <li><a href="{{ url('/contact_us') }}" class="<?php echo $menu_nav == 'contact_us'? "active":""; ?>">ติดต่อเรา</a>
+              <li><a href="{{ url('/contact_us') }}" class="<?php echo $menu_nav == 'contact_us'? "active":""; ?>"><?php echo \Config::get('config_memu.main_6'); ?></a>
               </li>
             </ul>
             <!-- End Navigation List -->
