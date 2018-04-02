@@ -3,7 +3,28 @@
 <?php } ?>
 
 @section('content')
-
+    <style type="text/css">
+        .hide-module {
+            display: none;
+        }
+        .circle-style-big {
+            background: #337ab7;
+            margin: 0px;
+            padding: 4px;
+            border-radius: 100%;
+            color: white;
+        }
+        .circle-style-small {
+            background: #337ab7;
+            margin: 0px;
+            padding: 5px;
+            border-radius: 100%;
+            color: white;
+        }
+        .classic-testimonials .testimonial-content-v2 {
+            padding: 5px 8px !important;
+        }
+    </style>
     <!-- Start Home Page Slider -->
     <section id="home">
       <!-- Carousel -->
@@ -109,7 +130,7 @@
                 <!-- <div class="hr5" style="margin-top:30px; margin-bottom:45px;"></div> -->
 
                 <!-- Accordion -->
-                <div class="panel-group" id="accordion_1">
+                <div class="panel-group <?php echo (\Config::get('config_module.information') == 1)? '':' hide-module'; ?>" id="accordion_1">
 
                   <!-- Start Accordion 1 -->
                   <div class="panel panel-default">
@@ -119,7 +140,7 @@
                             <a data-toggle="collapse" data-parent="#accordion_1" href="#collapse-1" style="color: #004160;">
                                 <span id="click_information" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-bullhorn"></i> ข่าวประชาสัมพันธ์
+                                <i class="fa fa-bullhorn circle-style-big"></i> ข่าวประชาสัมพันธ์
                             </a>
                         </h4>
                     </div>
@@ -144,7 +165,7 @@
                                         <div class="testimonial-content testimonial-content-v2">
                                           
                                         <h5 class="post-title post-text-hide">
-                                            <i class="fa fa-bullhorn" style="color: #337ab7;"></i>
+                                            <i class="fa fa-bullhorn circle-style-small"></i>
                                             <a href="<?php echo url('detail/information').'/'.$information[$k]->id; ?>" class="<?php echo "information_".$k; ?>">
                                                 <span style="font-size: 12px;color: #999;">
     {{ date("d-m-Y", strtotime($information[$k]->post_date)) }}
@@ -178,7 +199,7 @@
                 <!-- End Accordion -->
 
                 <!-- Accordion -->
-                <div class="panel-group" id="accordion_2">
+                <div class="panel-group <?php echo (\Config::get('config_module.purchase_news') == 1)? '':' hide-module'; ?>" id="accordion_2">
 
                   <!-- Start Accordion 1 -->
                   <div class="panel panel-default">
@@ -246,7 +267,7 @@
                 <!-- End Accordion -->
 
                 <!-- Accordion -->
-                <div class="panel-group" id="accordion_3">
+                <div class="panel-group <?php echo (\Config::get('config_module.calculate_middle_price') == 1)? '':' hide-module'; ?>" id="accordion_3">
 
                   <!-- Start Accordion 1 -->
                   <div class="panel panel-default">
@@ -314,7 +335,7 @@
                 <!-- End Accordion -->
 
                 <!-- Accordion -->
-                <div class="panel-group" id="accordion_4">
+                <div class="panel-group <?php echo (\Config::get('config_module.activity_news') == 1)? '':' hide-module'; ?>" id="accordion_4">
 
                   <!-- Start Accordion 1 -->
                   <div class="panel panel-default">
@@ -368,7 +389,7 @@
                 <!-- End Accordion -->
 
                 <!-- Accordion -->
-                <div class="panel-group" id="accordion_5">
+                <div class="panel-group <?php echo (\Config::get('config_module.presentation') == 1)? '':' hide-module'; ?>" id="accordion_5">
 
                   <!-- Start Accordion 1 -->
                   <div class="panel panel-default">
@@ -422,7 +443,7 @@
                 <!-- End Accordion -->
 
                 <!-- Accordion -->
-                <div class="panel-group" id="accordion_6">
+                <div class="panel-group <?php echo (\Config::get('config_module.resolution_of_meeting') == 1)? '':' hide-module'; ?>" id="accordion_6">
 
                   <!-- Start Accordion 1 -->
                   <div class="panel panel-default">
@@ -490,7 +511,7 @@
                 <!-- End Accordion -->
 
                 <!-- Accordion -->
-                <div class="panel-group" id="accordion_7">
+                <div class="panel-group <?php echo (\Config::get('config_module.vdo_youtube') == 1)? '':' hide-module'; ?>" id="accordion_7">
 
                   <!-- Start Accordion 1 -->
                   <div class="panel panel-default">
@@ -542,7 +563,7 @@
                 <!-- End Accordion -->
 
                 <!-- Accordion -->
-                <div class="panel-group" id="accordion_8">
+                <div class="panel-group <?php echo (\Config::get('config_module.landmarks') == 1)? '':' hide-module'; ?>" id="accordion_8">
 
                   <!-- Start Accordion 1 -->
                   <div class="panel panel-default">
@@ -596,7 +617,7 @@
                 <!-- End Accordion -->
 
                 <!-- Accordion -->
-                <div class="panel-group" id="accordion_9">
+                <div class="panel-group <?php echo (\Config::get('config_module.otop') == 1)? '':' hide-module'; ?>" id="accordion_9">
 
                   <!-- Start Accordion 1 -->
                   <div class="panel panel-default">
@@ -650,7 +671,7 @@
                 <!-- End Accordion -->
 
                 <!-- Accordion -->
-                <div class="panel-group" id="accordion_10">
+                <div class="panel-group <?php echo (\Config::get('config_module.transfer_news') == 1)? '':' hide-module'; ?>" id="accordion_10">
 
                   <!-- Start Accordion 1 -->
                   <div class="panel panel-default">

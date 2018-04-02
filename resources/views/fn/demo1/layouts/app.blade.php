@@ -8,7 +8,7 @@
   <!-- Basic -->
   <title><?php echo isset($contact_us[0]->location_name)? $contact_us[0]->location_name:""; ?></title>
     <!-- <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet"> -->
-    <link href="https://fonts.googleapis.com/css?family=Prompt:200,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Prompt:500,600" rel="stylesheet">
   <!-- Define Charset -->
   <meta charset="utf-8">
 
