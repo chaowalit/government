@@ -6,12 +6,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <?php echo $menu_name; ?>
+        <?php echo \Config::get('config_memu.main_4.main_show'); ?>
         <!-- <small>it all starts here</small> -->
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> เมนูหลัก</a></li>
-        <li><a href="#" class="active"><?php echo $menu_name; ?></a></li>
+        <li><a href="#" class="active"><?php echo \Config::get('config_memu.main_4.main_show'); ?></a></li>
         <!-- <li class="active">Blank page</li> -->
       </ol>
     </section>
@@ -24,7 +24,7 @@
           <div class="box box-info">
             <div class="box-header">
 
-              <h3 class="box-title">แสดงหมวดหมู่ข่าวสารอิเล็กทรอนิกส์ของราชการ
+              <h3 class="box-title">แสดงหมวดหมู่<?php echo \Config::get('config_memu.main_4.main_show'); ?>
                 <!-- <small>สามารถสร้างรูปแบบเนื้อหาที่จะแสดงหน้าเว็บได้ตามต้องการ</small> -->
                 <a href="{{ url('/online_electronic_data/form_category') }}"><u style="font-size: 12px;">เพิ่มข้อมูล</u></a>
               </h3>
@@ -48,7 +48,7 @@
                         <tbody>
                             <tr>
                               <th colspan="4" style="text-align: center;background-color: #d2d6de;">
-                                  หมวดหมู่ข้อมูลข่าวสารตามมาตรา 7
+                                  หมวดหมู่<?php echo \Config::get('config_memu.main_4.level_2'); ?>
                               </th>
                             </tr>
                             <tr>
@@ -82,7 +82,7 @@
                         <tbody>
                             <tr>
                               <th colspan="4" style="text-align: center;background-color: #d2d6de;">
-                                  หมวดหมู่ข้อมูลข่าวสารตามมาตรา 9
+                                  หมวดหมู่<?php echo \Config::get('config_memu.main_4.level_3'); ?>
                               </th>
                             </tr>
                             <tr>
@@ -117,7 +117,7 @@
                         <tbody>
                             <tr>
                               <th colspan="4" style="text-align: center;background-color: #d2d6de;">
-                                  จัดซื้อจัดจ้าง/การเงิน
+                                  <?php echo \Config::get('config_memu.main_4.level_4'); ?><!--จัดซื้อจัดจ้าง/การเงิน-->
                               </th>
                             </tr>
                             <tr>
@@ -152,7 +152,7 @@
                         <tbody>
                             <tr>
                               <th colspan="4" style="text-align: center;background-color: #d2d6de;">
-                                  สรุปรายงาน
+                                  <?php echo \Config::get('config_memu.main_4.level_5'); ?><!--สรุปรายงาน-->
                               </th>
                             </tr>
                             <tr>
@@ -187,7 +187,7 @@
                         <tbody>
                             <tr>
                               <th colspan="4" style="text-align: center;background-color: #d2d6de;">
-                                  ข้อมูลข่าวสารอื่นๆ
+                                  <?php echo \Config::get('config_memu.main_4.level_6'); ?><!--ข้อมูลข่าวสารอื่นๆ-->
                               </th>
                             </tr>
                             <tr>

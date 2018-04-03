@@ -6,12 +6,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <?php echo $menu_name; ?>
+        <?php echo \Config::get('config_memu.main_4.main_show'); ?>
         <!-- <small>it all starts here</small> -->
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> เมนูหลัก</a></li>
-        <li><a href="#" class="active"><?php echo $menu_name; ?></a></li>
+        <li><a href="#" class="active"><?php echo \Config::get('config_memu.main_4.main_show'); ?></a></li>
         <!-- <li class="active">Blank page</li> -->
       </ol>
     </section>
@@ -24,7 +24,7 @@
           <div class="box box-info">
             <div class="box-header">
 
-              <h3 class="box-title"><?php echo ($type_form == 'create')? "บันทึกหมวดหมู่ข่าวสารอิเล็กทรอนิกส์ของราชการ":"แก้ไขหมวดหมู่ข่าวสารอิเล็กทรอนิกส์ของราชการ"; ?>
+              <h3 class="box-title"><?php echo ($type_form == 'create')? "บันทึกหมวดหมู่".\Config::get('config_memu.main_4.main_show'):"แก้ไขหมวดหมู่".\Config::get('config_memu.main_4.main_show'); ?>
                 <small>สามารถสร้างรูปแบบเนื้อหาที่จะแสดงหน้าเว็บได้ตามต้องการ</small>
                 <a href="{{ url('/online_electronic_data/category') }}"><u style="font-size: 12px;">ย้อนกลับ</u></a>
               </h3>
@@ -56,17 +56,17 @@
                           <label for="">ประเภท</label>
                             <select class="form-control" name="table_type" id="table_type" style="width: 70%;">
                                 <?php if(isset($table_type)){ ?>
-                                <option value="online_data_section_7" <?php echo ($table_type == 'online_data_section_7')? "selected":"disabled" ?>>ข้อมูลข่าวสารตามมาตรา 7</option>
-                                <option value="online_data_section_9" <?php echo ($table_type == 'online_data_section_9')? "selected":"disabled" ?>>ข้อมูลข่าวสารตามมาตรา 9</option>
-                                <option value="contract_other" <?php echo ($table_type == 'contract_other')? "selected":"disabled" ?>>จัดซื้อจัดจ้าง/การเงิน</option>
-                                <option value="document_other_neccessary" <?php echo ($table_type == 'document_other_neccessary')? "selected":"disabled" ?>>สรุปรายงาน</option>
-                                <option value="document_interesting" <?php echo ($table_type == 'document_interesting')? "selected":"disabled" ?>>ข้อมูลข่าวสารอื่นๆ</option>
+                                <option value="online_data_section_7" <?php echo ($table_type == 'online_data_section_7')? "selected":"disabled" ?>><?php echo \Config::get('config_memu.main_4.level_2'); ?></option>
+                                <option value="online_data_section_9" <?php echo ($table_type == 'online_data_section_9')? "selected":"disabled" ?>><?php echo \Config::get('config_memu.main_4.level_3'); ?></option>
+                                <option value="contract_other" <?php echo ($table_type == 'contract_other')? "selected":"disabled" ?>><?php echo \Config::get('config_memu.main_4.level_4'); ?></option>
+                                <option value="document_other_neccessary" <?php echo ($table_type == 'document_other_neccessary')? "selected":"disabled" ?>><?php echo \Config::get('config_memu.main_4.level_5'); ?></option>
+                                <option value="document_interesting" <?php echo ($table_type == 'document_interesting')? "selected":"disabled" ?>><?php echo \Config::get('config_memu.main_4.level_6'); ?></option>
                                 <?php }else{ ?>
-                                <option value="online_data_section_7">ข้อมูลข่าวสารตามมาตรา 7</option>
-                                <option value="online_data_section_9">ข้อมูลข่าวสารตามมาตรา 9</option>
-                                <option value="contract_other">จัดซื้อจัดจ้าง/การเงิน</option>
-                                <option value="document_other_neccessary">สรุปรายงาน</option>
-                                <option value="document_interesting">ข้อมูลข่าวสารอื่นๆ</option>
+                                <option value="online_data_section_7"><?php echo \Config::get('config_memu.main_4.level_2'); ?></option>
+                                <option value="online_data_section_9"><?php echo \Config::get('config_memu.main_4.level_3'); ?></option>
+                                <option value="contract_other"><?php echo \Config::get('config_memu.main_4.level_4'); ?></option>
+                                <option value="document_other_neccessary"><?php echo \Config::get('config_memu.main_4.level_5'); ?></option>
+                                <option value="document_interesting"><?php echo \Config::get('config_memu.main_4.level_6'); ?></option>
                                 <?php } ?>
                             </select>
                         </div>

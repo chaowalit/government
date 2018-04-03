@@ -6,12 +6,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <?php echo $menu_name; ?>
+        <?php echo \Config::get('config_memu.main_4.main_show'); ?>
         <!-- <small>it all starts here</small> -->
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> เมนูหลัก</a></li>
-        <li><a href="#" class="active"><?php echo $menu_name; ?></a></li>
+        <li><a href="#" class="active"><?php echo \Config::get('config_memu.main_4.main_show'); ?></a></li>
         <!-- <li class="active">Blank page</li> -->
       </ol>
     </section>
@@ -24,15 +24,15 @@
         <div class="box-header with-border">
           <h3 class="box-title"> >>> 
 				<?php if($table_type == "online_data_section_7"){
-					echo ($type_form == "create")? "บันทึกข้อมูลข่าวสารตามมาตรา 7":"แก้ไขข้อมูลข่าวสารตามมาตรา 7";
+					echo ($type_form == "create")? "บันทึก".\Config::get('config_memu.main_4.level_2'):"แก้ไข".\Config::get('config_memu.main_4.level_2');
 				}else if($table_type == "online_data_section_9"){
-					echo ($type_form == "create")? "บันทึกข้อมูลข่าวสารตามมาตรา 9":"แก้ไขข้อมูลข่าวสารตามมาตรา 9";
+					echo ($type_form == "create")? "บันทึก".\Config::get('config_memu.main_4.level_3'):"แก้ไข".\Config::get('config_memu.main_4.level_3');
 				}else if($table_type == "online_contract_other"){
-					echo ($type_form == "create")? "บันทึกข้อมูลจัดซื้อจัดจ้าง/การเงิน":"แก้ไขข้อมูลจัดซื้อจัดจ้าง/การเงิน";
+					echo ($type_form == "create")? "บันทึกข้อมูล".\Config::get('config_memu.main_4.level_4'):"แก้ไขข้อมูล".\Config::get('config_memu.main_4.level_4');
 				}else if($table_type == "online_document_other_neccessary"){
-					echo ($type_form == "create")? "บันทึกข้อมูล สรุปรายงาน":"แก้ไขข้อมูล สรุปรายงาน";
+					echo ($type_form == "create")? "บันทึกข้อมูล ".\Config::get('config_memu.main_4.level_5'):"แก้ไขข้อมูล ".\Config::get('config_memu.main_4.level_5');
 				}else if($table_type == "online_document_interesting"){
-					echo ($type_form == "create")? "บันทึกข้อมูลข่าวสารอื่นๆ":"แก้ไขข้อมูลข่าวสารอื่นๆ";
+					echo ($type_form == "create")? "บันทึก".\Config::get('config_memu.main_4.level_6'):"แก้ไข".\Config::get('config_memu.main_4.level_6');
 				}
 
 				?>

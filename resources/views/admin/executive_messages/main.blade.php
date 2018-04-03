@@ -6,12 +6,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <?php echo $menu_name; ?>
+        <?php echo \Config::get('config_memu.main_2.level_3'); ?>
         <!-- <small>it all starts here</small> -->
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> เมนูหลัก</a></li>
-        <li><a href="#" class="active"><?php echo $menu_name; ?></a></li>
+        <li><a href="#" class="active"><?php echo \Config::get('config_memu.main_2.level_3'); ?></a></li>
         <!-- <li class="active">Blank page</li> -->
       </ol>
     </section>
@@ -24,7 +24,7 @@
           <div class="box box-info">
             <div class="box-header">
 
-              <h3 class="box-title">กรอกสานส์จากผู้บริหาร
+              <h3 class="box-title">กรอก<?php echo \Config::get('config_memu.main_2.level_3'); ?>
                 <small>สามารถสร้างรูปแบบเนื้อหาที่จะแสดงหน้าเว็บได้ตามต้องการ</small>
               </h3>
               <!-- tools box -->

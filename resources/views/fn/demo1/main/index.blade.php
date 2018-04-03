@@ -209,7 +209,7 @@
                             <a data-toggle="collapse" data-parent="#accordion_2" href="#collapse-2" style="color: #004160;">
                                 <span id="click_purchase_news" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-bullhorn"></i> ข่าวจัดซื้อจัดจ้าง
+                                <i class="fa fa-bullhorn circle-style-big"></i> ข่าวจัดซื้อจัดจ้าง
                             </a>
                         </h4>
                     </div>
@@ -234,7 +234,7 @@
                                         <div class="testimonial-content testimonial-content-v2">
                                           
                                         <h5 class="post-title post-text-hide">
-                                            <i class="fa fa-bullhorn"></i>
+                                            <i class="fa fa-bullhorn circle-style-small"></i>
                                             <a href="<?php echo asset($purchase_news[$k]->file_path); ?>" class="<?php echo "purchase_news_".$k; ?>" target="_blank">
                                                 <span style="font-size: 12px;color: #999;">
     {{ date("d-m-Y", strtotime($purchase_news[$k]->post_date)) }}
@@ -277,7 +277,7 @@
                             <a data-toggle="collapse" data-parent="#accordion_3" href="#collapse-3" style="color: #004160;">
                                 <span id="click_calculate_middle_price" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-bullhorn"></i> เผยแพร่การคำนวนราคากลาง
+                                <i class="fa fa-bullhorn circle-style-big"></i> เผยแพร่การคำนวนราคากลาง
                             </a>
                         </h4>
                     </div>
@@ -302,7 +302,7 @@
                                         <div class="testimonial-content testimonial-content-v2">
                                           
                                         <h5 class="post-title post-text-hide">
-                                            <i class="fa fa-bullhorn"></i>
+                                            <i class="fa fa-bullhorn circle-style-small"></i>
                                             <a href="<?php echo asset($calculate_middle_price[$k]->file_path); ?>" class="<?php echo "calculate_middle_price_".$k; ?>" target="_blank">
                                                 <span style="font-size: 12px;color: #999;">
     {{ date("d-m-Y", strtotime($calculate_middle_price[$k]->post_date)) }}
@@ -345,7 +345,7 @@
                             <a data-toggle="collapse" data-parent="#accordion_4" href="#collapse-4" style="color: #004160;">
                                 <span id="click_activity_news" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-bullhorn"></i> ข่าวกิจกรรม
+                                <i class="fa fa-bullhorn circle-style-big"></i> ข่าวกิจกรรม
                             </a>
                         </h4>
                     </div>
@@ -399,7 +399,7 @@
                             <a data-toggle="collapse" data-parent="#accordion_5" href="#collapse-5" style="color: #004160;">
                                 <span id="click_presentation" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-bullhorn"></i> นำเสนอผลงาน อปท.
+                                <i class="fa fa-bullhorn circle-style-big"></i> นำเสนอผลงาน อปท.
                             </a>
                         </h4>
                     </div>
@@ -453,7 +453,7 @@
                             <a data-toggle="collapse" data-parent="#accordion_6" href="#collapse-6" style="color: #004160;">
                                 <span id="click_resolution_of_meeting" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-bullhorn"></i> มติประชุม
+                                <i class="fa fa-bullhorn circle-style-big"></i> มติประชุม
                             </a>
                         </h4>
                     </div>
@@ -478,7 +478,7 @@
                                         <div class="testimonial-content testimonial-content-v2">
                                           
                                         <h5 class="post-title post-text-hide">
-                                            <i class="fa fa-bullhorn"></i>
+                                            <i class="fa fa-bullhorn circle-style-small"></i>
                                             <a href="<?php echo asset($resolution_of_meeting[$k]->file_path); ?>" class="<?php echo "resolution_of_meeting_".$k; ?>" target="_blank">
                                                 <span style="font-size: 12px;color: #999;">
     {{ date("d-m-Y", strtotime($resolution_of_meeting[$k]->post_date)) }}
@@ -521,7 +521,7 @@
                             <a data-toggle="collapse" data-parent="#accordion_7" href="#collapse-7" style="color: #004160;">
                                 <span id="click_vdo_youtube" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-bullhorn"></i> วิดีโอวิดิทัศน์
+                                <i class="fa fa-bullhorn circle-style-big"></i> วิดีโอวิดิทัศน์
                             </a>
                         </h4>
                     </div>
@@ -573,7 +573,7 @@
                             <a data-toggle="collapse" data-parent="#accordion_8" href="#collapse-8" style="color: #004160;">
                                 <span id="click_landmarks" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-bullhorn"></i> สถานที่สำคัญ (ท่องเที่ยว)
+                                <i class="fa fa-bullhorn circle-style-big"></i> สถานที่สำคัญ (ท่องเที่ยว)
                             </a>
                         </h4>
                     </div>
@@ -627,7 +627,7 @@
                             <a data-toggle="collapse" data-parent="#accordion_9" href="#collapse-9" style="color: #004160;">
                                 <span id="click_otop" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-bullhorn"></i> ผลิตภัณฑ์ OTOP
+                                <i class="fa fa-bullhorn circle-style-big"></i> ผลิตภัณฑ์ OTOP
                             </a>
                         </h4>
                     </div>
@@ -681,7 +681,7 @@
                             <a data-toggle="collapse" data-parent="#accordion_10" href="#collapse-10" style="color: #004160;">
                                 <span id="click_transfer_news" class="right-detail-all" style="">ดูทั้งหมด</span>
                                 <i class="fa fa-angle-up control-icon"></i>
-                                <i class="fa fa-bullhorn"></i> ข่าวโอนย้าย
+                                <i class="fa fa-bullhorn circle-style-big"></i> ข่าวโอนย้าย
                             </a>
                         </h4>
                     </div>
@@ -706,7 +706,7 @@
                                         <div class="testimonial-content testimonial-content-v2">
                                           
                                         <h5 class="post-title post-text-hide">
-                                            <i class="fa fa-bullhorn"></i>
+                                            <i class="fa fa-bullhorn circle-style-small"></i>
                                             <a href="<?php echo asset($transfer_news[$k]->file_path); ?>" class="<?php echo "transfer_news_".$k; ?>" target="_blank">
                                                 <span style="font-size: 12px;color: #999;">
     {{ date("d-m-Y", strtotime($transfer_news[$k]->post_date)) }}

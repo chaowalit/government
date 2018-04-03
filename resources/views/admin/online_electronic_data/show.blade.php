@@ -6,12 +6,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <?php echo $menu_name; ?>
+        <?php echo \Config::get('config_memu.main_4.main_show'); ?>
         <!-- <small>it all starts here</small> -->
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> เมนูหลัก</a></li>
-        <li><a href="#" class="active"><?php echo $menu_name; ?></a></li>
+        <li><a href="#" class="active"><?php echo \Config::get('config_memu.main_4.main_show'); ?></a></li>
         <!-- <li class="active">Blank page</li> -->
       </ol>
     </section>
@@ -22,7 +22,7 @@
       <!-- Default box -->
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title"> >>> ข้อมูลข่าวสารตามมาตรา 7 </h3>&nbsp;
+          <h3 class="box-title"> >>> <?php echo \Config::get('config_memu.main_4.level_2'); ?> </h3>&nbsp;
             <a href="{{ url('/online_electronic_data/form?table=online_data_section_7') }}"><u style="font-size: 12px;">เพิ่มข้อมูล</u></a>
 
           <div class="box-tools pull-right">
@@ -78,7 +78,7 @@
       <!-- Default box -->
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title"> >>> ข้อมูลข่าวสารตามมาตรา 9</h3> &nbsp;
+          <h3 class="box-title"> >>> <?php echo \Config::get('config_memu.main_4.level_3'); ?></h3> &nbsp;
           <a href="{{ url('/online_electronic_data/form?table=online_data_section_9') }}"><u style="font-size: 12px;">เพิ่มข้อมูล</u></a>
 
           <div class="box-tools pull-right">
@@ -134,7 +134,7 @@
       <!-- Default box -->
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title"> >>> จัดซื้อจัดจ้าง/การเงิน <!--สัญญาอื่นๆ--></h3> &nbsp;
+          <h3 class="box-title"> >>> <?php echo \Config::get('config_memu.main_4.level_4'); ?><!--จัดซื้อจัดจ้าง/การเงิน--> <!--สัญญาอื่นๆ--></h3> &nbsp;
           <a href="{{ url('/online_electronic_data/form?table=online_contract_other') }}"><u style="font-size: 12px;">เพิ่มข้อมูล</u></a>
 
           <div class="box-tools pull-right">
@@ -190,7 +190,7 @@
         <!-- Default box -->
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title"> >>> สรุปรายงาน <!--เอกสารอื่นๆ ที่ต้องรายงาน--></h3> &nbsp;
+          <h3 class="box-title"> >>> <?php echo \Config::get('config_memu.main_4.level_5'); ?><!--สรุปรายงาน--> <!--เอกสารอื่นๆ ที่ต้องรายงาน--></h3> &nbsp;
           <a href="{{ url('/online_electronic_data/form?table=online_document_other_neccessary') }}"><u style="font-size: 12px;">เพิ่มข้อมูล</u></a>
 
           <div class="box-tools pull-right">
@@ -247,7 +247,7 @@
       <!-- Default box -->
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title"> >>> ข้อมูลข่าวสารอื่นๆ <!--ข้อมูลข่าวสารที่น่าสนใจ--></h3> &nbsp;
+          <h3 class="box-title"> >>> <?php echo \Config::get('config_memu.main_4.level_6'); ?><!--ข้อมูลข่าวสารอื่นๆ--> <!--ข้อมูลข่าวสารที่น่าสนใจ--></h3> &nbsp;
           <a href="{{ url('/online_electronic_data/form?table=online_document_interesting') }}"><u style="font-size: 12px;">เพิ่มข้อมูล</u></a>
 
           <div class="box-tools pull-right">

@@ -288,20 +288,20 @@
         </li>
 
 
-        <li class="header">เกี่ยวกับหน่วยงาน</li>
+        <li class="header"><?php echo \Config::get('config_memu.main_2.main_show'); ?></li> <!--เกี่ยวกับหน่วยงาน -->
         <li class="<?php echo ($menu_nav == 'history_detail')? 'active':''; ?>">
             <a href="{{ url('/about/history_detail') }}"><i class="fa fa-space-shuttle"></i> 
-                <span style="font-size: 12px;"><?php echo "ประวัติความเป็นมา"; ?></span>
+                <span style="font-size: 12px;"><?php echo \Config::get('config_memu.main_2.level_1'); ?><?php //echo "ประวัติความเป็นมา"; ?></span>
             </a>
         </li>
         <li class="<?php echo ($menu_nav == 'mission_vision')? 'active':''; ?>">
             <a href="{{ url('/about/mission_vision') }}"><i class="fa fa-space-shuttle"></i> 
-                <span style="font-size: 12px;"><?php echo "พันธกิจและวิสัยทัศน์"; ?></span>
+                <span style="font-size: 12px;"><?php echo \Config::get('config_memu.main_2.level_2'); ?><?php //echo "พันธกิจและวิสัยทัศน์"; ?></span>
             </a>
         </li>
         <li class="<?php echo ($menu_nav == 'executive_messages')? 'active':''; ?>">
             <a href="{{ url('/about/executive_messages') }}"><i class="fa fa-space-shuttle"></i> 
-                <span style="font-size: 12px;"><?php echo "สานส์จากผู้บริหาร"; ?></span>
+                <span style="font-size: 12px;"><?php echo \Config::get('config_memu.main_2.level_3'); ?><?php //echo "สานส์จากผู้บริหาร"; ?></span>
             </a>
         </li>
         <!-- <li class="<?php echo ($menu_nav == 'staff_structure')? 'active':''; ?>">
@@ -313,7 +313,7 @@
         <li class="treeview <?php echo ($menu_nav == 'staff_structure')? 'active menu-open':''; ?>">
           <a href="#">
             <i class="fa fa-space-shuttle"></i>
-            <span style="font-size: 12px;">โครงสร้างบุคคลากร</span>
+            <span style="font-size: 12px;"><?php echo \Config::get('config_memu.main_2.level_4'); ?></span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -362,7 +362,7 @@
         <li class="treeview <?php echo ($menu_nav == 'online_electronic_data')? 'active menu-open':''; ?>">
           <a href="#">
             <i class="fa fa-space-shuttle"></i>
-            <span style="font-size: 12px;">ข่าวสารอิเล็กทรอนิกส์ของราชการ</span>
+            <span style="font-size: 12px;"><?php echo \Config::get('config_memu.main_4.main_show'); ?></span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -381,16 +381,16 @@
 
         <li class="<?php echo ($menu_nav == '')? 'active':''; ?>">
             <a href="{{ url('/') }}"><i class="fa fa-space-shuttle"></i> 
-                <span style="font-size: 12px;"><?php echo "ร้องเรียน/ร้องทุกข์"; ?></span>
+                <span style="font-size: 12px;"><?php echo \Config::get('config_memu.main_3'); ?><?php //echo "ร้องเรียน/ร้องทุกข์"; ?></span>
             </a>
         </li>
 
         <li class="header">อื่นๆ</li>
         <li class="<?php echo ($menu_nav == 'visit_book')? 'active':''; ?>">
-            <a href="{{ url('/visit_book') }}"><i class="fa fa-space-shuttle"></i> <span><?php echo "สมุดเยี่ยม"; ?></span></a>
+            <a href="{{ url('/visit_book') }}"><i class="fa fa-space-shuttle"></i> <span><?php echo \Config::get('config_memu.main_5'); ?><?php //echo "สมุดเยี่ยม"; ?></span></a>
         </li>
         <li class="<?php echo ($menu_nav == 'contact_us')? 'active':''; ?>">
-            <a href="{{ url('/admin/contact_us') }}"><i class="fa fa-whatsapp"></i> <span><?php echo "ติดต่อเรา"; ?></span></a>
+            <a href="{{ url('/admin/contact_us') }}"><i class="fa fa-whatsapp"></i> <span><?php echo \Config::get('config_memu.main_6'); ?><?php //echo "ติดต่อเรา"; ?></span></a>
         </li>
 
         <!-- <li class="treeview">
