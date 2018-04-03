@@ -8,12 +8,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h2>ร้องเรียน/ร้องทุกข์</h2>
+        <h2><?php echo \Config::get('config_memu.main_3'); ?></h2>
       </div>
       <div class="col-md-6">
         <ul class="breadcrumbs">
           <li><a href="#">หน้าแรก</a></li>
-          <li>ร้องเรียน/ร้องทุกข์</li>
+          <li><?php echo \Config::get('config_memu.main_3'); ?></li>
         </ul>
       </div>
     </div>

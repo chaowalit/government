@@ -9,7 +9,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h2>ติดต่อเรา</h2>
+            <h2><?php echo \Config::get('config_memu.main_6'); ?></h2>
           </div>
           <div class="col-md-6">
             <ul class="breadcrumbs">

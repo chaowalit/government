@@ -9,12 +9,12 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h2>ข้อมูลข่าวสารอิเล็กทรอนิกส์ของราชการ</h2>
+            <h2><?php echo \Config::get('config_memu.main_4.main_show'); ?></h2>
           </div>
           <div class="col-md-6">
             <ul class="breadcrumbs">
-              <li><a href="#">ดัชนีรวม / ดัชนีประจำแฟ้ม</a></li>
-              <!-- <li>ประวัติความเป็นมา</li> -->
+              <li><a href="#"><?php echo \Config::get('config_memu.main_4.level_1'); ?></a></li>
+              <!-- <li>ดัชนีรวม / ดัชนีประจำแฟ้ม</li> -->
             </ul>
           </div>
         </div>
@@ -44,7 +44,7 @@
                 <div class="tab-pane fade active in" id="tab-4">
 
                     <div class="widget widget-categories" style="margin-bottom: 0px;">
-                      <h4 style="font-size: 13px;"><a href="{{ url('/online_electronic') }}"><i class="fa fa-fw fa-folder-open"></i> ดัชนีรวม / ดัชนีประจำแฟ้ม</a> <span class="head-line"></span></h4>
+                      <h4 style="font-size: 13px;"><a href="{{ url('/online_electronic') }}"><i class="fa fa-fw fa-folder-open"></i> <?php echo \Config::get('config_memu.main_4.level_1'); ?><!--ดัชนีรวม / ดัชนีประจำแฟ้ม--></a> <span class="head-line"></span></h4>
                       <!-- <ul>
                         <li>
                           <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-fw fa-file-text"></i> Brandign</a>
@@ -61,7 +61,7 @@
                       </ul> -->
                     </div>
                   <div class="widget widget-categories" style="margin-bottom: 10px;">
-                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> ข้อมูลข่าวสารตามมาตรา 7 <span class="head-line"></span></h4>
+                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> <?php echo \Config::get('config_memu.main_4.level_2'); ?><!--ข้อมูลข่าวสารตามมาตรา 7--> <span class="head-line"></span></h4>
                       <ul>
                         <?php
                                 if(isset($menu_government_online['online_data_section_7'][0])){
@@ -80,7 +80,7 @@
                       </ul>
                     </div>
                     <div class="widget widget-categories" style="margin-bottom: 10px;">
-                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> ข้อมูลข่าวสารตามมาตรา 9 <span class="head-line"></span></h4>
+                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> <?php echo \Config::get('config_memu.main_4.level_3'); ?><!--ข้อมูลข่าวสารตามมาตรา 9--> <span class="head-line"></span></h4>
                       <ul>
                         <?php
                                 if(isset($menu_government_online['online_data_section_9'][0])){
@@ -99,7 +99,7 @@
                       </ul>
                     </div>
                     <div class="widget widget-categories" style="margin-bottom: 10px;">
-                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> จัดซื้อจัดจ้าง/การเงิน <!-- สัญญาอื่นๆ --><span class="head-line"></span></h4>
+                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> <?php echo \Config::get('config_memu.main_4.level_4'); ?><!--จัดซื้อจัดจ้าง/การเงิน--> <!-- สัญญาอื่นๆ --><span class="head-line"></span></h4>
                       <ul>
                         <?php
                                 if(isset($menu_government_online['online_contract_other'][0])){
@@ -118,7 +118,7 @@
                       </ul>
                     </div>
                     <div class="widget widget-categories" style="margin-bottom: 10px;">
-                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> สรุปรายงาน <!-- เอกสารอื่นๆที่ต้องรายงาน --><span class="head-line"></span></h4>
+                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> <?php echo \Config::get('config_memu.main_4.level_5'); ?><!--สรุปรายงาน--> <!-- เอกสารอื่นๆที่ต้องรายงาน --><span class="head-line"></span></h4>
                       <ul>
                         <?php
                                 if(isset($menu_government_online['other_neccessary'][0])){
@@ -137,7 +137,7 @@
                       </ul>
                     </div>
                     <div class="widget widget-categories" style="margin-bottom: 10px;">
-                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> ข้อมูลข่าวสารอื่นๆ  <!--ข้อมูลข่าวสารที่น่าสนใจ--><span class="head-line"></span></h4>
+                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> <?php echo \Config::get('config_memu.main_4.level_6'); ?><!--ข้อมูลข่าวสารอื่นๆ-->  <!--ข้อมูลข่าวสารที่น่าสนใจ--><span class="head-line"></span></h4>
                       <ul>
                         <?php
                                 if(isset($menu_government_online['document_interesting'][0])){
@@ -181,7 +181,7 @@
 
             <div class="call-action call-action-boxed call-action-style3 clearfix" style="padding: 5px 40px;">
                 <!-- Call Action Text -->
-                <h3 class="primary" style="color: #fff;text-align: center;">ข้อมูลข่าวสารตามมาตรา 7</h3>
+                <h3 class="primary" style="color: #fff;text-align: center;"><?php echo \Config::get('config_memu.main_4.level_2'); ?><!--ข้อมูลข่าวสารตามมาตรา 7--></h3>
             </div>
             <br>
             <div class="box-body table-responsive no-padding">
@@ -222,7 +222,7 @@
 
             <div class="call-action call-action-boxed call-action-style3 clearfix" style="padding: 5px 40px;">
                 <!-- Call Action Text -->
-                <h3 class="primary" style="color: #fff;text-align: center;">ข้อมูลข่าวสารตามมาตรา 9</h3>
+                <h3 class="primary" style="color: #fff;text-align: center;"><?php echo \Config::get('config_memu.main_4.level_3'); ?><!--ข้อมูลข่าวสารตามมาตรา 9--></h3>
             </div>
             <br>
             <div class="box-body table-responsive no-padding">
@@ -263,7 +263,7 @@
 
             <div class="call-action call-action-boxed call-action-style3 clearfix" style="padding: 5px 40px;">
                 <!-- Call Action Text -->
-                <h3 class="primary" style="color: #fff;text-align: center;">จัดซื้อจัดจ้าง/การเงิน</h3>
+                <h3 class="primary" style="color: #fff;text-align: center;"><?php echo \Config::get('config_memu.main_4.level_4'); ?><!--จัดซื้อจัดจ้าง/การเงิน--></h3>
             </div>
             <br>
             <div class="box-body table-responsive no-padding">
@@ -304,7 +304,7 @@
 
             <div class="call-action call-action-boxed call-action-style3 clearfix" style="padding: 5px 40px;">
                 <!-- Call Action Text -->
-                <h3 class="primary" style="color: #fff;text-align: center;">สรุปรายงาน</h3>
+                <h3 class="primary" style="color: #fff;text-align: center;"><?php echo \Config::get('config_memu.main_4.level_5'); ?><!--สรุปรายงาน--></h3>
             </div>
             <br>
             <div class="box-body table-responsive no-padding">
@@ -345,7 +345,7 @@
 
             <div class="call-action call-action-boxed call-action-style3 clearfix" style="padding: 5px 40px;">
                 <!-- Call Action Text -->
-                <h3 class="primary" style="color: #fff;text-align: center;">ข้อมูลข่าวสารอื่นๆ</h3>
+                <h3 class="primary" style="color: #fff;text-align: center;"><?php echo \Config::get('config_memu.main_4.level_6'); ?><!--ข้อมูลข่าวสารอื่นๆ--></h3>
             </div>
             <br>
             <div class="box-body table-responsive no-padding">

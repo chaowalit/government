@@ -9,12 +9,12 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h2>โครงสร้างบุคลากร</h2>
+            <h2><?php echo \Config::get('config_memu.main_2.level_4'); ?></h2>
           </div>
           <div class="col-md-6">
             <ul class="breadcrumbs">
               <li><a href="#">เกี่ยวกับหน่วยงาน</a></li>
-              <li>โครงสร้างบุคลากร</li>
+              <li><?php echo \Config::get('config_memu.main_2.level_4'); ?></li>
             </ul>
           </div>
         </div>

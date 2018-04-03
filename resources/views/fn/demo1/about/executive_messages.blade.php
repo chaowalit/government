@@ -9,12 +9,12 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h2>สานส์จากผู้บริหาร</h2>
+            <h2><?php echo \Config::get('config_memu.main_2.level_3'); ?></h2>
           </div>
           <div class="col-md-6">
             <ul class="breadcrumbs">
               <li><a href="#">เกี่ยวกับหน่วยงาน</a></li>
-              <li>สานส์จากผู้บริหาร</li>
+              <li><?php echo \Config::get('config_memu.main_2.level_3'); ?></li>
             </ul>
           </div>
         </div>
@@ -32,7 +32,7 @@
           <div class="col-md-9 page-content custom-page-content">
 
             <!-- Classic Heading -->
-            <h4 class="classic-title"><span>สานส์จากผู้บริหาร <?php echo @$contact_us[0]->location_name; ?></span></h4>
+            <h4 class="classic-title"><span><?php echo \Config::get('config_memu.main_2.level_3'); ?> <?php echo @$contact_us[0]->location_name; ?></span></h4>
 
             <div class="row">
 

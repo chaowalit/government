@@ -104,7 +104,7 @@ class OnlineElectronicController extends FrontMsgController{
 				'news_online_type' => $Section7,
 				'news_online_info' => $Section7Info,
 				'id_selected' => $id,
-				'main_menu_name' => "ข้อมูลข่าวสารตามมาตรา 7",
+				'main_menu_name' => \Config::get('config_memu.main_4.level_2'),//"ข้อมูลข่าวสารตามมาตรา 7",
 			);
 		}else if($type == 'online_data_section_9'){
 			$OnlineDataSection9 = new OnlineDataSection9;
@@ -124,7 +124,7 @@ class OnlineElectronicController extends FrontMsgController{
 				'news_online_type' => $Section9,
 				'news_online_info' => $Section9Info,
 				'id_selected' => $id,
-				'main_menu_name' => "ข้อมูลข่าวสารตามมาตรา 9",
+				'main_menu_name' => \Config::get('config_memu.main_4.level_3'),//"ข้อมูลข่าวสารตามมาตรา 9",
 			);
 		}else if($type == 'online_contract_other'){
 			$OnlineContractOther = new OnlineContractOther;
@@ -144,7 +144,7 @@ class OnlineElectronicController extends FrontMsgController{
 				'news_online_type' => $ContractOther,
 				'news_online_info' => $ContractOtherInfo,
 				'id_selected' => $id,
-				'main_menu_name' => "จัดซื้อจัดจ้าง/การเงิน",
+				'main_menu_name' => \Config::get('config_memu.main_4.level_4'),//"จัดซื้อจัดจ้าง/การเงิน",
 			);
 		}else if($type == 'other_neccessary'){
 			$OnlineDocumentOtherNeccessary = new OnlineDocumentOtherNeccessary;
@@ -164,7 +164,7 @@ class OnlineElectronicController extends FrontMsgController{
 				'news_online_type' => $OtherNeccessary,
 				'news_online_info' => $OtherNeccessaryInfo,
 				'id_selected' => $id,
-				'main_menu_name' => "สรุปรายงาน",
+				'main_menu_name' => \Config::get('config_memu.main_4.level_5'), //"สรุปรายงาน",
 			);
 		}else if($type == 'document_interesting'){
 			$OnlineDocumentInteresting = new OnlineDocumentInteresting;
@@ -184,7 +184,7 @@ class OnlineElectronicController extends FrontMsgController{
 				'news_online_type' => $DocumentInteresting,
 				'news_online_info' => $DocumentInterestingInfo,
 				'id_selected' => $id,
-				'main_menu_name' => "ข้อมูลข่าวสารอื่นๆ",
+				'main_menu_name' => \Config::get('config_memu.main_4.level_6'),//"ข้อมูลข่าวสารอื่นๆ",
 			);
 		}
 

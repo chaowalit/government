@@ -9,11 +9,11 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h2>ข้อมูลข่าวสารอิเล็กทรอนิกส์ของราชการ</h2>
+            <h2><?php echo \Config::get('config_memu.main_4.main_show'); ?></h2>
           </div>
           <div class="col-md-6">
             <ul class="breadcrumbs">
-              <li><a href="#">ดัชนีรวม / ดัชนีประจำแฟ้ม</a></li>
+              <li><a href="#">{{ $main_menu_name }}</a></li>
               <!-- <li>ประวัติความเป็นมา</li> -->
             </ul>
           </div>
@@ -44,7 +44,7 @@
                 <div class="tab-pane fade active in" id="tab-4">
 
                     <div class="widget widget-categories" style="margin-bottom: 0px;">
-                      <h4 style="font-size: 13px;"><a href="{{ url('/online_electronic') }}"><i class="fa fa-fw fa-folder-open"></i> ดัชนีรวม / ดัชนีประจำแฟ้ม</a> <span class="head-line"></span></h4>
+                      <h4 style="font-size: 13px;"><a href="{{ url('/online_electronic') }}"><i class="fa fa-fw fa-folder-open"></i> <?php echo \Config::get('config_memu.main_4.level_1'); ?></a> <span class="head-line"></span></h4>
                       <!-- <ul>
                         <li>
                           <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-fw fa-file-text"></i> Brandign</a>
@@ -61,7 +61,7 @@
                       </ul> -->
                     </div>
                   <div class="widget widget-categories" style="margin-bottom: 10px;">
-                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> ข้อมูลข่าวสารตามมาตรา 7 <span class="head-line"></span></h4>
+                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> <?php echo \Config::get('config_memu.main_4.level_2'); ?> <span class="head-line"></span></h4>
                       <ul>
                         <?php
                                 if(isset($menu_government_online['online_data_section_7'][0])){
@@ -80,7 +80,7 @@
                       </ul>
                     </div>
                     <div class="widget widget-categories" style="margin-bottom: 10px;">
-                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> ข้อมูลข่าวสารตามมาตรา 9 <span class="head-line"></span></h4>
+                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> <?php echo \Config::get('config_memu.main_4.level_3'); ?> <span class="head-line"></span></h4>
                       <ul>
                         <?php
                                 if(isset($menu_government_online['online_data_section_9'][0])){
@@ -99,7 +99,7 @@
                       </ul>
                     </div>
                     <div class="widget widget-categories" style="margin-bottom: 10px;">
-                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> จัดซื้อจัดจ้าง/การเงิน <!-- สัญญาอื่นๆ --><span class="head-line"></span></h4>
+                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> <?php echo \Config::get('config_memu.main_4.level_4'); ?> <!-- สัญญาอื่นๆ --><span class="head-line"></span></h4>
                       <ul>
                         <?php
                                 if(isset($menu_government_online['online_contract_other'][0])){
@@ -118,7 +118,7 @@
                       </ul>
                     </div>
                     <div class="widget widget-categories" style="margin-bottom: 10px;">
-                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> สรุปรายงาน <!-- เอกสารอื่นๆที่ต้องรายงาน --><span class="head-line"></span></h4>
+                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> <?php echo \Config::get('config_memu.main_4.level_5'); ?> <!-- เอกสารอื่นๆที่ต้องรายงาน --><span class="head-line"></span></h4>
                       <ul>
                         <?php
                                 if(isset($menu_government_online['other_neccessary'][0])){
@@ -137,7 +137,7 @@
                       </ul>
                     </div>
                     <div class="widget widget-categories" style="margin-bottom: 10px;">
-                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> ข้อมูลข่าวสารอื่นๆ  <!--ข้อมูลข่าวสารที่น่าสนใจ--><span class="head-line"></span></h4>
+                      <h4 style="font-size: 13px;"><i class="fa fa-fw fa-folder-open"></i> <?php echo \Config::get('config_memu.main_4.level_6'); ?>  <!--ข้อมูลข่าวสารที่น่าสนใจ--><span class="head-line"></span></h4>
                       <ul>
                         <?php
                                 if(isset($menu_government_online['document_interesting'][0])){
