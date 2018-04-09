@@ -54,6 +54,17 @@ class InformationController extends AdminMsgController{
 	}
 
 	public function save(Request $Requests){
+		$file_path = "";
+		if($Requests->file('file_path')){
+			$file = $Requests->file('file_path');
+			$destinationPath = public_path('uploads/news');
+			$fileName = time().'.'.$file->getClientOriginalExtension();
+			$file->move($destinationPath, $fileName);
+			$file_path = 'public/uploads/news/'.$fileName;
+		}else{
+			$file_path = $Requests->get('img_old', '');
+		}
+
 		$post_date = "";
 		if(!empty($Requests->get('post_date', ''))){
 			$temp = explode('-', $Requests->get('post_date', ''));
@@ -65,6 +76,7 @@ class InformationController extends AdminMsgController{
 				"post_date" => $post_date,
 				"detail1" => $Requests->get('detail1', ''),
 				"active" => $Requests->get('active', ''),
+				"file_path" => $file_path,
 				"created_at" => date("Y-m-d H:i:s"),
 				"updated_at" => date("Y-m-d H:i:s"),
 			);
@@ -80,6 +92,7 @@ class InformationController extends AdminMsgController{
 				"post_date" => $post_date,
 				"detail1" => $Requests->get('detail1', ''),
 				"active" => $Requests->get('active', ''),
+				"file_path" => $file_path,
 				"updated_at" => date("Y-m-d H:i:s"),
 			);
 			$Information = new Information;
@@ -95,7 +108,9 @@ class InformationController extends AdminMsgController{
 	public function delete($id = ''){
 		$Information = new Information;
 		$result = $Information->getDataById($id);
-		
+		if(file_exists(base_path($result[0]->file_path))){
+			@unlink(base_path($result[0]->file_path));
+		}
 		$Information->delete_row($id);
 
 		return redirect('admin/information');

@@ -93,12 +93,24 @@
                             <?php echo @$result[0]->detail1; ?>
                         </textarea>
                     </div>
+
+                    <div class="form-group">
+                      <label for="">อัปโหลดไฟล์</label>
+                      <input type="file" name="file_path" id="file_path">
+
+                      <p class="help-block">รองรับไฟล์ pdf เท่านั้น</p>
+                        <p>
+                        <a href="<?php echo isset($result[0]->file_path)? '/'.$result[0]->file_path:''; ?>" target="_blank">{{ @$result[0]->file_path }}</a>
+                        </p>
+                    </div>
                   </div>
                     <!-- /.box-body -->
 
                   <div class="box-footer">
                     {!! csrf_field() !!}
                     <input type="hidden" name="edit_id" id="edit_id" value="<?php echo isset($result[0]->id)? $result[0]->id:""; ?>">
+                    <input type="hidden" name="img_old" id="img_old" value="<?php echo isset($result[0]->file_path)? $result[0]->file_path:""; ?>">
+
                     <button type="submit" class="btn btn-primary">บันทึก</button>
                     <a href="{{ url('/admin/information') }}" class="btn btn-warning">ยกเลิก</a>
                   </div>

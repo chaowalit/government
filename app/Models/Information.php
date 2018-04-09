@@ -11,6 +11,7 @@ class Information extends Model{
 		'title',
     	'post_date',
     	'detail1',
+    	'file_path',
     	'active',
     ];
 

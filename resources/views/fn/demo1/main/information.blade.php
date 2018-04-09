@@ -50,7 +50,7 @@
                 <a href="#"><img src="images/blog-mini-01.jpg" alt="" /></a>
               </div>
               <div class="widget-content">
-                <h5><a href="#">{{ $value->title }}</a></h5>
+                <h5><a href="<?php echo url('detail/information').'/'.$value->id; ?>">{{ $value->title }}</a></h5>
                 <span>เมื่อวันที่ {{ date("d-m-Y", strtotime($value->post_date)) }}</span>
               </div>
               <div class="clearfix"></div>
@@ -96,6 +96,9 @@
         </ul>
         <p><?php echo $information[0]->detail1 ?></p>
         <!-- <a class="main-button" href="#">Read More <i class="fa fa-angle-right"></i></a> -->
+        <?php if(!empty($information[0]->file_path)){ ?>
+        <a href="<?php echo '/'.$information[0]->file_path; ?>" target="_blank">เอกสารเพิ่มเติม</a>
+        <?php } ?>
       </div>
     </div>
 
