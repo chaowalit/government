@@ -211,6 +211,11 @@
                 <span style="font-size: 12px;"><?php echo "Slide Banner"; ?></span>
             </a>
         </li>
+        <li class="<?php echo ($menu_nav == 'bg_config')? 'active':''; ?>">
+            <a href="{{ url('admin/bg_config') }}"><i class="fa fa-space-shuttle"></i> 
+                <span style="font-size: 12px;"><?php echo "ตั้งค่าพื้นหลัง"; ?></span>
+            </a>
+        </li>
         <li class="<?php echo ($menu_nav == 'other_link')? 'active':''; ?>">
             <a href="{{ url('admin/other_link') }}"><i class="fa fa-space-shuttle"></i> 
                 <span style="font-size: 12px;"><?php echo "ลิ้งหน่วยงานอื่นๆ"; ?></span>
@@ -391,6 +396,12 @@
         </li>
         <li class="<?php echo ($menu_nav == 'contact_us')? 'active':''; ?>">
             <a href="{{ url('/admin/contact_us') }}"><i class="fa fa-whatsapp"></i> <span><?php echo \Config::get('config_memu.main_6'); ?><?php //echo "ติดต่อเรา"; ?></span></a>
+        </li>
+
+        <li class="<?php echo ($menu_nav == 'user')? 'active':''; ?>">
+            <a href="{{ url('/admin/user') }}"><i class="fa fa-space-shuttle"></i> <span>
+                จัดการผู้ใช้งาน
+            </span></a>
         </li>
 
         <!-- <li class="treeview">

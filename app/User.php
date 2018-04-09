@@ -30,4 +30,25 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getTableName(){
+        return 'users';
+    }
+
+    public function getUserAll(){
+        return \DB::table($this->getTableName())
+                    ->orderBy('updated_at', 'desc')
+                    ->limit(1)
+                    ->get();
+    }
+
+    public function save_data($data = array(), $id = ''){
+        if($id == ''){
+            return \DB::table($this->getTableName())->insert($data);
+        }else if($id != ''){
+            return \DB::table($this->getTableName())->where('id', $id)->update($data);
+        }else{
+            echo "Error Otop";die;
+        }
+    }
 }

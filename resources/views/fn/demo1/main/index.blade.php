@@ -24,6 +24,12 @@
         .classic-testimonials .testimonial-content-v2 {
             padding: 5px 8px !important;
         }
+        .slide-text {
+            border-radius: 20px !important;
+            padding: 6px 18px !important;
+            box-shadow: 1px 4px 3px -1px rgba(50, 50, 50, 0.75) !important;
+            background-color: #fff !important;
+        }
     </style>
     <!-- Start Home Page Slider -->
     <section id="home">
@@ -97,20 +103,42 @@
 
             <!-- Start Testimonials Carousel -->
             <div class="custom-carousel-slide-news show-one-slide touch-carousel slide_news" data-appeared-items="1">
+                <?php
+                if(isset($information[0])){
+                    for ($i = 0 ; $i < 2 ; $i++) {
+                        if(isset($information[$i])){
+              ?>
               <!-- Testimonial 1 -->
               <div class="classic-testimonials item">
-                <div class="testimonial-content" style="border-radius: 20px;padding: 6px 18px;box-shadow: 1px 4px 3px -1px rgba(50, 50, 50, 0.75);background-color: #fff;">
-                  <p style="font-size: 14px;">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <div class="testimonial-content slide-text">
+                    <a href="<?php echo url('detail/information').'/'.$information[$i]->id; ?>">
+                        <p style="font-size: 14px;">{{ date("d-m-Y", strtotime($information[$i]->post_date)) }} >>> {{ $information[$i]->title }}</p>
+                    </a>
                 </div>
                 <!-- <div class="testimonial-author"><span>John Doe</span> - Customer</div> -->
               </div>
-              <!-- Testimonial 1 -->
+              <?php }}} ?>
+                <?php
+                    if(isset($purchase_news[0])){
+                        for ($i = 0 ; $i < 2 ; $i++) {
+                            if(isset($purchase_news[$i])){
+                ?>
+                <!-- Testimonial 1 -->
               <div class="classic-testimonials item">
-                <div class="testimonial-content" style="border-radius: 20px;padding: 6px 18px;box-shadow: 1px 4px 3px -1px rgba(50, 50, 50, 0.75);background-color: #fff;">
-                  <p style="font-size: 14px;">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <div class="testimonial-content slide-text">
+                    <a href="<?php echo asset($purchase_news[$i]->file_path); ?>" target="_blank">
+                        <p style="font-size: 14px;">{{ date("d-m-Y", strtotime($purchase_news[$i]->post_date)) }} >>> {{ $purchase_news[$i]->title }}</p>
+                    </a>
                 </div>
                 <!-- <div class="testimonial-author"><span>John Doe</span> - Customer</div> -->
               </div>
+                <?php }}} ?>
+              <!-- Testimonial 1 -->
+              <!-- <div class="classic-testimonials item">
+                <div class="testimonial-content" style="border-radius: 20px;padding: 6px 18px;box-shadow: 1px 4px 3px -1px rgba(50, 50, 50, 0.75);background-color: #fff;">
+                  <p style="font-size: 14px;">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+              </div> -->
 
             </div>
             <!-- End Testimonials Carousel -->

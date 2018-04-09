@@ -161,7 +161,7 @@
             </div>
 
             <!-- Categories Widget -->
-            <div class="widget widget-categories">
+            <!-- <div class="widget widget-categories">
               <h4>โครงสร้างบุคลากร <span class="head-line"></span></h4>
               <ul>
                 <li>
@@ -177,10 +177,10 @@
                   <a href="#">Graphic</a>
                 </li>
               </ul>
-            </div>
+            </div> -->
 
             <!-- Popular Posts widget -->
-            <div class="widget widget-popular-posts">
+            <!-- <div class="widget widget-popular-posts">
               <h4>Popular Post <span class="head-line"></span></h4>
               <ul>
                 <li>
@@ -214,18 +214,18 @@
                   <div class="clearfix"></div>
                 </li>
               </ul>
-            </div>
+            </div> -->
 
             <!-- Video Widget -->
-            <div class="widget">
+            <!-- <div class="widget">
               <h4>Video <span class="head-line"></span></h4>
               <div>
                 <iframe src="http://player.vimeo.com/video/63322694?byline=0&amp;portrait=0&amp;badge=0" width="800" height="450"></iframe>
               </div>
-            </div>
+            </div> -->
 
             <!-- Tags Widget -->
-            <div class="widget widget-tags">
+            <!-- <div class="widget widget-tags">
               <h4>Tags <span class="head-line"></span></h4>
               <div class="tagcloud">
                 <a href="#">Portfolio</a>
@@ -240,7 +240,7 @@
                 <a href="#">Icons</a>
                 <a href="#">Google</a>
               </div>
-            </div>
+            </div> -->
 
           </div>
           <!--End sidebar-->

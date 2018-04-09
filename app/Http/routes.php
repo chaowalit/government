@@ -143,6 +143,11 @@ Route::get('online_electronic_data/form_category', 'admin\OnlineElectronicDataCo
 Route::post('online_electronic_data/save_category', 'admin\OnlineElectronicDataController@save_category');
 Route::get('online_electronic_data/edit_category/{type}/{id}', 'admin\OnlineElectronicDataController@edit_category');
 
+Route::get('admin/user', 'admin\UsersController@index');
+Route::post('admin/user/save', 'admin\UsersController@save');
+
+Route::get('admin/bg_config', 'admin\BgConfigController@index');
+Route::post('admin/bg_config/save', 'admin\BgConfigController@save');
 /*
 
 */

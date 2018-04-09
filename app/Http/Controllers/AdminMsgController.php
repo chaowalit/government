@@ -76,6 +76,18 @@ class AdminMsgController extends Controller
 								'menu_name' => 'ติดต่อเรา',
 							),
 						),
+		'user' => array(
+							array(
+								'menu_nav' => 'user',
+								'menu_name' => 'จัดการผู้ใช้งาน',
+							),
+						),
+		'bg_config' => array(
+							array(
+								'menu_nav' => 'bg_config',
+								'menu_name' => 'ตั้งค่าพื้นหลัง',
+							),
+						),
 	);
 
 	public function get_menu_admin(){
