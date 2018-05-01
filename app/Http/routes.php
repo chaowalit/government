@@ -34,6 +34,7 @@ Route::get('online_electronic', 'fn\v1\OnlineElectronicController@index');
 Route::get('sub_online_electronic/{type}/{id}', 'fn\v1\OnlineElectronicController@sub_online_electronic');
 
 Route::get('complaint', 'fn\v1\ComplaintController@index');
+Route::post('complaint/save', 'fn\v1\ComplaintController@save');
 
 /*
 Back End purchase
@@ -177,6 +178,9 @@ Route::get('admin/staff_structure/form_category', 'admin\StaffStructureControlle
 Route::post('admin/staff_structure/save_category', 'admin\StaffStructureController@save_category');
 Route::get('admin/staff_structure/edit_category/{id}', 'admin\StaffStructureController@edit_category');
 Route::get('admin/staff_structure/delete_category/{id}', 'admin\StaffStructureController@delete_category');
+
+Route::get('admin/complaint', 'admin\ComplaintController@index');
+Route::get('admin/complaint/delete/{id}', 'admin\ComplaintController@delete');
 
 //------------------------------------------------------------------------------
 Route::get('/search_customer', function () {

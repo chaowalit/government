@@ -384,8 +384,8 @@
           </ul>
         </li>
 
-        <li class="<?php echo ($menu_nav == '')? 'active':''; ?>">
-            <a href="{{ url('/') }}"><i class="fa fa-space-shuttle"></i> 
+        <li class="<?php echo ($menu_nav == 'complaint')? 'active':''; ?>">
+            <a href="{{ url('admin/complaint') }}"><i class="fa fa-space-shuttle"></i> 
                 <span style="font-size: 12px;"><?php echo \Config::get('config_memu.main_3'); ?><?php //echo "ร้องเรียน/ร้องทุกข์"; ?></span>
             </a>
         </li>

@@ -88,6 +88,12 @@ class AdminMsgController extends Controller
 								'menu_name' => 'ตั้งค่าพื้นหลัง',
 							),
 						),
+		'complaint' => array(
+							array(
+								'menu_nav' => 'complaint',
+								'menu_name' => 'ร้องเรียน/ร้องทุกข์',
+							),
+						),
 	);
 
 	public function get_menu_admin(){

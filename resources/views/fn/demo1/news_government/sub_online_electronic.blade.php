@@ -216,7 +216,7 @@
                                                   <td style="text-align: center;">{{ $value->floor_at }}</td>
                                                   <td style="text-align: center;">{{ $value->doc_at }}</td>
                                                   <td style="text-align: center;">
-                                                    <a href="<?php echo $value->file_name; ?>" target="_blank"><span class="label label-primary">โหลด</span></a>
+                                                    <a href="/<?php echo $value->file_name; ?>" target="_blank"><span class="label label-primary">โหลด</span></a>
                                                     </td>
                                                 </tr>
                                     <?php } } } ?>
