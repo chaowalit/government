@@ -39,5 +39,16 @@ class ComplaintController extends AdminMsgController{
 		$Requests->session()->flash('msg', "ทำรายการลบข้อมูล สำเร็จแล้ว");
 		return redirect('admin/complaint');
 	}
+
+	public function show($id = ''){
+		$ComplainRequest = new ComplainRequest;
+		$ComplainRequest = $ComplainRequest->getDataById($id);
+
+		$data = array(
+			'menu_name' => $this->menu_name,
+			'ComplainRequest' => $ComplainRequest,
+		);
+		$this->render_view('admin/complaint/show', $data, $this->menu_nav, 1);
+	}
 }
 ?>

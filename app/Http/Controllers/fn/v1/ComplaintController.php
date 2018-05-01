@@ -42,27 +42,37 @@ class ComplaintController extends FrontMsgController{
 	}
 
 	public function save(Request $Requests){
-		$data = array(
-				"full_name" => $Requests->get('full_name', ''),
-				"thai_id" => $Requests->get('thai_id', ''),
-				"age" => $Requests->get('age', ''),
-				"sex" => $Requests->get('sex', ''),
-				"career" => $Requests->get('career', ''),
-				"tel" => $Requests->get('tel', ''),
-				"fax" => $Requests->get('fax', ''),
-				"email" => $Requests->get('email', ''),
-				"address" => $Requests->get('address', ''),
-				"title" => $Requests->get('title', ''),
-				"detail" => $Requests->get('detail', ''),
-				"created_at" => date("Y-m-d H:i:s"),
-				"updated_at" => date("Y-m-d H:i:s"),
-			);
-		$ComplainRequest = new ComplainRequest;
-		$ComplainRequest->save_data($data);
+		// validate the user-entered Captcha code when the form is submitted
+	    $code = $Requests->input('CaptchaCode');
+	    $isHuman = captcha_validate($code);
 
-		$Requests->session()->flash('bg_color', 'success');
-		$Requests->session()->flash('msg', "ทำรายการบันทึกข้อมูล สำเร็จแล้ว");
-		return redirect('complaint');
+	    if ($isHuman) {
+	      $data = array(
+					"full_name" => $Requests->get('full_name', ''),
+					"thai_id" => $Requests->get('thai_id', ''),
+					"age" => $Requests->get('age', ''),
+					"sex" => $Requests->get('sex', ''),
+					"career" => $Requests->get('career', ''),
+					"tel" => $Requests->get('tel', ''),
+					"fax" => $Requests->get('fax', ''),
+					"email" => $Requests->get('email', ''),
+					"address" => $Requests->get('address', ''),
+					"title" => $Requests->get('title', ''),
+					"detail" => $Requests->get('detail', ''),
+					"created_at" => date("Y-m-d H:i:s"),
+					"updated_at" => date("Y-m-d H:i:s"),
+				);
+			$ComplainRequest = new ComplainRequest;
+			$ComplainRequest->save_data($data);
+
+			$Requests->session()->flash('bg_color', 'success');
+			$Requests->session()->flash('msg', "ทำรายการบันทึกข้อมูล สำเร็จแล้ว");
+			return redirect('complaint');
+	    } else {
+	      	$Requests->session()->flash('bg_color', 'warning');
+			$Requests->session()->flash('msg', "ทำรายการบันทึกข้อมูล ไม่สำเร็จ โปรดลองอีกครั้ง");
+			return redirect('complaint');
+	    }
 	}
 }
 ?>

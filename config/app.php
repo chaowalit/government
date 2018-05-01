@@ -157,6 +157,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Maatwebsite\Excel\ExcelServiceProvider::class,
+
+        LaravelCaptcha\Providers\LaravelCaptchaServiceProvider::class,
     ],
 
     /*

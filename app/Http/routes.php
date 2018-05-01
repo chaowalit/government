@@ -181,6 +181,7 @@ Route::get('admin/staff_structure/delete_category/{id}', 'admin\StaffStructureCo
 
 Route::get('admin/complaint', 'admin\ComplaintController@index');
 Route::get('admin/complaint/delete/{id}', 'admin\ComplaintController@delete');
+Route::get('admin/complaint/show/{id}', 'admin\ComplaintController@show');
 
 //------------------------------------------------------------------------------
 Route::get('/search_customer', function () {

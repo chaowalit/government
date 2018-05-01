@@ -56,7 +56,7 @@
                           <th>อายุ</th>
                           <th>เพศ</th>
                           <th>อาชีพ</th>
-                          <th style="width: 50px;"></th>
+                          <th style="width: 100px;"></th>
                         </tr>
 
                         <?php if(isset($ComplainRequest[0])){ 
@@ -77,6 +77,8 @@
                             {{ $v->career }}
                           </td>
                           <td>
+                            <a href="<?php echo url('/admin/complaint/show').'/'.$v->id; ?>">ดูข้อมูล</a>
+                            &nbsp;&nbsp;
                             <a href="<?php echo url('/admin/complaint/delete').'/'.$v->id; ?>" onclick="return confirm('คุณต้องการลบรายการนี้หรือไม่ ?')">ลบ</a>
                           </td>
                         </tr>

@@ -96,7 +96,7 @@
         </ul>
         <hr>
       </div>
-        <?php if(session('bg_color') == 'success'){ ?>
+        <?php if(session('bg_color')){ ?>
             <div class="alert alert-<?php echo session('bg_color'); ?> alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <?php echo session('msg'); ?>
@@ -238,6 +238,15 @@
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-2"></div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+                {!! captcha_image_html('ExampleCaptcha') !!}
+                <input type="text" id="CaptchaCode" name="CaptchaCode">
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
           </div>
 
           <div style="padding: 6px 40px;" class="call-action call-action-boxed call-action-style1 clearfix">

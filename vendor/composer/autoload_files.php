@@ -15,5 +15,6 @@ return array(
     '5255c38a0faeba867671b61dfda6d864' => $vendorDir . '/paragonie/random_compat/lib/random.php',
     'f0906e6318348a765ffb6eb24e0d0938' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
     '58571171fd5812e6e447dce228f52f4d' => $vendorDir . '/laravel/framework/src/Illuminate/Support/helpers.php',
+    'c78728b4802e1a9e0e9e89908b46d100' => $vendorDir . '/captcha-com/laravel-captcha/src/Support/helpers.php',
     '8fde5feda9697fe0ee53a3938c839fb0' => $baseDir . '/app/Helpers/Helper.php',
 );
