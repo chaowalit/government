@@ -109,7 +109,7 @@
                 <label class="control-label">ชื่อ-สกุล ผู้ส่ง</label>
                 <div class="controls">
                   <input class="form-control" name="full_name" id="full_name" type="text" required="true">
-                   <i class="fa fa-pencil form-control-feedback"></i>
+                   <i class="fa fa-pencil form-control-feedback" style="color: red;"></i>
                 </div>
               </div>
             </div>
@@ -123,7 +123,7 @@
                 <label class="control-label">เลขบัตรประชาชน</label>
                 <div class="controls">
                   <input class="form-control" name="thai_id" id="thai_id" type="text" required="true">
-                   <i class="fa fa-pencil form-control-feedback"></i>
+                   <i class="fa fa-pencil form-control-feedback" style="color: red;"></i>
                 </div>
               </div>
             </div>
@@ -172,7 +172,7 @@
                 <label class="control-label">โทรศัพท์</label>
                 <div class="controls">
                   <input class="form-control" name="tel" id="tel" type="text" required="true">
-                   <i class="fa fa-pencil form-control-feedback"></i>
+                   <i class="fa fa-pencil form-control-feedback" style="color: red;"></i>
                 </div>
               </div>
             </div>
