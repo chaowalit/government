@@ -14,6 +14,8 @@ use App\Models\OnlineContractOther;
 use App\Models\OnlineDocumentOtherNeccessary;
 use App\Models\OnlineDocumentInteresting;
 use App\Models\StaffStructure;
+use App\Models\PopupBanner;
+use Cookie;
 
 class FrontMsgController extends Controller
 {
@@ -30,6 +32,17 @@ class FrontMsgController extends Controller
 	public function __construct()
     {
         $this->template = env('TEMPLATE', 'demo1');
+        $this->r_redirect_popup();
+    }
+
+    public function r_redirect_popup(){
+        $PopupBanner = new PopupBanner;
+        $check_popup = $PopupBanner->getPopupBannerAllFN();
+        if(count($check_popup) == 1){
+            if(!Cookie::get('popup_banner')){
+                \Redirect::to('screen')->send();
+            }
+        }
     }
 
     public function getContactUs(){

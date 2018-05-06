@@ -4,41 +4,39 @@ namespace App\Http\Controllers\fn\v1;
 
 use Illuminate\Http\Request;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Http\Controllers\fn\FrontMsgController;
 use App\Models\ContactUs;
 use App\Models\PopupBanner;
+use Cookie;
 
-class FirstController extends FrontMsgController{
+class FirstController extends Controller{
 
-
-	private $contact_us = array();
-	private $menu_government_online = array();
-	private $staff_structure = array();
 	public function __construct()
     {
-        parent::__construct();
-        $this->contact_us = $this->getContactUs();
-        $this->menu_government_online = $this->getMenuNewsGovernmentOnline();
-        $this->staff_structure = $this->getMenuStaffStructure();
+
     }
 
 	public function index(){
-		$ContactUs = new ContactUs;
-		$contact_us = $ContactUs->getContactUsAll();
+		$PopupBanner = new PopupBanner;
+		$popup = $PopupBanner->getPopupBannerAllFN();
+		if(count($popup) == 0){
+			return redirect('/');
+		}
+
+		if($popup[0]->show_every == '1 day'){
+			Cookie::queue('popup_banner', true, 1440);
+		}else{
+			Cookie::queue('popup_banner', true, 60);
+		}
 
 		$data = array(
-			'template' => $this->template,
-			'menu_nav' => $this->menu_nav['complaint'],
-			'menu_l1' => '1',
-			'menu_l2' => '1',
-			'logo_url' => $this->getLogo(),
-			'staff_structure' => $this->staff_structure,
-			'menu_government_online' => $this->menu_government_online,
-			'contact_us' => $this->contact_us,
+			'template' => env('TEMPLATE', 'demo1'),
+			'popup' => $popup
 		);
 
-		return view('fn/'.$this->template.'/first_screen/show', $data);
+		return view('fn/'.env('TEMPLATE', 'demo1').'/first_screen/show', $data);
 	}
 }
 ?>

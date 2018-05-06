@@ -66,6 +66,15 @@
   <script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
   <script type="text/javascript" src="js/jquery.themepunch.tools.min.js"></script>   -->
 
+    <style type="text/css">
+        .show-popup {
+            background-color: #ccc;
+            background-image: url("{{ $popup[0]->image_popup }}");
+            background-repeat: round;
+            /*background-position: center;*/
+            background-size: 100% auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -86,15 +95,19 @@
     <!-- Start Content -->
     <div id="content">
       <div class="container">
-        <div class="page-content" style="background-color: #ccc;">
+        <div class="page-content show-popup">
           <div class="error-page">
-            <h1>404</h1>
-            <h3>File not Found</h3>
-            <p>We're sorry, but the page you were looking for doesn't exist.</p>
+            <h1>&nbsp;</h1>
+            <h3>&nbsp;</h3>
+            <p>&nbsp;</p>
             <div class="text-center">
-            	<a href="index.html" class="btn-system btn-small">Back To Home</a>
+            	<a href="index.html" class="btn-system btn-small" style="visibility: hidden;">Back To Home</a>
             </div>
           </div>
+        </div>
+        <br>
+        <div class="text-center">
+              <a href="{{ url('/') }}" class="btn-system btn-small">เข้าสู่หน้าเว็บไซด์</a>
         </div>
       </div>
     </div>

@@ -49,5 +49,16 @@ class PopupBanner extends Model{
 	public function delete_row($id){
 		return \DB::table($this->table)->where('id', '=', $id)->delete();
 	}
+	//---------------------------------------------------------------------
+	public function getPopupBannerAllFN(){
+		return \DB::table($this->table)
+					->where('active', 1)
+					->where('start_date' ,'<', date("Y-m-d H:i:s"))
+					->where('end_date' ,'>', date("Y-m-d H:i:s"))
+					->orderBy('updated_at', 'desc')
+					->orderBy('active', 'desc')
+					->limit(1)
+					->get();
+	}
 }
 ?>
