@@ -38,6 +38,8 @@ Route::get('sub_online_electronic/{type}/{id}', 'fn\v1\OnlineElectronicControlle
 Route::get('complaint', 'fn\v1\ComplaintController@index');
 Route::post('complaint/save', 'fn\v1\ComplaintController@save');
 
+Route::get('survey', 'fn\v1\SurveyController@index');
+
 /*
 Back End purchase
 */
