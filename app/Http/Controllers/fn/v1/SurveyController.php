@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\fn\FrontMsgController;
 use App\Models\ContactUs;
-// use App\Models\Survey;
+use App\Models\Survey;
 
 class SurveyController extends FrontMsgController{
 
@@ -42,37 +42,41 @@ class SurveyController extends FrontMsgController{
 	}
 
 	public function save(Request $Requests){
+		// echo "<pre>";print_r($_POST);die;
 		// validate the user-entered Captcha code when the form is submitted
-	    $code = $Requests->input('CaptchaCode');
-	    $isHuman = captcha_validate($code);
+	    // $code = $Requests->input('CaptchaCode');
+	    // $isHuman = captcha_validate($code);
 
-	    if ($isHuman) {
-	      $data = array(
-					"full_name" => $Requests->get('full_name', ''),
-					"thai_id" => $Requests->get('thai_id', ''),
-					"age" => $Requests->get('age', ''),
+	    // if ($isHuman) {
+	      	$data = array(
 					"sex" => $Requests->get('sex', ''),
+					"age" => $Requests->get('age', ''),
 					"career" => $Requests->get('career', ''),
-					"tel" => $Requests->get('tel', ''),
-					"fax" => $Requests->get('fax', ''),
-					"email" => $Requests->get('email', ''),
-					"address" => $Requests->get('address', ''),
-					"title" => $Requests->get('title', ''),
-					"detail" => $Requests->get('detail', ''),
+					"data_info_do" => serialize($Requests->get('data_info_do', '')),
+					"data_info_at9" => serialize($Requests->get('data_info_at9', '')),
+					"data_info_other" => serialize($Requests->get('data_info_other', '')),
+					"easy_data" => $Requests->get('easy_data', ''),
+					"correct_data" => $Requests->get('correct_data', ''),
+					"use_data" => $Requests->get('use_data', ''),
+					"people_service" => $Requests->get('people_service', ''),
+					"location_easy_use" => $Requests->get('location_easy_use', ''),
+					"overview_data" => $Requests->get('overview_data', ''),
+					"comments_open_data" => $Requests->get('comments_open_data', ''),
+					"comments_other" => $Requests->get('comments_other', ''),
 					"created_at" => date("Y-m-d H:i:s"),
 					"updated_at" => date("Y-m-d H:i:s"),
 				);
-			$ComplainRequest = new ComplainRequest;
-			$ComplainRequest->save_data($data);
+			$Survey = new Survey;
+			$Survey->save_data($data);
 
 			$Requests->session()->flash('bg_color', 'success');
 			$Requests->session()->flash('msg', "ทำรายการบันทึกข้อมูล สำเร็จแล้ว");
-			return redirect('complaint');
-	    } else {
-	      	$Requests->session()->flash('bg_color', 'warning');
-			$Requests->session()->flash('msg', "ทำรายการบันทึกข้อมูล ไม่สำเร็จ โปรดลองอีกครั้ง");
-			return redirect('complaint');
-	    }
+			return redirect('survey');
+	  //   } else {
+	  //     	$Requests->session()->flash('bg_color', 'warning');
+			// $Requests->session()->flash('msg', "ทำรายการบันทึกข้อมูล ไม่สำเร็จ โปรดลองอีกครั้ง");
+			// return redirect('complaint');
+	  //   }
 	}
 }
 ?>

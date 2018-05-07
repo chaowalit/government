@@ -8,17 +8,20 @@ class Survey extends Model{
 	protected $table = 'survey';
 
 	protected $fillable = [
-		'full_name',
-		'thai_id',
-    	'age',
-    	'sex',
+		'sex',
+		'age',
     	'career',
-    	'tel',
-    	'fax',
-    	'email',
-    	'address',
-    	'title',
-    	'detail',
+    	'data_info_do',
+    	'data_info_at9',
+    	'data_info_other',
+    	'easy_data',
+    	'correct_data',
+    	'use_data',
+    	'people_service',
+    	'location_easy_use',
+    	'overview_data',
+    	'comments_open_data',
+    	'comments_other',
     ];
 
     protected $casts = [
