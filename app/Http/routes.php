@@ -40,6 +40,7 @@ Route::post('complaint/save', 'fn\v1\ComplaintController@save');
 
 Route::get('survey', 'fn\v1\SurveyController@index');
 Route::post('survey/save', 'fn\v1\SurveyController@save');
+Route::get('survey/summary', 'fn\v1\SurveySummaryController@index');
 
 /*
 Back End purchase

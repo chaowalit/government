@@ -64,8 +64,8 @@ class Survey extends Model{
 		return \DB::table($this->table)
 					//->where('active', 1)
 					//->orderBy('post_date', 'desc')
-					//->orderBy('updated_at', 'desc')
-					->limit($limit)
+					->orderBy('updated_at', 'desc')
+					//->limit($limit)
 					->get();
 	}
 }

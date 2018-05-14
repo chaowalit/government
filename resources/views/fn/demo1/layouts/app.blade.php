@@ -322,7 +322,7 @@
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="{{ url('/survey') }}"> แบบฟอร์มสำรวจความพึงพอใจ</a></li>
-                            <li><a href="#"> สรุปผลความพึงพอใจ</a></li>
+                            <li><a href="{{ url('/survey/summary') }}"> สรุปผลความพึงพอใจ</a></li>
                             <li><a href="#"> สถิติผู้เข้าใช้บริการ</a></li>
                             <li><a href="#"> กระดานถาม-ตอบข้อคิดเห็น</a></li>
                         </ul>
