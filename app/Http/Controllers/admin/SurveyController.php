@@ -1,35 +1,65 @@
 <?php
 
-namespace App\Http\Controllers\fn\v1;
+namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\fn\FrontMsgController;
-use App\Models\ContactUs;
+use App\Http\Controllers\AdminMsgController;
 use App\Models\Survey;
 
-class SurveySummaryController extends FrontMsgController{
+class SurveyController extends AdminMsgController{
 
+	private $menu_nav = '';
+	private $menu_name = '';
 
-	private $contact_us = array();
-	private $menu_government_online = array();
-	private $staff_structure = array();
 	public function __construct()
     {
-        parent::__construct();
-        $this->contact_us = $this->getContactUs();
-        $this->menu_government_online = $this->getMenuNewsGovernmentOnline();
-        $this->staff_structure = $this->getMenuStaffStructure();
+        $this->middleware('auth'); //Auth::user()->name , {!! csrf_field() !!} , Auth::guest() , {{ url('/logout') }}
+        $this->menu_nav = $this->get_menu_admin()['survey'][0]['menu_nav'];
+        $this->menu_name = $this->get_menu_admin()['survey'][0]['menu_name'];
     }
 
 	public function index(){
-		$ContactUs = new ContactUs;
-		$contact_us = $ContactUs->getContactUsAll();
-
-		$Survey = new Survey;
-		$temp = $Survey->getSurveyFN();
 		$summary_survey = array(
+			'sex' => array(
+				'male' => 0,
+				'female' => 0,
+			),
+			'age' => array(
+				'<20' => 0,
+				'20-30' => 0,
+				'30-40' => 0,
+				'40>' => 0,
+			),
+			'career' => array(
+				'career_1' => 0,
+				'career_2' => 0,
+				'career_3' => 0,
+				'career_4' => 0,
+				'career_5' => 0,
+			),
+			'data_info_do' => array(
+				'data_info_do_1' => 0,
+				'data_info_do_2' => 0,
+			),
+			'data_info_at9' => array(
+				'data_info_at9_1' => 0,
+				'data_info_at9_2' => 0,
+				'data_info_at9_3' => 0,
+				'data_info_at9_4' => 0,
+				'data_info_at9_5' => 0,
+				'data_info_at9_6' => 0,
+				'data_info_at9_7' => 0,
+				'data_info_at9_8' => 0,
+			),
+			'data_info_other' => array(
+				'data_info_other_1' => 0,
+				'data_info_other_2' => 0,
+				'data_info_other_3' => 0,
+				'data_info_other_4' => 0,
+				'data_info_other_5' => 0,
+			),
 			'easy_data' => array(
 					'_5' => 0,
 					'_4' => 0,
@@ -51,6 +81,20 @@ class SurveySummaryController extends FrontMsgController{
 					'_2' => 0,
 					'_1' => 0,
 			),
+			'people_service' => array(
+					'_5' => 0,
+					'_4' => 0,
+					'_3' => 0,
+					'_2' => 0,
+					'_1' => 0,
+			),
+			'location_easy_use' => array(
+					'_5' => 0,
+					'_4' => 0,
+					'_3' => 0,
+					'_2' => 0,
+					'_1' => 0,
+			),
 			'overview_data' => array(
 					'_5' => 0,
 					'_4' => 0,
@@ -60,6 +104,8 @@ class SurveySummaryController extends FrontMsgController{
 			),
 			'total' => 0
 		);
+		$Survey = new Survey;
+		$temp = $Survey->getSurveyAll();
 		foreach ($temp as $key => $value) {
 			if(is_int($value->easy_data)){
 				$summary_survey['easy_data']['_5'] = $value->easy_data == 5? ++$summary_survey['easy_data']['_5'] : $summary_survey['easy_data']['_5'];
@@ -82,6 +128,20 @@ class SurveySummaryController extends FrontMsgController{
 				$summary_survey['use_data']['_2'] = $value->use_data == 2? ++$summary_survey['use_data']['_2'] : $summary_survey['use_data']['_2'];
 				$summary_survey['use_data']['_1'] = $value->use_data == 1? ++$summary_survey['use_data']['_1'] : $summary_survey['use_data']['_1'];
 			}
+			if(is_int($value->people_service)){
+				$summary_survey['people_service']['_5'] = $value->people_service == 5? ++$summary_survey['people_service']['_5'] : $summary_survey['people_service']['_5'];
+				$summary_survey['people_service']['_4'] = $value->people_service == 4? ++$summary_survey['people_service']['_4'] : $summary_survey['people_service']['_4'];
+				$summary_survey['people_service']['_3'] = $value->people_service == 3? ++$summary_survey['people_service']['_3'] : $summary_survey['people_service']['_3'];
+				$summary_survey['people_service']['_2'] = $value->people_service == 2? ++$summary_survey['people_service']['_2'] : $summary_survey['people_service']['_2'];
+				$summary_survey['people_service']['_1'] = $value->people_service == 1? ++$summary_survey['people_service']['_1'] : $summary_survey['people_service']['_1'];
+			}
+			if(is_int($value->location_easy_use)){
+				$summary_survey['location_easy_use']['_5'] = $value->location_easy_use == 5? ++$summary_survey['location_easy_use']['_5'] : $summary_survey['location_easy_use']['_5'];
+				$summary_survey['location_easy_use']['_4'] = $value->location_easy_use == 4? ++$summary_survey['location_easy_use']['_4'] : $summary_survey['location_easy_use']['_4'];
+				$summary_survey['location_easy_use']['_3'] = $value->location_easy_use == 3? ++$summary_survey['location_easy_use']['_3'] : $summary_survey['location_easy_use']['_3'];
+				$summary_survey['location_easy_use']['_2'] = $value->location_easy_use == 2? ++$summary_survey['location_easy_use']['_2'] : $summary_survey['location_easy_use']['_2'];
+				$summary_survey['location_easy_use']['_1'] = $value->location_easy_use == 1? ++$summary_survey['location_easy_use']['_1'] : $summary_survey['location_easy_use']['_1'];
+			}
 			if(is_int($value->overview_data)){
 				$summary_survey['overview_data']['_5'] = $value->overview_data == 5? ++$summary_survey['overview_data']['_5'] : $summary_survey['overview_data']['_5'];
 				$summary_survey['overview_data']['_4'] = $value->overview_data == 4? ++$summary_survey['overview_data']['_4'] : $summary_survey['overview_data']['_4'];
@@ -92,60 +152,15 @@ class SurveySummaryController extends FrontMsgController{
 
 			$summary_survey['total'] = ++$summary_survey['total'];
 		}
-		// echo "<pre>";print_r($summary_survey);die;
+		echo "<pre>";print_r($summary_survey);die;
 
 		$data = array(
-			'template' => $this->template,
-			'menu_nav' => $this->menu_nav['news_government'],
-			'menu_l1' => '1',
-			'menu_l2' => '1',
-			'logo_url' => $this->getLogo(),
-			'staff_structure' => $this->staff_structure,
-			'menu_government_online' => $this->menu_government_online,
-			'contact_us' => $this->contact_us,
-
-			'summary_survey' => $summary_survey,
+			'menu_name' => $this->menu_name,
 		);
 
-		return view('fn/'.$this->template.'/survey/summary', $data);
+		$this->render_view('admin/survey/main', $data, $this->menu_nav, 1);
 	}
 
-	public function save(Request $Requests){
-		// echo "<pre>";print_r($_POST);die;
-		// validate the user-entered Captcha code when the form is submitted
-	    // $code = $Requests->input('CaptchaCode');
-	    // $isHuman = captcha_validate($code);
-
-	    // if ($isHuman) {
-	      	$data = array(
-					"sex" => $Requests->get('sex', ''),
-					"age" => $Requests->get('age', ''),
-					"career" => $Requests->get('career', ''),
-					"data_info_do" => serialize($Requests->get('data_info_do', '')),
-					"data_info_at9" => serialize($Requests->get('data_info_at9', '')),
-					"data_info_other" => serialize($Requests->get('data_info_other', '')),
-					"easy_data" => $Requests->get('easy_data', ''),
-					"correct_data" => $Requests->get('correct_data', ''),
-					"use_data" => $Requests->get('use_data', ''),
-					"people_service" => $Requests->get('people_service', ''),
-					"location_easy_use" => $Requests->get('location_easy_use', ''),
-					"overview_data" => $Requests->get('overview_data', ''),
-					"comments_open_data" => $Requests->get('comments_open_data', ''),
-					"comments_other" => $Requests->get('comments_other', ''),
-					"created_at" => date("Y-m-d H:i:s"),
-					"updated_at" => date("Y-m-d H:i:s"),
-				);
-			$Survey = new Survey;
-			$Survey->save_data($data);
-
-			$Requests->session()->flash('bg_color', 'success');
-			$Requests->session()->flash('msg', "ทำรายการบันทึกข้อมูล สำเร็จแล้ว");
-			return redirect('survey');
-	  //   } else {
-	  //     	$Requests->session()->flash('bg_color', 'warning');
-			// $Requests->session()->flash('msg', "ทำรายการบันทึกข้อมูล ไม่สำเร็จ โปรดลองอีกครั้ง");
-			// return redirect('complaint');
-	  //   }
-	}
+	
 }
 ?>

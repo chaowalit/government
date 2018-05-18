@@ -329,9 +329,9 @@
                   </li>
                 </ul>
               </li>
-              <li>
+              <!-- <li>
                 <a href="#"><?php echo \Config::get('config_memu.main_5'); ?></a>
-              </li>
+              </li> -->
               <li><a href="{{ url('/contact_us') }}" class="<?php echo $menu_nav == 'contact_us'? "active":""; ?>"><?php echo \Config::get('config_memu.main_6'); ?></a>
               </li>
             </ul>
@@ -626,13 +626,13 @@
                 </li>
               </ul>
             </div>
-            <div class="footer-widget social-widget" style="margin-bottom: 12px;">
+            <!-- <div class="footer-widget social-widget" style="margin-bottom: 12px;">
               <ul>
                 <li>
                   <a href="#"><b>สมุดเยื่ยม</b></a>
                 </li>
             </ul>
-            </div>
+            </div> -->
             <div class="footer-widget social-widget">
               <ul>
                 <li>

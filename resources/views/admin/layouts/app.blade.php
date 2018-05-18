@@ -14,7 +14,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="../../index2.html" class="logo">
+    <a href="{{ url('/config_menu') }}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>MT</span>
       <!-- logo for regular state and mobile devices -->
@@ -389,11 +389,16 @@
                 <span style="font-size: 12px;"><?php echo \Config::get('config_memu.main_3'); ?><?php //echo "ร้องเรียน/ร้องทุกข์"; ?></span>
             </a>
         </li>
+        <li class="<?php echo ($menu_nav == 'survey')? 'active':''; ?>">
+            <a href="{{ url('admin/survey') }}"><i class="fa fa-space-shuttle"></i> 
+                <span style="font-size: 12px;"><?php // echo \Config::get('config_memu.main_4.level_7'); ?><?php echo "สรุปผลความพึงพอใจ"; ?></span>
+            </a>
+        </li>
 
         <li class="header">อื่นๆ</li>
-        <li class="<?php echo ($menu_nav == 'visit_book')? 'active':''; ?>">
+        <!-- <li class="<?php echo ($menu_nav == 'visit_book')? 'active':''; ?>">
             <a href="{{ url('/visit_book') }}"><i class="fa fa-space-shuttle"></i> <span><?php echo \Config::get('config_memu.main_5'); ?><?php //echo "สมุดเยี่ยม"; ?></span></a>
-        </li>
+        </li> -->
         <li class="<?php echo ($menu_nav == 'contact_us')? 'active':''; ?>">
             <a href="{{ url('/admin/contact_us') }}"><i class="fa fa-whatsapp"></i> <span><?php echo \Config::get('config_memu.main_6'); ?><?php //echo "ติดต่อเรา"; ?></span></a>
         </li>

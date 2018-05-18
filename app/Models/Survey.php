@@ -44,7 +44,7 @@ class Survey extends Model{
 		}
 	}
 
-	public function getComplainRequestAll(){
+	public function getSurveyAll(){
 		return \DB::table($this->table)
 					//->orderBy('post_date', 'desc')
 					->orderBy('updated_at', 'desc')
@@ -60,7 +60,7 @@ class Survey extends Model{
 		return \DB::table($this->table)->where('id', '=', $id)->delete();
 	}
 	//---------------------------------------------------------------------
-	public function getComplainRequestFN($limit = 20){
+	public function getSurveyFN($limit = 20){
 		return \DB::table($this->table)
 					//->where('active', 1)
 					//->orderBy('post_date', 'desc')

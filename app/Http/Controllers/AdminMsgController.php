@@ -94,6 +94,12 @@ class AdminMsgController extends Controller
 								'menu_name' => 'ร้องเรียน/ร้องทุกข์',
 							),
 						),
+		'survey' => array(
+							array(
+								'menu_nav' => 'survey',
+								'menu_name' => 'สรุปผลความพึงพอใจ',
+							),
+						),
 	);
 
 	public function get_menu_admin(){

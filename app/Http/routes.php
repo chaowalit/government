@@ -189,6 +189,8 @@ Route::get('admin/complaint', 'admin\ComplaintController@index');
 Route::get('admin/complaint/delete/{id}', 'admin\ComplaintController@delete');
 Route::get('admin/complaint/show/{id}', 'admin\ComplaintController@show');
 
+Route::get('admin/survey', 'admin\SurveyController@index');
+
 //------------------------------------------------------------------------------
 Route::get('/search_customer', function () {
     return view('form_search_customer');
