@@ -190,6 +190,7 @@ Route::get('admin/complaint/delete/{id}', 'admin\ComplaintController@delete');
 Route::get('admin/complaint/show/{id}', 'admin\ComplaintController@show');
 
 Route::get('admin/survey', 'admin\SurveyController@index');
+Route::post('admin/survey/export_excel', 'admin\SurveyController@export_excel');
 
 //------------------------------------------------------------------------------
 Route::get('/search_customer', function () {

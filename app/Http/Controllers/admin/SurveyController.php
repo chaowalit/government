@@ -21,6 +21,36 @@ class SurveyController extends AdminMsgController{
     }
 
 	public function index(){
+		$summary_survey = $this->summary_survey();
+		// echo "<pre>";print_r($summary_survey);
+
+		$data = array(
+			'menu_name' => $this->menu_name,
+			'summary_survey' => $summary_survey,
+		);
+
+		$this->render_view('admin/survey/main', $data, $this->menu_nav, 1);
+	}
+
+	public function export_excel(){
+		$summary_survey = $this->summary_survey();
+		$file_name = 'summary_survey';
+		return \Excel::create($file_name, function($excel)
+								use($summary_survey){
+
+					$excel->sheet('_1', function($sheet)
+					    			use($summary_survey){
+					    	$data = array(
+					    		// "header" => $header,
+					    		"summary_survey" => $summary_survey,
+				    		);
+					        $sheet->loadView('admin.survey.summary_survey', $data);
+					    });
+
+				})->download('xls');
+	}
+
+	public function summary_survey(){
 		$summary_survey = array(
 			'sex' => array(
 				'male' => 0,
@@ -107,6 +137,72 @@ class SurveyController extends AdminMsgController{
 		$Survey = new Survey;
 		$temp = $Survey->getSurveyAll();
 		foreach ($temp as $key => $value) {
+			$summary_survey['sex']['male'] = $value->sex == 'male'? ++$summary_survey['sex']['male'] : $summary_survey['sex']['male'];
+			$summary_survey['sex']['female'] = $value->sex == 'female'? ++$summary_survey['sex']['female'] : $summary_survey['sex']['female'];
+
+			$summary_survey['age']['<20'] = $value->age == '<20'? ++$summary_survey['age']['<20'] : $summary_survey['age']['<20'];
+			$summary_survey['age']['20-30'] = $value->age == '20-30'? ++$summary_survey['age']['20-30'] : $summary_survey['age']['20-30'];
+			$summary_survey['age']['30-40'] = $value->age == '30-40'? ++$summary_survey['age']['30-40'] : $summary_survey['age']['30-40'];
+			$summary_survey['age']['40>'] = $value->age == '40>'? ++$summary_survey['age']['40>'] : $summary_survey['age']['40>'];
+
+			$summary_survey['career']['career_1'] = $value->career == 'career_1'? ++$summary_survey['career']['career_1'] : $summary_survey['career']['career_1'];
+			$summary_survey['career']['career_2'] = $value->career == 'career_2'? ++$summary_survey['career']['career_2'] : $summary_survey['career']['career_2'];
+			$summary_survey['career']['career_3'] = $value->career == 'career_3'? ++$summary_survey['career']['career_3'] : $summary_survey['career']['career_3'];
+			$summary_survey['career']['career_4'] = $value->career == 'career_4'? ++$summary_survey['career']['career_4'] : $summary_survey['career']['career_4'];
+			$summary_survey['career']['career_5'] = $value->career == 'career_5'? ++$summary_survey['career']['career_5'] : $summary_survey['career']['career_5'];
+
+			if(is_array(unserialize($value->data_info_do))){
+				$temp = unserialize($value->data_info_do);
+				foreach ($temp as $k => $v) {
+					if($v == 'data_info_do_1'){
+						$summary_survey['data_info_do']['data_info_do_1'] = ++$summary_survey['data_info_do']['data_info_do_1'];
+					}else if($v == 'data_info_do_2'){
+						$summary_survey['data_info_do']['data_info_do_2'] = ++$summary_survey['data_info_do']['data_info_do_2'];
+					}
+				}
+			}
+
+			if(is_array(unserialize($value->data_info_at9))){
+				$temp = unserialize($value->data_info_at9);
+				foreach ($temp as $k => $v) {
+					if($v == 'data_info_at9_1'){
+						$summary_survey['data_info_at9']['data_info_at9_1'] = ++$summary_survey['data_info_at9']['data_info_at9_1'];
+					}else if($v == 'data_info_at9_2'){
+						$summary_survey['data_info_at9']['data_info_at9_2'] = ++$summary_survey['data_info_at9']['data_info_at9_2'];
+					}else if($v == 'data_info_at9_3'){
+						$summary_survey['data_info_at9']['data_info_at9_3'] = ++$summary_survey['data_info_at9']['data_info_at9_3'];
+					}else if($v == 'data_info_at9_4'){
+						$summary_survey['data_info_at9']['data_info_at9_4'] = ++$summary_survey['data_info_at9']['data_info_at9_4'];
+					}else if($v == 'data_info_at9_5'){
+						$summary_survey['data_info_at9']['data_info_at9_5'] = ++$summary_survey['data_info_at9']['data_info_at9_5'];
+					}else if($v == 'data_info_at9_6'){
+						$summary_survey['data_info_at9']['data_info_at9_6'] = ++$summary_survey['data_info_at9']['data_info_at9_6'];
+					}else if($v == 'data_info_at9_7'){
+						$summary_survey['data_info_at9']['data_info_at9_7'] = ++$summary_survey['data_info_at9']['data_info_at9_7'];
+					}else if($v == 'data_info_at9_8'){
+						$summary_survey['data_info_at9']['data_info_at9_8'] = ++$summary_survey['data_info_at9']['data_info_at9_8'];
+					}
+				}
+			}
+
+			if(is_array(unserialize($value->data_info_other))){
+				$temp = unserialize($value->data_info_other);
+				foreach ($temp as $k => $v) {
+					if($v == 'data_info_other_1'){
+						$summary_survey['data_info_other']['data_info_other_1'] = ++$summary_survey['data_info_other']['data_info_other_1'];
+					}else if($v == 'data_info_other_2'){
+						$summary_survey['data_info_other']['data_info_other_2'] = ++$summary_survey['data_info_other']['data_info_other_2'];
+					}else if($v == 'data_info_other_3'){
+						$summary_survey['data_info_other']['data_info_other_3'] = ++$summary_survey['data_info_other']['data_info_other_3'];
+					}else if($v == 'data_info_other_4'){
+						$summary_survey['data_info_other']['data_info_other_4'] = ++$summary_survey['data_info_other']['data_info_other_4'];
+					}else if($v == 'data_info_other_5'){
+						$summary_survey['data_info_other']['data_info_other_5'] = ++$summary_survey['data_info_other']['data_info_other_5'];
+					}
+				}
+			}
+
+
 			if(is_int($value->easy_data)){
 				$summary_survey['easy_data']['_5'] = $value->easy_data == 5? ++$summary_survey['easy_data']['_5'] : $summary_survey['easy_data']['_5'];
 				$summary_survey['easy_data']['_4'] = $value->easy_data == 4? ++$summary_survey['easy_data']['_4'] : $summary_survey['easy_data']['_4'];
@@ -152,15 +248,7 @@ class SurveyController extends AdminMsgController{
 
 			$summary_survey['total'] = ++$summary_survey['total'];
 		}
-		echo "<pre>";print_r($summary_survey);die;
-
-		$data = array(
-			'menu_name' => $this->menu_name,
-		);
-
-		$this->render_view('admin/survey/main', $data, $this->menu_nav, 1);
+		return $summary_survey;
 	}
-
-	
 }
 ?>

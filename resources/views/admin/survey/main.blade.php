@@ -28,7 +28,10 @@
                 <small>สามารถสร้างรูปแบบเนื้อหาที่จะแสดงหน้าเว็บได้ตามต้องการ</small>
                 <a href="{{ url('/admin/survey') }}"><u style="font-size: 12px;">รีเฟรส</u></a>
                 &nbsp;&nbsp;&nbsp;
-                <a href="{{ url('/admin/survey') }}"><u style="font-size: 12px;">Export PDF</u></a>
+                <form action="{{ url('/admin/survey/export_excel') }}" method="POST" style="display: inline;">
+                  {!! csrf_field() !!}
+                  <button type="submit"><u style="font-size: 12px;">Export Excel</u></button>
+                </form>
               </h3>
               <!-- tools box -->
               <div class="pull-right box-tools">
@@ -71,15 +74,15 @@
                           </td>
                           <td>&nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['sex']['male']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['sex']['female']; ?></span></li>
                                 </ul>
                           </td>
                           <td>
                               &nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">45%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['sex']['male']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['sex']['female']/$summary_survey['total']*100; ?>%</span></li>
                                 </ul>
                           </td>
                         </tr>
@@ -95,19 +98,19 @@
                           </td>
                           <td>&nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['age']['<20']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['age']['20-30']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['age']['30-40']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['age']['40>']; ?></span></li>
                                 </ul>
                           </td>
                           <td>
                               &nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">45%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
-                                  <li><span class="badge bg-green">45%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['age']['<20']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['age']['20-30']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['age']['30-40']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['age']['40>']/$summary_survey['total']*100; ?>%</span></li>
                                 </ul>
                           </td>
                         </tr>
@@ -124,21 +127,21 @@
                           </td>
                           <td>&nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['career']['career_1']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['career']['career_2']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['career']['career_3']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['career']['career_4']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['career']['career_5']; ?></span></li>
                                 </ul>
                           </td>
                           <td>
                               &nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">45%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
-                                  <li><span class="badge bg-green">45%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['career']['career_1']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['career']['career_2']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['career']['career_3']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['career']['career_4']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['career']['career_5']/$summary_survey['total']*100; ?>%</span></li>
                                 </ul>
                           </td>
                         </tr>
@@ -154,15 +157,15 @@
                           </td>
                           <td>&nbsp;
                                 <ul class="ul-non">
-                                  <li><p class=""><span class="badge bg-green">5</span></p></li>
-                                  <li><p class=""><span class="badge bg-green">5</span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_do']['data_info_do_1']; ?></span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_do']['data_info_do_2']; ?></span></p></li>
                                 </ul>
                           </td>
                           <td>
                               &nbsp;
                                 <ul class="ul-non">
-                                  <li><p class=""><span class="badge bg-green">45%</span></p></li>
-                                  <li><p class=""><span class="badge bg-green">55%</span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_do']['data_info_do_1']/$summary_survey['total']*100; ?>%</span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_do']['data_info_do_2']/$summary_survey['total']*100; ?>%</span></p></li>
                                 </ul>
                           </td>
                         </tr>
@@ -220,27 +223,27 @@
                           </td>
                           <td>&nbsp;
                                 <ul class="ul-non">
-                                  <li><p class=""><span class="badge bg-green">5</span></p></li>
-                                  <li><p class=""><span class="badge bg-green">5</span></p></li>
-                                  <li><p class=""><span class="badge bg-green">5</span></p></li>
-                                  <li><p class=""><span class="badge bg-green">5</span></p></li>
-                                  <li><p class=""><span class="badge bg-green">5</span></p></li>
-                                  <li><p class=""><span class="badge bg-green">5</span></p></li>
-                                  <li><p class=""><span class="badge bg-green">5</span></p></li>
-                                  <li><p class=""><span class="badge bg-green">5</span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_at9']['data_info_at9_1']; ?></span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_at9']['data_info_at9_2']; ?></span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_at9']['data_info_at9_3']; ?></span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_at9']['data_info_at9_4']; ?></span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_at9']['data_info_at9_5']; ?></span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_at9']['data_info_at9_6']; ?></span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_at9']['data_info_at9_7']; ?></span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_at9']['data_info_at9_8']; ?></span></p></li>
                                 </ul>
                           </td>
                           <td>
                               &nbsp;
                                 <ul class="ul-non">
-                                  <li><p class=""><span class="badge bg-green">45%</span></p></li>
-                                  <li><p class=""><span class="badge bg-green">55%</span></p></li>
-                                  <li><p class=""><span class="badge bg-green">45%</span></p></li>
-                                  <li><p class=""><span class="badge bg-green">55%</span></p></li>
-                                  <li><p class=""><span class="badge bg-green">45%</span></p></li>
-                                  <li><p class=""><span class="badge bg-green">55%</span></p></li>
-                                  <li><p class=""><span class="badge bg-green">45%</span></p></li>
-                                  <li><p class=""><span class="badge bg-green">55%</span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_at9']['data_info_at9_1']/$summary_survey['total']*100; ?>%</span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_at9']['data_info_at9_2']/$summary_survey['total']*100; ?>%</span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_at9']['data_info_at9_3']/$summary_survey['total']*100; ?>%</span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_at9']['data_info_at9_4']/$summary_survey['total']*100; ?>%</span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_at9']['data_info_at9_5']/$summary_survey['total']*100; ?>%</span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_at9']['data_info_at9_6']/$summary_survey['total']*100; ?>%</span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_at9']['data_info_at9_7']/$summary_survey['total']*100; ?>%</span></p></li>
+                                  <li><p class=""><span class="badge bg-green"><?php echo $summary_survey['data_info_at9']['data_info_at9_8']/$summary_survey['total']*100; ?>%</span></p></li>
                                 </ul>
                           </td>
                         </tr>
@@ -257,21 +260,21 @@
                           </td>
                           <td>&nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['data_info_other']['data_info_other_1']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['data_info_other']['data_info_other_2']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['data_info_other']['data_info_other_3']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['data_info_other']['data_info_other_4']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['data_info_other']['data_info_other_5']; ?></span></li>
                                 </ul>
                           </td>
                           <td>
                               &nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">45%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
-                                  <li><span class="badge bg-green">45%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['data_info_other']['data_info_other_1']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['data_info_other']['data_info_other_2']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['data_info_other']['data_info_other_3']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['data_info_other']['data_info_other_4']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['data_info_other']['data_info_other_5']/$summary_survey['total']*100; ?>%</span></li>
                                 </ul>
                           </td>
                         </tr>
@@ -288,21 +291,21 @@
                           </td>
                           <td>&nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['easy_data']['_5']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['easy_data']['_4']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['easy_data']['_3']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['easy_data']['_2']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['easy_data']['_1']; ?></span></li>
                                 </ul>
                           </td>
                           <td>
                               &nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">45%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
-                                  <li><span class="badge bg-green">45%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['easy_data']['_5']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['easy_data']['_4']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['easy_data']['_3']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['easy_data']['_2']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['easy_data']['_1']/$summary_survey['total']*100; ?>%</span></li>
                                 </ul>
                           </td>
                         </tr>
@@ -319,21 +322,21 @@
                           </td>
                           <td>&nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['correct_data']['_5']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['correct_data']['_4']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['correct_data']['_3']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['correct_data']['_2']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['correct_data']['_1']; ?></span></li>
                                 </ul>
                           </td>
                           <td>
                               &nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">45%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
-                                  <li><span class="badge bg-green">45%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['correct_data']['_5']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['correct_data']['_4']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['correct_data']['_3']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['correct_data']['_2']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['correct_data']['_1']/$summary_survey['total']*100; ?>%</span></li>
                                 </ul>
                           </td>
                         </tr>
@@ -350,21 +353,21 @@
                           </td>
                           <td>&nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['use_data']['_5']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['use_data']['_4']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['use_data']['_3']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['use_data']['_2']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['use_data']['_1']; ?></span></li>
                                 </ul>
                           </td>
                           <td>
                               &nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">45%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
-                                  <li><span class="badge bg-green">45%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['use_data']['_5']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['use_data']['_4']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['use_data']['_3']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['use_data']['_2']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['use_data']['_1']/$summary_survey['total']*100; ?>%</span></li>
                                 </ul>
                           </td>
                         </tr>
@@ -381,21 +384,21 @@
                           </td>
                           <td>&nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['people_service']['_5']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['people_service']['_4']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['people_service']['_3']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['people_service']['_2']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['people_service']['_1']; ?></span></li>
                                 </ul>
                           </td>
                           <td>
                               &nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">45%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
-                                  <li><span class="badge bg-green">45%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['people_service']['_5']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['people_service']['_4']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['people_service']['_3']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['people_service']['_2']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['people_service']['_1']/$summary_survey['total']*100; ?>%</span></li>
                                 </ul>
                           </td>
                         </tr>
@@ -412,21 +415,21 @@
                           </td>
                           <td>&nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['location_easy_use']['_5']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['location_easy_use']['_4']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['location_easy_use']['_3']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['location_easy_use']['_2']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['location_easy_use']['_1']; ?></span></li>
                                 </ul>
                           </td>
                           <td>
                               &nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">45%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
-                                  <li><span class="badge bg-green">45%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['location_easy_use']['_5']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['location_easy_use']['_4']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['location_easy_use']['_3']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['location_easy_use']['_2']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['location_easy_use']['_1']/$summary_survey['total']*100; ?>%</span></li>
                                 </ul>
                           </td>
                         </tr>
@@ -443,21 +446,21 @@
                           </td>
                           <td>&nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
-                                  <li><span class="badge bg-green">5</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['overview_data']['_5']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['overview_data']['_4']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['overview_data']['_3']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['overview_data']['_2']; ?></span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['overview_data']['_1']; ?></span></li>
                                 </ul>
                           </td>
                           <td>
                               &nbsp;
                                 <ul class="ul-non">
-                                  <li><span class="badge bg-green">45%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
-                                  <li><span class="badge bg-green">45%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
-                                  <li><span class="badge bg-green">55%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['overview_data']['_5']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['overview_data']['_4']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['overview_data']['_3']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['overview_data']['_2']/$summary_survey['total']*100; ?>%</span></li>
+                                  <li><span class="badge bg-green"><?php echo $summary_survey['overview_data']['_1']/$summary_survey['total']*100; ?>%</span></li>
                                 </ul>
                           </td>
                         </tr>
