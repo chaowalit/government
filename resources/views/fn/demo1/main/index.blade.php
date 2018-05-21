@@ -799,39 +799,18 @@
 
                 <!-- Popular Posts widget -->
                 <div class="widget widget-popular-posts">
-                  <h4>Popular Post <span class="head-line"></span></h4>
-                  <ul>
-                    <li>
-                      <div class="widget-thumb">
-                        <a href="#"><img src="images/blog-mini-01.jpg" alt="" /></a>
-                      </div>
-                      <div class="widget-content">
-                        <h5><a href="#">How To Download The Google Fonts Catalog</a></h5>
-                        <span>Jul 29 2013</span>
-                      </div>
-                      <div class="clearfix"></div>
-                    </li>
-                    <li>
-                      <div class="widget-thumb">
-                        <a href="#"><img src="images/blog-mini-02.jpg" alt="" /></a>
-                      </div>
-                      <div class="widget-content">
-                        <h5><a href="#">How To Download The Google Fonts Catalog</a></h5>
-                        <span>Jul 29 2013</span>
-                      </div>
-                      <div class="clearfix"></div>
-                    </li>
-                    <li>
-                      <div class="widget-thumb">
-                        <a href="#"><img src="images/blog-mini-03.jpg" alt="" /></a>
-                      </div>
-                      <div class="widget-content">
-                        <h5><a href="#">How To Download The Google Fonts Catalog</a></h5>
-                        <span>Jul 29 2013</span>
-                      </div>
-                      <div class="clearfix"></div>
-                    </li>
-                  </ul>
+                    <div id="fb-root"></div>
+                    <script>(function(d, s, id) {
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return;
+                      js = d.createElement(s); js.id = id;
+                      js.src = 'https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v3.0&appId=967219293403451&autoLogAppEvents=1';
+                      fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
+                    </script>
+
+                    <div class="fb-page" data-href="<?php echo ($contact_us[0]->facebook_url); ?>" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="<?php echo ($contact_us[0]->facebook_url); ?>" class="fb-xfbml-parse-ignore"><a href="<?php echo ($contact_us[0]->facebook_url); ?>">Facebook Link</a></blockquote>
+                    </div>
                 </div>
 
                 <?php if(isset($vdo_youtube[0])){ ?>

@@ -162,7 +162,7 @@
 
 <?php } ?>
 
-<?php if($menu_nav == 'popup_banner'){ ?>
+<?php if($menu_nav == 'popup_banner' || $menu_nav == 'survey'){ ?>
     <!-- bootstrap datepicker -->
     <link rel="stylesheet" href="{{ asset('admin/assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
     <!-- bootstrap datepicker -->
@@ -179,6 +179,13 @@
             $('#end_date').datepicker({
                 format: 'dd-mm-yyyy',
                 autoclose: true
+            });
+
+            $("#search_word").click(function(){
+                // alert('กำลังตั้งค่า logic');
+                var start_date = $("#start_date").val();
+                var end_date = $("#end_date").val();
+                window.location.href = '/admin/survey?start_date='+start_date+'&end_date='+end_date;
             });
       });
     </script>

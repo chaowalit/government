@@ -44,9 +44,14 @@ class Survey extends Model{
 		}
 	}
 
-	public function getSurveyAll(){
+	public function getSurveyAll($start_date, $end_date){
+		$temp_1 = explode('-', $start_date);
+		$temp_2 = explode('-', $end_date);
+		$start = $temp_1['2'].'-'.$temp_1['1'].'-'.$temp_1['0'].' 00:00:00';
+		$end = $temp_2['2'].'-'.$temp_2['1'].'-'.$temp_2['0'].' 23:59:59';
 		return \DB::table($this->table)
-					//->orderBy('post_date', 'desc')
+					->where('created_at', '>=', $start)
+					->where('created_at', '<=', $end)
 					->orderBy('updated_at', 'desc')
 					//->orderBy('active', 'desc')
 					->get();

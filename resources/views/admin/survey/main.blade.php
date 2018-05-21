@@ -17,6 +17,7 @@
     </section>
 
     <!-- Main content -->
+  <form action="{{ url('/admin/survey/export_excel') }}" method="POST" style="display: inline;">
     <section class="content">
 
       <div class="row">
@@ -26,12 +27,12 @@
 
               <h3 class="box-title">แสดงผลความพึงพอใจ
                 <small>สามารถสร้างรูปแบบเนื้อหาที่จะแสดงหน้าเว็บได้ตามต้องการ</small>
-                <a href="{{ url('/admin/survey') }}"><u style="font-size: 12px;">รีเฟรส</u></a>
+                <button type="button" id="search_word"><u style="font-size: 14px;">ค้นหาตามวันที่</u></button>
                 &nbsp;&nbsp;&nbsp;
-                <form action="{{ url('/admin/survey/export_excel') }}" method="POST" style="display: inline;">
                   {!! csrf_field() !!}
+                  <?php if($summary_survey['total'] != 0){ ?>
                   <button type="submit"><u style="font-size: 12px;">Export Excel</u></button>
-                </form>
+                <?php } ?>
               </h3>
               <!-- tools box -->
               <div class="pull-right box-tools">
@@ -59,11 +60,32 @@
                       <table class="table table-striped">
                         <tbody><tr>
                           <th style="width: 10px">#</th>
-                          <th></th>
+                          <th>
+                            <div class="row">
+                              <div class="col-md-5">
+                                <div class="input-group date">
+                                  <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                  </div>
+                                  <input type="text" class="form-control pull-right" value="<?php echo $start_date; ?>" id="start_date">
+                                </div>
+                              </div>
+                              <div class="col-md-2" style="text-align: center;">ถึงวันที่</div>
+                              <div class="col-md-5">
+                                <div class="input-group date">
+                                  <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                  </div>
+                                  <input type="text" class="form-control pull-right" value="<?php echo $end_date; ?>" id="end_date">
+                                </div>
+                              </div>
+                            </div>
+                          </th>
                           <th style="width: 90px">จำนวน</th>
                           <th style="width: 90px">คิดเป็น %</th>
                         </tr>
 
+                      <?php if($summary_survey['total'] != 0){ ?>
                         <tr>
                           <td>1.</td>
                           <td>เพศ
@@ -464,7 +486,7 @@
                                 </ul>
                           </td>
                         </tr>
-
+                      <?php } ?>
                       </tbody></table>
                     </div>
                     <!-- /.box-body -->
@@ -481,6 +503,7 @@
 
     </section>
     <!-- /.content -->
+  </form>
   </div>
     <style type="text/css">
         .ul-non {

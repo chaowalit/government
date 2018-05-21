@@ -21,19 +21,26 @@ class SurveyController extends AdminMsgController{
     }
 
 	public function index(){
-		$summary_survey = $this->summary_survey();
+		$start_date = isset($_GET['start_date'])? $_GET['start_date'] : date("d-m-Y", strtotime("-1 month"));
+		$end_date = isset($_GET['end_date'])? $_GET['end_date'] : date("d-m-Y");
+		$summary_survey = $this->summary_survey($start_date, $end_date);
 		// echo "<pre>";print_r($summary_survey);
-
+//echo "<pre>";print_r($summary_survey);die;
 		$data = array(
 			'menu_name' => $this->menu_name,
 			'summary_survey' => $summary_survey,
+			'start_date' => $start_date,
+			'end_date' => $end_date,
 		);
-
+// echo "<pre>";print_r($data);die;
 		$this->render_view('admin/survey/main', $data, $this->menu_nav, 1);
 	}
 
 	public function export_excel(){
-		$summary_survey = $this->summary_survey();
+		$start_date = isset($_POST['start_date'])? $_POST['start_date'] : date("d-m-Y", strtotime("-1 month"));
+		$end_date = isset($_POST['end_date'])? $_POST['end_date'] : date("d-m-Y");
+
+		$summary_survey = $this->summary_survey($start_date, $end_date);
 		$file_name = 'summary_survey';
 		return \Excel::create($file_name, function($excel)
 								use($summary_survey){
@@ -50,7 +57,7 @@ class SurveyController extends AdminMsgController{
 				})->download('xls');
 	}
 
-	public function summary_survey(){
+	public function summary_survey($start_date = '', $end_date = ''){
 		$summary_survey = array(
 			'sex' => array(
 				'male' => 0,
@@ -135,7 +142,7 @@ class SurveyController extends AdminMsgController{
 			'total' => 0
 		);
 		$Survey = new Survey;
-		$temp = $Survey->getSurveyAll();
+		$temp = $Survey->getSurveyAll($start_date, $end_date);
 		foreach ($temp as $key => $value) {
 			$summary_survey['sex']['male'] = $value->sex == 'male'? ++$summary_survey['sex']['male'] : $summary_survey['sex']['male'];
 			$summary_survey['sex']['female'] = $value->sex == 'female'? ++$summary_survey['sex']['female'] : $summary_survey['sex']['female'];
