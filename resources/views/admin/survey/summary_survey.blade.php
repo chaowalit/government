@@ -100,7 +100,7 @@
                 <td align="center"></td>
             </tr>
             <tr>
-                <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;แผ่นพับแนะนำองค์การบริการส่วนตำบลเมืองเสือ(โครงสร้างและการจัดการองค์กรในการดำเนินงาน สรุปอำนาจหน้าที่ที่สำคัญและวิธีการดำเนินงานและสถานที่ติดต่อเพื่อขอรับข้อมูลข่าวสารหรือคำแนะนำในการติดต่อกลับกับหน่วยงานรัฐ)</td>
+                <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;แผ่นพับแนะนำ<?php echo $contact_us[0]->location_name; ?>(โครงสร้างและการจัดการองค์กรในการดำเนินงาน สรุปอำนาจหน้าที่ที่สำคัญและวิธีการดำเนินงานและสถานที่ติดต่อเพื่อขอรับข้อมูลข่าวสารหรือคำแนะนำในการติดต่อกลับกับหน่วยงานรัฐ)</td>
                 <td align="center"><?php echo $summary_survey['data_info_do']['data_info_do_1']; ?></td>
                 <td align="center"><?php echo $summary_survey['data_info_do']['data_info_do_1']/$summary_survey['total']*100; ?>%</td>
             </tr>

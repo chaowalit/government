@@ -30,59 +30,19 @@
       <div class="col-md-3 sidebar right-sidebar custom-page-content">
 
         <!-- Search Widget -->
-        <div class="widget widget-search">
-          <form action="#">
-            <input type="search" placeholder="Enter Keywords..." />
-            <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
-          </form>
-        </div>
+        @include('fn.demo1.main.module_search')
 
         <!-- Popular Posts widget -->
-        <div class="widget widget-popular-posts">
-          <h4>Title <span class="head-line"></span></h4>
-          <ul>
-            <?php
-                if(isset($informationAll[0])){
-                    foreach ($informationAll as $key => $value) {
-            ?>
-            <li>
-              <div class="widget-thumb">
-                <a href="#"><img src="images/blog-mini-01.jpg" alt="" /></a>
-              </div>
-              <div class="widget-content">
-                <h5><a href="#">{{ $value->title }}</a></h5>
-                <span>เมื่อวันที่ {{ date("d-m-Y", strtotime($value->post_date)) }}</span>
-              </div>
-              <div class="clearfix"></div>
-            </li>
-            <?php }} ?>
-          </ul>
-        </div>
+
 
         <!-- Tags Widget -->
-        <div class="widget widget-tags">
-          <h4>Tags <span class="head-line"></span></h4>
-          <div class="tagcloud">
-            <a href="#">Portfolio</a>
-            <a href="#">Theme</a>
-            <a href="#">Mobile</a>
-            <a href="#">Design</a>
-            <a href="#">Wordpress</a>
-            <a href="#">Jquery</a>
-            <a href="#">CSS</a>
-            <a href="#">Modern</a>
-            <a href="#">Theme</a>
-            <a href="#">Icons</a>
-            <a href="#">Google</a>
-          </div>
-        </div>
 
       </div>
       <!--End sidebar-->
 
 	<!-- Page Content -->
   <div class="col-md-9 page-content custom-right-sidebar">
-
+<?php //echo "<pre>";print_r($contact_us[0]); ?>
     <div class="blog-post image-post">
       <!-- Post Content -->
       <div class="post-content" style="text-align: center;padding-left: 0px;">
@@ -90,11 +50,24 @@
         <ul class="post-meta">
           <li>รับแจ้งข้อมูลทุจริต ประพฤติมิชอบ ไม่บริการประชาชนของพนักงานและลูกจ้าง 
             <?php echo isset($contact_us[0]->location_name)? $contact_us[0]->location_name:""; ?>
+            <br><br>
+- ช่องทางให้หน่วยงานภาครัฐ ภาคเอกชน นิติบุคคล ประชาชนทั่วไป แจ้งปัญหา เรื่องร้องเรียน สอบถามข้อมูล หรือข้อเสนอแนะให้<?php echo isset($contact_us[0]->location_name)? $contact_us[0]->location_name:""; ?>ออนไลน์ <br>
+คำแนะนำ : [คู่มือการแจ้งเรื่องร้องเรียน]
+
+หรือสามารถยื่นผ่านช่องทางการรับเรื่องร้องเรียนร้องทุกข์อื่น ๆ ดังนี้ <br>
+<p style="text-align: left;">
+1. ติดต่อด้วยตนเอง <br>
+2. ทางจดหมาย ถึง <?php echo isset($contact_us[0]->location_name)? $contact_us[0]->location_name:""; ?> <?php echo isset($contact_us[0]->address)? $contact_us[0]->address:""; ?><br>
+3. ทางอีเมล์อิเล็กทรอนิกส์ - Email Address : <?php echo isset($contact_us[0]->email)? $contact_us[0]->email:""; ?><br>
+4. ตู้รับฟังความคิดเห็น<br>
+5. ผู้บังคับบัญชา หรือนายก<?php echo isset($contact_us[0]->location_name)? $contact_us[0]->location_name:""; ?><br>
+6. อื่นๆ (เพจ<?php echo isset($contact_us[0]->location_name)? $contact_us[0]->location_name:""; ?> หรือ <a href="<?php echo isset($contact_us[0]->facebook_url)? $contact_us[0]->facebook_url:""; ?>" target="_blank"><?php echo isset($contact_us[0]->facebook_url)? $contact_us[0]->facebook_url:""; ?></a>)
+</p>
           </li>
-          <!-- <li><a href="#">WordPress</a>, <a href="#">Graphic</a></li>
-          <li><a href="#">4 Comments</a></li> -->
+          <!-- <li><a href="#">WordPress</a>, <a href="#">Graphic</a></li> -->
+          <!-- <li><a href="#">4 Comments</a></li>  -->
         </ul>
-        <hr>
+        <!-- <hr> -->
       </div>
         <?php if(session('bg_color')){ ?>
             <div class="alert alert-<?php echo session('bg_color'); ?> alert-dismissible">

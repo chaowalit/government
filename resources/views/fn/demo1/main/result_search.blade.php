@@ -8,12 +8,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h2>สถานที่สำคัญ (ท่องเที่ยว)ทั้งหมด</h2>
+        <h2>ผลการค้นหา ทั้งหมด</h2>
       </div>
       <div class="col-md-6">
         <ul class="breadcrumbs">
           <li><a href="#">หน้าแรก</a></li>
-          <li>สถานที่สำคัญ (ท่องเที่ยว)ทั้งหมด</li>
+          <li>ผลการค้นหา ทั้งหมด</li>
         </ul>
       </div>
     </div>
@@ -50,7 +50,7 @@
       <!-- Post Content -->
       <div class="post-content">
         <div class="post-type"><i class="fa fa-play"></i></div>
-        <h2><a href="#"> สถานที่สำคัญ (ท่องเที่ยว)ทั้งหมด </a></h2>
+        <h2><a href="#"> แสดงผลการค้นหา ทั้งหมด </a></h2>
         <ul class="post-meta">
           <li>By <a href="#">Administrator</a></li>
           <li>อัพเดตวันที่ {{ date("d-m-Y") }} </li>
@@ -59,9 +59,14 @@
         </ul>
         <!-- <p> echo $information[0]->detail1 </p> -->
         <!-- <a class="main-button" href="#">Read More <i class="fa fa-angle-right"></i></a> -->
-
-        <table id="dataTableNews" class="display" cellspacing="0" width="100%">
+	<?php if(isset($result['information'][0])){ ?>
+        <table id="dataTableNews--" class="display table table-striped" cellspacing="0" width="100%">
             <thead>
+            	<tr>
+            		<th colspan="3" style="text-align: center;background-color: #ccc;">
+		            	<h4>ข่าวประชาสัมพันธ์</h4>
+		            </th>
+		        </tr>
                 <tr>
                     <th style="width: 12%;"></th>
                     <th>หัวข้อข่าว</th>
@@ -69,16 +74,16 @@
                 </tr>
             </thead>
             <tbody>
-                <?php if(isset($landmarks[0])){ 
-                    foreach ($landmarks as $key => $value) {
+                <?php if(isset($result['information'][0])){ 
+                    foreach ($result['information'] as $key => $value) {
                 ?>
                 <tr>
                     <td style="text-align: center;">
-                        <img alt="" src="/public/uploads/news/<?php echo $value->file_path.'/'.$value->show_img; ?>" style="width: 100%;"/>
+                        <img src="<?php echo asset('fn/demo1/images/Documents-icon.png'); ?>" style="width: 50%;">
                     </td>
                     <td>{{ $value->title }}</td>
                     <td style="text-align: center;">
-                        <a class="main-button" href="<?php echo url('detail/landmarks').'/'.$value->id; ?>">อ่านเพิ่มเติม
+                        <a class="main-button" href="<?php echo url('detail/information').'/'.$value->id; ?>">อ่านเพิ่มเติม
                             <i class="fa fa-angle-right"></i>
                         </a>
                     </td>
@@ -86,6 +91,7 @@
                 <?php }} ?>
             </tbody>
         </table>
+    <?php } ?>
 
       </div>
     </div>

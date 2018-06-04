@@ -72,12 +72,7 @@
           <div class="col-md-3 sidebar right-sidebar custom-right-sidebar">
 
             <!-- Search Widget -->
-            <div class="widget widget-search">
-              <form action="#">
-                <input type="search" placeholder="Enter Keywords..." />
-                <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
-              </form>
-            </div>
+            @include('fn.demo1.main.module_search')
 
             <!-- Categories Widget -->
             <!-- <div class="widget widget-categories">

@@ -7,17 +7,22 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\AdminMsgController;
 use App\Models\Survey;
+use App\Models\ContactUs;
 
 class SurveyController extends AdminMsgController{
 
 	private $menu_nav = '';
 	private $menu_name = '';
+	private $contact_us = array();
 
 	public function __construct()
     {
         $this->middleware('auth'); //Auth::user()->name , {!! csrf_field() !!} , Auth::guest() , {{ url('/logout') }}
         $this->menu_nav = $this->get_menu_admin()['survey'][0]['menu_nav'];
         $this->menu_name = $this->get_menu_admin()['survey'][0]['menu_name'];
+
+        $ContactUs = new ContactUs;
+		$this->contact_us = $ContactUs->getContactUsAll();
     }
 
 	public function index(){
@@ -31,8 +36,9 @@ class SurveyController extends AdminMsgController{
 			'summary_survey' => $summary_survey,
 			'start_date' => $start_date,
 			'end_date' => $end_date,
+			'contact_us' => $this->contact_us,
 		);
-// echo "<pre>";print_r($data);die;
+// echo "<pre>";print_r($this->contact_us);die;
 		$this->render_view('admin/survey/main', $data, $this->menu_nav, 1);
 	}
 
@@ -40,16 +46,18 @@ class SurveyController extends AdminMsgController{
 		$start_date = isset($_POST['start_date'])? $_POST['start_date'] : date("d-m-Y", strtotime("-1 month"));
 		$end_date = isset($_POST['end_date'])? $_POST['end_date'] : date("d-m-Y");
 
+		$contact_us = $this->contact_us;
 		$summary_survey = $this->summary_survey($start_date, $end_date);
 		$file_name = 'summary_survey';
 		return \Excel::create($file_name, function($excel)
-								use($summary_survey){
+								use($summary_survey, $contact_us){
 
 					$excel->sheet('_1', function($sheet)
-					    			use($summary_survey){
+					    			use($summary_survey, $contact_us){
 					    	$data = array(
 					    		// "header" => $header,
 					    		"summary_survey" => $summary_survey,
+					    		"contact_us" => $contact_us,
 				    		);
 					        $sheet->loadView('admin.survey.summary_survey', $data);
 					    });

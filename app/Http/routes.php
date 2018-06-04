@@ -16,6 +16,8 @@ Front End
 */
 Route::get('/screen', 'fn\v1\FirstController@index')->name('screen');
 
+Route::get('/module_search', 'fn\v1\SearchController@index');
+
 Route::get('/', 'fn\v1\IndexController@index');
 Route::get('detail/information/{id}', 'fn\v1\IndexController@informationDetail');
 Route::get('detail/activity/{id}', 'fn\v1\IndexController@activityDetail');

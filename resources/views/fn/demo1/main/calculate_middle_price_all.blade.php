@@ -39,22 +39,6 @@
         @include('fn.demo1.main.module-news')
 
         <!-- Tags Widget -->
-        <div class="widget widget-tags">
-          <h4>Tags <span class="head-line"></span></h4>
-          <div class="tagcloud">
-            <a href="#">Portfolio</a>
-            <a href="#">Theme</a>
-            <a href="#">Mobile</a>
-            <a href="#">Design</a>
-            <a href="#">Wordpress</a>
-            <a href="#">Jquery</a>
-            <a href="#">CSS</a>
-            <a href="#">Modern</a>
-            <a href="#">Theme</a>
-            <a href="#">Icons</a>
-            <a href="#">Google</a>
-          </div>
-        </div>
 
       </div>
       <!--End sidebar-->

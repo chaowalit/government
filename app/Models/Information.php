@@ -59,5 +59,15 @@ class Information extends Model{
 					->limit($limit)
 					->get();
 	}
+
+	public function getInformationSearchFN($search = '', $limit = 7){
+		return \DB::table($this->table)
+					->where('title', 'like', '%'.$search.'%')
+					->where('active', 1)
+					->orderBy('post_date', 'desc')
+					->orderBy('updated_at', 'desc')
+					->limit($limit)
+					->get();
+	}
 }
 ?>
