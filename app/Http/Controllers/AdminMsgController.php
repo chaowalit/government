@@ -100,6 +100,18 @@ class AdminMsgController extends Controller
 								'menu_name' => 'สรุปผลความพึงพอใจ',
 							),
 						),
+		'summary_complaint' => array(
+							array(
+								'menu_nav' => 'summary_complaint',
+								'menu_name' => 'สรุปผลการร้องเรียน/ร้องทุกข์',
+							),
+						),
+		'statistic' => array(
+							array(
+								'menu_nav' => 'statistic',
+								'menu_name' => 'สถิติการเข้าใช้งาน',
+							),
+						),
 	);
 
 	public function get_menu_admin(){

@@ -4,21 +4,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ComplainRequest extends Model{
-	protected $table = 'complain_request';
+class StatisticWebsite extends Model{
+	protected $table = 'statistic_website';
 
 	protected $fillable = [
-		'full_name',
-		'thai_id',
-    	'age',
-    	'sex',
-    	'career',
-    	'tel',
-    	'fax',
-    	'email',
-    	'address',
-    	'title',
-    	'detail',
+		'client_ip',
     ];
 
     protected $casts = [
@@ -37,19 +27,11 @@ class ComplainRequest extends Model{
 		}else if($id != ''){
 			return \DB::table($this->table)->where('id', $id)->update($data);
 		}else{
-			echo "Error ComplainRequest";die;
+			echo "Error StatisticWebsite";die;
 		}
 	}
 
-	public function getComplainRequestAll(){
-		return \DB::table($this->table)
-					//->orderBy('post_date', 'desc')
-					->orderBy('updated_at', 'desc')
-					//->orderBy('active', 'desc')
-					->get();
-	}
-
-	public function getSearchComplainRequestAll($start_date, $end_date){
+	public function getStatisticWebsiteAll($start_date, $end_date){
 		$temp_1 = explode('-', $start_date);
 		$temp_2 = explode('-', $end_date);
 		$start = $temp_1['2'].'-'.$temp_1['1'].'-'.$temp_1['0'].' 00:00:00';
@@ -58,7 +40,19 @@ class ComplainRequest extends Model{
 					->where('created_at', '>=', $start)
 					->where('created_at', '<=', $end)
 					->orderBy('updated_at', 'desc')
-					//->orderBy('active', 'desc')
+					->get();
+	}
+
+	public function checkStatisticWebsiteExiting($start_date, $end_date, $ip = ''){
+		$temp_1 = explode('-', $start_date);
+		$temp_2 = explode('-', $end_date);
+		$start = $temp_1['2'].'-'.$temp_1['1'].'-'.$temp_1['0'].' 00:00:00';
+		$end = $temp_2['2'].'-'.$temp_2['1'].'-'.$temp_2['0'].' 23:59:59';
+		return \DB::table($this->table)
+					->where('client_ip', $ip)
+					->where('created_at', '>=', $start)
+					->where('created_at', '<=', $end)
+					->orderBy('updated_at', 'desc')
 					->get();
 	}
 
@@ -70,13 +64,5 @@ class ComplainRequest extends Model{
 		return \DB::table($this->table)->where('id', '=', $id)->delete();
 	}
 	//---------------------------------------------------------------------
-	public function getComplainRequestFN($limit = 20){
-		return \DB::table($this->table)
-					//->where('active', 1)
-					//->orderBy('post_date', 'desc')
-					//->orderBy('updated_at', 'desc')
-					->limit($limit)
-					->get();
-	}
 }
 ?>

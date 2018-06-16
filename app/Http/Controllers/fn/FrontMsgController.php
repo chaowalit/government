@@ -15,6 +15,7 @@ use App\Models\OnlineDocumentOtherNeccessary;
 use App\Models\OnlineDocumentInteresting;
 use App\Models\StaffStructure;
 use App\Models\PopupBanner;
+use App\Models\StatisticWebsite;
 use Cookie;
 
 class FrontMsgController extends Controller
@@ -32,6 +33,7 @@ class FrontMsgController extends Controller
 	public function __construct()
     {
         $this->template = env('TEMPLATE', 'demo1');
+        $this->add_visitor_website();
         $this->r_redirect_popup();
     }
 
@@ -87,6 +89,41 @@ class FrontMsgController extends Controller
         $StaffStructure = new StaffStructure;
         $staff_structure = $StaffStructure->getInfoStaffStructureAll();
         return $staff_structure;
+    }
+
+    public function add_visitor_website(){
+        $ip = $this->get_visitor_ip();
+        $StatisticWebsite = new StatisticWebsite;
+        $check_visit = $StatisticWebsite->checkStatisticWebsiteExiting(date("d-m-Y"), date("d-m-Y"), $ip);
+        
+        if(count($check_visit) == 0){
+            $data = array(
+                "client_ip" => $ip,
+                "created_at" => date("Y-m-d H:i:s"),
+                "updated_at" => date("Y-m-d H:i:s"),
+            );
+            $StatisticWebsite->save_data($data);
+        }
+    }
+
+    function get_visitor_ip() {
+        $ipaddress = '';
+        if (getenv('HTTP_CLIENT_IP'))
+            $ipaddress = getenv('HTTP_CLIENT_IP');
+        else if(getenv('HTTP_X_FORWARDED_FOR'))
+            $ipaddress = getenv('HTTP_X_FORWARDED_FOR');
+        else if(getenv('HTTP_X_FORWARDED'))
+            $ipaddress = getenv('HTTP_X_FORWARDED');
+        else if(getenv('HTTP_FORWARDED_FOR'))
+            $ipaddress = getenv('HTTP_FORWARDED_FOR');
+        else if(getenv('HTTP_FORWARDED'))
+            $ipaddress = getenv('HTTP_FORWARDED');
+        else if(getenv('REMOTE_ADDR'))
+            $ipaddress = getenv('REMOTE_ADDR');
+        else
+            $ipaddress = 'UNKNOWN';
+
+        return $ipaddress;
     }
 }
 ?>

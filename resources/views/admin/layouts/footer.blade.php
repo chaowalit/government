@@ -190,3 +190,61 @@
       });
     </script>
 <?php } ?>
+
+<?php if($menu_nav == 'summary_complaint'){ ?>
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="{{ asset('admin/assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
+    <!-- bootstrap datepicker -->
+    <script src="{{ asset('admin/assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+
+    <script>
+      $(function () {
+            //Date picker
+            $('#start_date').datepicker({
+                format: 'dd-mm-yyyy',
+                autoclose: true
+            });
+
+            $('#end_date').datepicker({
+                format: 'dd-mm-yyyy',
+                autoclose: true
+            });
+
+            $("#search_word").click(function(){
+                // alert('กำลังตั้งค่า logic');
+                var start_date = $("#start_date").val();
+                var end_date = $("#end_date").val();
+                window.location.href = '/admin/summary_complaint?start_date='+start_date+'&end_date='+end_date;
+            });
+      });
+    </script>
+<?php } ?>
+
+<?php if($menu_nav == 'statistic'){ ?>
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="{{ asset('admin/assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
+    <!-- bootstrap datepicker -->
+    <script src="{{ asset('admin/assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+
+    <script>
+      $(function () {
+            //Date picker
+            $('#start_date').datepicker({
+                format: 'dd-mm-yyyy',
+                autoclose: true
+            });
+
+            $('#end_date').datepicker({
+                format: 'dd-mm-yyyy',
+                autoclose: true
+            });
+
+            $("#search_word").click(function(){
+                // alert('กำลังตั้งค่า logic');
+                var start_date = $("#start_date").val();
+                var end_date = $("#end_date").val();
+                window.location.href = '/admin/statistic?start_date='+start_date+'&end_date='+end_date;
+            });
+      });
+    </script>
+<?php } ?>

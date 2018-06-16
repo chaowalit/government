@@ -389,9 +389,20 @@
                 <span style="font-size: 12px;"><?php echo \Config::get('config_memu.main_3'); ?><?php //echo "ร้องเรียน/ร้องทุกข์"; ?></span>
             </a>
         </li>
+        <li class="<?php echo ($menu_nav == 'summary_complaint')? 'active':''; ?>">
+            <a href="{{ url('admin/summary_complaint') }}"><i class="fa fa-space-shuttle"></i> 
+                <span style="font-size: 12px;">สรุปผลการร้องเรียน/ร้องทุกข์<?php //echo "ร้องเรียน/ร้องทุกข์"; ?></span>
+            </a>
+        </li>
         <li class="<?php echo ($menu_nav == 'survey')? 'active':''; ?>">
             <a href="{{ url('admin/survey') }}"><i class="fa fa-space-shuttle"></i> 
                 <span style="font-size: 12px;"><?php // echo \Config::get('config_memu.main_4.level_7'); ?><?php echo "สรุปผลความพึงพอใจ"; ?></span>
+            </a>
+        </li>
+
+        <li class="<?php echo ($menu_nav == 'statistic')? 'active':''; ?>">
+            <a href="{{ url('admin/statistic') }}"><i class="fa fa-space-shuttle"></i> 
+                <span style="font-size: 12px;"><?php // echo \Config::get('config_memu.main_4.level_7'); ?><?php echo "สถิติการเข้าใช้งาน"; ?></span>
             </a>
         </li>
 
