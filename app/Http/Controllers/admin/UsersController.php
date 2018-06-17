@@ -32,12 +32,14 @@ class UsersController extends AdminMsgController{
 	}
 
 	public function save(Request $Requests){
+		$full_name = $Requests->get('full_name', '');
 		$email = $Requests->get('email', '');
 		$password = $Requests->get('password', '');
 		$user_id = $Requests->get('user_id', '');
 
 		if(trim($email) != '' && trim($password) != ''){
 			$data = array(
+				"full_name" => $full_name,
 				"email" => $email,
 				"password" => bcrypt($password),
 				"updated_at" => date("Y-m-d H:i:s"),

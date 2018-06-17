@@ -133,6 +133,9 @@
                         <select class="form-control" name="career" id="career">
                             <option value="" selected>กรุณาเลือก</option>
                             <option value="รับราชการ">รับราชการ</option>
+                            <option value="รัฐวิสาหกิจ">รัฐวิสาหกิจ</option>
+                            <option value="ผู้ประกอบการภาคเอกชน">ผู้ประกอบการภาคเอกชน</option>
+                            <option value="ประชาชนทั่วไป">ประชาชนทั่วไป</option>
                         </select>
                        <i class="fa fa-pencil form-control-feedback"></i>
                     </div>

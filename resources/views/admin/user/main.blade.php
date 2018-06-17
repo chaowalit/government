@@ -51,6 +51,11 @@
                 <form role="form" action="{{ url('admin/user/save') }}" method="post" enctype="multipart/form-data">
                   <div class="box-body">
                     <div class="form-group">
+                      <label for="">ชื่อ-นามสกุล</label>
+                      <input type="text" class="form-control" name="full_name" id="full_name" placeholder="ชื่อ-นามสกุล" value="<?php echo isset($user[0]->full_name)? $user[0]->full_name:""; ?>" style="width: 30%;" required="true">
+                    </div>
+
+                    <div class="form-group">
                       <label for="">Username</label>
                       <input type="text" class="form-control" name="email" id="email" placeholder="Username" value="<?php echo isset($user[0]->email)? $user[0]->email:""; ?>" style="width: 30%;" required="true">
                     </div>
