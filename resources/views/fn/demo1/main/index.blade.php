@@ -818,6 +818,70 @@
                 </div>
                 <?php } ?>
 
+                <div class="widget panel panel-default">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="pricing-table" style="text-align: center;">
+                          <div class="plan-name">
+                            <h5>สถิติการเข้าเว็บ</h5>
+                          </div>
+                          <div class="plan-price">
+                            <div class="interval">วันนี้</div>
+                            <?php
+                                $start = date("Y-m-d").' 00:00:00';
+                                $end = date("Y-m-d").' 23:59:59';
+                                $temp_1 = \DB::table("statistic_website")
+                                    ->where('created_at', '>=', $start)
+                                    ->where('created_at', '<=', $end)
+                                    ->orderBy('updated_at', 'desc')
+                                    ->get();
+                            ?>
+                            <div class="price-value"><?php echo count($temp_1); ?></div>
+                            <div class="interval">IP คุณ : <?php echo getenv('REMOTE_ADDR')? getenv('REMOTE_ADDR'):'-'; ?></div>
+                          </div>
+                          <div class="plan-list">
+                            <ul>
+                            <?php
+                                $start = date("Y-m-d", strtotime("yesterday")).' 00:00:00';
+                                $end = date("Y-m-d", strtotime("yesterday")).' 23:59:59';
+                                $temp_2 = \DB::table("statistic_website")
+                                    ->where('created_at', '>=', $start)
+                                    ->where('created_at', '<=', $end)
+                                    ->orderBy('updated_at', 'desc')
+                                    ->get();
+                            ?>
+                              <li>สถิติเมื่อวานนี้ : <strong><?php echo count($temp_2); ?> คน</strong></li>
+                            <?php
+                                $start = date("Y-m").'-01 00:00:00';
+                                $end = date("Y-m").'-30 23:59:59';
+                                $temp_3 = \DB::table("statistic_website")
+                                    ->where('created_at', '>=', $start)
+                                    ->where('created_at', '<=', $end)
+                                    ->orderBy('updated_at', 'desc')
+                                    ->get();
+                            ?>
+                              <li>สถิติเดือนนี้ : <strong><?php echo count($temp_3); ?> คน</strong></li>
+                            <?php
+                                $start = date("Y").'-01-01 00:00:00';
+                                $end = date("Y").'-12-30 23:59:59';
+                                $temp_4 = \DB::table("statistic_website")
+                                    ->where('created_at', '>=', $start)
+                                    ->where('created_at', '<=', $end)
+                                    ->orderBy('updated_at', 'desc')
+                                    ->get();
+                            ?>
+                              <li>สถิติปีนี้ : <strong><?php echo count($temp_4); ?> คน</strong></li>
+                            <?php
+                                $temp_5 = \DB::table("statistic_website")
+                                    ->orderBy('updated_at', 'desc')
+                                    ->get();
+                            ?>
+                              <li>สถิติทั้งหมด : <strong><?php echo count($temp_5); ?> คน</strong></li>
+                            </ul>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
               </div>
               <!--End sidebar-->
 
